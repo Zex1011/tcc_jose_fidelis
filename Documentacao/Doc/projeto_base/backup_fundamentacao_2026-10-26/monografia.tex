@@ -1,0 +1,361 @@
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{abntex2}}
+\ProcessOptions
+
+\documentclass[
+	% -- opções da classe memoir --
+	12pt,				% tamanho da fonte
+	openright,			% capítulos começam em pág ímpar (insere página vazia caso preciso)
+	oneside,			% para impressão em verso e anverso. Oposto a oneside
+	a4paper,			% tamanho do papel. 
+	% -- opções da classe abntex2 --
+	%chapter=TITLE,		% títulos de capítulos convertidos em letras maiúsculas
+	%section=TITLE,		% títulos de seções convertidos em letras maiúsculas
+	%subsection=TITLE,	% títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,% títulos de subsubseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+	english,			% idioma adicional para hifenização
+	french,				% idioma adicional para hifenização
+	spanish,			% idioma adicional para hifenização
+	brazil				% o último idioma é o principal do documento
+	]{abntex2}
+
+\usepackage{setspace}
+\usepackage{conf-ifsc}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{trivfloat}
+\trivfloat{quadro}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{float}
+\floatstyle{plaintop}
+\restylefloat{quadro}
+\usepackage{chngcntr}
+\usepackage{lipsum}
+\usepackage{tocloft}
+\usepackage{tocvsec2}
+\usepackage{boxhandler}
+\captionsetup{font={bf,small},labelfont=small}
+%\usepackage{todonotes}
+% A lista institucional usa \imprimirlistadeabreviaturas, sem alvos de glossário.
+\usepackage[acronym]{glossaries}
+\glsdisablehyper
+%\makeglossaries
+
+\newcommand{\source}[1]{\caption*{\normalfont Fonte: {#1}}}
+
+
+\counterwithout{equation}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\newcommand\ChangeRT[1]{\noalign{\hrule height #1}}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+
+
+% Cadastro único de siglas: expansão no texto e lista institucional.
+\input{tex/siglas}
+
+%---------------------------------------------------------------------%
+%---------------------------------------------------------------------%
+% Informações de dados para CAPA e FOLHA DE ROSTO
+%---------------------------------------------------------------------%
+%---------------------------------------------------------------------%
+
+% Título e dados acadêmicos confirmados pelo autor em 07/10/2026.
+\titulo{SISTEMA DE SEGUIMENTO DE PESSOAS COM VISÃO COMPUTACIONAL EMBARCADA NO RASPBERRY PI ZERO 2 W}
+
+% Nome confirmado pelo autor; caixa alta acompanha a apresentação do modelo.
+\autor{JOSÉ HENRIQUE SCHMITT FIDELIS}
+
+\local{FLORIANÓPOLIS}
+
+\data{2026}
+
+% Dados usados pelo cabeçalho institucional da capa e da folha de rosto.
+\newcommand{\departamentotcc}{DEPARTAMENTO ACADÊMICO DE ELETRÔNICA}
+\newcommand{\cursotcc}{CURSO DE GRADUAÇÃO EM ENGENHARIA ELETRÔNICA}
+
+\orientador[Orientador:\\]{Matheus Leitzke Pinto, Me}
+
+
+%\coorientador[Coorientador:\\]{Nome do coorientador}
+
+\tipotrabalho{Monografia (Graduação)}
+
+% O preambulo deve conter o tipo do trabalho, o objetivo, o nome da instituição e a área de concentração 
+\preambulo{Trabalho de Conclusão de Curso submetido ao Instituto Federal de Educação, Ciência e Tecnologia de Santa Catarina como parte dos requisitos para obtenção do título de Bacharel em Engenharia Eletrônica.}
+
+% Palavras-chave provisórias, coerentes com o objetivo geral da introdução.
+\newcommand{\palavraschavetcc}{Visão computacional. Robótica móvel. Seguimento de pessoas.}
+\newcommand{\keywordstcc}{Computer vision. Mobile robotics. Person following.}
+% Atualiza os metadados após as declarações de título e autor.
+\hypersetup{
+    pdftitle={\imprimirtitulo},
+    pdfauthor={José Henrique Schmitt Fidelis},
+    pdfsubject={\imprimirpreambulo},
+    pdfkeywords={Visão computacional, Robótica móvel, Seguimento de pessoas}
+}
+
+% \textoaprovacao{Este Trabalho foi julgado adequado para obtenção do Título de Engenheira Eletrônica em abril de 2021 e aprovado na sua forma final pela banca examinadora do Curso de Engenharia Eletrônica do instituto Federal de Educação Ciência, e Tecnologia de Santa Catarina.}
+
+
+
+%---------------------------------------------------------------------%
+% Início do documento
+%---------------------------------------------------------------------%
+
+\begin{document}
+
+
+
+\selectlanguage{brazil}
+\frenchspacing 
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+% \pretextual
+
+\imprimircapa
+\imprimirfolhaderosto* %(o * indica que haverá a ficha bibliográfica)
+
+%---------------------------------------------------------------------%
+% ATENÇÃO - Pergunte para a Biblioteca do IFSC
+% Inserir a ficha bibliografica - 
+%
+% Para gerar a ficha catalográfica acesse:
+% http://ficha.florianopolis.ifsc.edu.br/
+% Precisa ser feito pelo navegador Mozilla Firefox
+%---------------------------------------------------------------------%
+
+\imprimirficha{pdf/fichacatalografica.pdf}
+%\cleardoublepage
+
+%---------------------------------------------------------------------%
+% Inserir folha de aprovação
+%---------------------------------------------------------------------%
+
+
+%\imprimiraprovacao
+\includepdf[pages=-]{pdf/tcc-aprovado.pdf}
+
+%\cleardoublepage
+
+%---------------------------------------------------------------------%
+% Dedicatória
+%---------------------------------------------------------------------%
+\begin{dedicatoria}
+    \vspace*{\fill}
+	\begin{flushright}
+    		(Dedicatória é um elemento opcional.\\ 
+            Texto alinhado no canto inferior direito.\\
+            Não deve ultrapassar uma página.)
+	\end{flushright}
+\end{dedicatoria}
+
+
+
+
+%---------------------------------------------------------------------%
+% Agradecimentos
+%---------------------------------------------------------------------%
+\begin{agradecimentos}
+    Elemento opcional que não pode ultrapassar o limite de uma página.
+\end{agradecimentos}
+% ---
+
+%---------------------------------------------------------------------%
+% Epígrafe
+%---------------------------------------------------------------------%
+\begin{epigrafe}
+    \vspace*{\fill}
+	\begin{flushright}
+    		(Epígrafe é um elemento opcional.\\
+    		Texto alinhado no canto inferior direito.\\
+            Não deve ultrapassar uma página.)
+	\end{flushright}
+\end{epigrafe}
+
+%---------------------------------------------------------------------%
+% RESUMOS
+%---------------------------------------------------------------------%
+% resumo em português
+\setlength{\absparsep}{18pt} % ajusta o espaçamento dos parágrafos do resumo
+\renewcommand{\baselinestretch}{1} 
+\begin{resumo}
+    O resumo deve mostrar a natureza e o objetivo do trabalho, o método que foi empregado, os resultados e as conclusões. O resumo deve conter entre 150 e 500 palavras e constitui-se de um único parágrafo, sem recuo.
+
+ 
+   \noindent 
+    \textbf{Palavras-chave}: \palavraschavetcc
+\end{resumo}
+
+% resumo em inglês
+\renewcommand{\baselinestretch}{1} 
+\begin{resumo}[Abstract]
+ \begin{otherlanguage*}{english}
+
+   The abstract should show the nature and scope of work, the method that was used, the results and conclusions. The abstract may contain between 150 and 500 words, and it must be only one paragraph. 
+
+
+   %\vspace{-0.8cm}
+ 
+   \noindent 
+   \textbf{Keywords}: \keywordstcc
+ \end{otherlanguage*}
+\end{resumo}
+
+
+%---------------------------------------------------------------------%
+% inserir lista de ilustrações
+%---------------------------------------------------------------------%
+\renewcommand{\listfigurename}{Lista de Figuras}
+\pdfbookmark[0]{\listfigurename}{lof}
+\listoffigures*
+\cleardoublepage
+
+%---------------------------------------------------------------------%
+% inserir lista de quadros
+%---------------------------------------------------------------------%
+
+\renewcommand{\listquadroname}{Lista de quadros}
+\newfloat{quadro}{\quadroname}{loq}[chapter]
+\setfloatlocations{quadro}{hbtp}
+\newlistof{listofquadros}{loq}{\listquadroname}
+\newlistentry{quadro}{loq}{0}
+\renewcommand{\cftquadroname}{\quadroname\space}
+\renewcommand*{\cftquadroaftersnum}{\hfill\textendash\hfill}
+\counterwithout{quadro}{chapter}
+\listofquadros* 
+\cleardoublepage
+
+
+
+%---------------------------------------------------------------------%
+% inserir lista de tabelas
+%---------------------------------------------------------------------%
+\pdfbookmark[0]{\listtablename}{lot}
+\listoftables*
+\cleardoublepage
+
+%---------------------------------------------------------------------%
+% inserir lista de listings
+%---------------------------------------------------------------------%
+%\pdfbookmark[0]{\lstlistlistingname}{lol}
+%\listoflistings
+%\cleardoublepage
+
+%---------------------------------------------------------------------%
+% inserir lista de abreviaturas e simbolos
+%---------------------------------------------------------------------%
+%\listofabrev{tex/00-Abreviaturas}
+\imprimirlistadeabreviaturas
+
+% \imprimirlistadesimbolos
+\cleardoublepage
+
+%---------------------------------------------------------------------%
+% inserir o sumario
+
+%---------------------------------------------------------------------%
+
+
+\setlength{\cftbeforechapterskip}{4pt plus 0pt}
+\pdfbookmark[0]{\contentsname}{toc}
+
+
+\tableofcontents*
+
+
+\cleardoublepage
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+% ----------------------------------------------------------
+% Inclusão dos capítulos que estão em outros arquivos .tex
+% ----------------------------------------------------------
+
+\glsresetall
+\include{tex/cap1}
+\include{tex/cap2}
+\include{tex/cap3}
+\include{tex/cap4}
+\include{tex/cap5}
+
+
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+% ----------------------------------------------------------
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{referencias}
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+ \begin{apendicesenv}         
+     \partapendices
+     \include{tex/Apendices}
+ \end{apendicesenv}
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+ \begin{anexosenv}
+     \partanexos
+     \include{tex/Anexos}
+ \end{anexosenv}
+
+%---------------------------------------------------------------------
+% INDICE REMISSIVO
+%---------------------------------------------------------------------
+%\phantompart
+%\printindex
+%---------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,30 @@
+# Bancada: câmera e detector reais, comunicação simulada (não abre serial).
+# Requer câmera funcional no sistema, Picamera2 e runtime/modelo validados no Pi.
+[camera]
+backend = "picamera2"
+width = 640
+height = 480
+warmup_s = 1.0
+
+[detector]
+backend = "ultralytics"
+model_path = "models/yolo26n_ncnn_model"
+imgsz = 320
+confidence = 0.35
+class_name = "person"
+
+[communication]
+backend = "mock"
+
+[logging]
+file = "logs/rpi_vision.log"
+console = true
+
+[debug]
+enabled = false
+# Ative apenas para inspecionar imagens; gravação altera o tempo do loop.
+save_every_n = 5
+max_images = 6
+
+[system]
+abort_on_comm_failure = true

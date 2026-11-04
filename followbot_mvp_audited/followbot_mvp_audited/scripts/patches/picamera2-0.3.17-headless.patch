@@ -1,0 +1,17 @@
+--- a/picamera2/previews/__init__.py
++++ b/picamera2/previews/__init__.py
+@@ -1,3 +1,13 @@
+-from .drm_preview import DrmPreview
++# FollowBot Ubuntu headless: KMS is only required for a DRM preview.
++try:
++    from .drm_preview import DrmPreview
++except ModuleNotFoundError as exc:
++    if exc.name != "pykms":
++        raise
++
++    class DrmPreview:
++        def __init__(self, *args, **kwargs):
++            raise RuntimeError("DRM preview requires pykms; use the headless NullPreview here.")
++
+ from .null_preview import NullPreview
+ from .qt_previews import QtGlPreview, QtPreview

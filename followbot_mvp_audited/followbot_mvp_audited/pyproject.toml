@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "followbot"
+version = "0.1.0"
+description = "Modular person-following robot MVP for Raspberry Pi + ESP"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.24",
+  "pyserial>=3.5",
+]
+
+[project.optional-dependencies]
+ai = [
+  "ultralytics>=8.4.108,<9",
+]
+
+# Dependências extras usadas para CONVERTER/exportar modelos.
+# Não são necessárias no teste mock nem necessariamente no runtime NCNN.
+export = [
+  "ultralytics[export]>=8.4.108,<9",
+]
+
+dev = [
+  "pytest>=8",
+]
+
+webcam = [
+  "opencv-python>=4.10,<5",
+]
+
+[project.scripts]
+followbot = "followbot.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,61 @@
+[camera]
+backend = "picamera2"
+# Captura 4:3 razoavelmente pequena; a IA pode inferir em 320x320.
+width = 640
+height = 480
+warmup_s = 1.0
+
+[detector]
+backend = "ultralytics"
+# Exporte o modelo em outro computador e copie esta pasta para o Raspberry.
+model_path = "models/yolo26n_ncnn_model"
+imgsz = 320
+confidence = 0.35
+class_name = "person"
+
+[tracking]
+# Mantém a proposta inicial: primeiro alvo no primeiro ciclo.
+initial_strategy = "first"
+# Distância máxima entre centros, normalizada pela diagonal da imagem.
+max_center_distance = 0.30
+# O carrinho para imediatamente sem alvo, mas o tracker mantém a referência
+# por alguns frames para tentar reencontrar a mesma pessoa.
+max_missed_frames = 3
+
+[control]
+# Valores INICIAIS para calibração em testes físicos.
+desired_height_ratio = 0.55
+height_deadband = 0.05
+horizontal_deadband = 0.06
+kp_linear = 1.0
+kp_angular = 1.3
+max_linear = 0.40
+max_angular = 1.20
+allow_reverse = false
+# Reduz avanço quando a pessoa está muito fora do centro.
+forward_slowdown_error = 0.35
+forward_stop_error = 0.75
+# Use -1.0 se a convenção angular do seu ESP estiver invertida.
+angular_sign = 1.0
+
+[communication]
+backend = "serial"
+# Pode ser /dev/ttyACM0, /dev/ttyUSB0 etc. Confirmar no hardware real.
+port = "/dev/ttyACM0"
+baudrate = 115200
+ack_timeout_s = 0.25
+write_timeout_s = 0.25
+retries = 2
+# Alguns ESPs reiniciam ao abrir a serial; ajustar após teste.
+startup_delay_s = 1.5
+
+[logging]
+level = "INFO"
+file = "logs/followbot.log"
+max_bytes = 2000000
+backup_count = 3
+console = true
+
+[system]
+# Para protótipo móvel, falha persistente de comunicação deve interromper o loop.
+abort_on_comm_failure = true

@@ -1,0 +1,68 @@
+@startuml classes_rpi
+!include estilo.iuml
+top to bottom direction
+hide circle
+hide empty members
+
+class Orchestrator {
+  - _cycle: int
+  + abort_on_comm_failure: bool
+  + run(max_cycles: int | None): None
+  + close(): None
+  - _send_stop_best_effort(reason: str): None
+}
+
+abstract class Camera {
+  {abstract} + capture(): Frame
+  + close(): None
+}
+abstract class Detector {
+  {abstract} + detect(frame: Frame): list[Detection]
+  + close(): None
+}
+abstract class TargetSelector {
+  {abstract} + select(detections, frame): Detection | None
+  {abstract} + reset(): None
+}
+abstract class Controller {
+  {abstract} + compute(target, frame): MotionCommand
+}
+abstract class CommunicationLink {
+  {abstract} + send(command): CommunicationResult
+  + close(): None
+}
+
+class Picamera2Camera
+class UltralyticsPersonDetector
+class NearestBBoxSelector {
+  - _previous: Detection | None
+  - _missed: int
+}
+class BBoxProportionalController
+class SerialCommunicationLink
+
+Orchestrator --> "1" Camera : camera
+Orchestrator --> "1" Detector : detector
+Orchestrator --> "1" TargetSelector : selector
+Orchestrator --> "1" Controller : controller
+Orchestrator --> "1" CommunicationLink : communication
+Camera <|-- Picamera2Camera
+Detector <|-- UltralyticsPersonDetector
+TargetSelector <|-- NearestBBoxSelector
+Controller <|-- BBoxProportionalController
+CommunicationLink <|-- SerialCommunicationLink
+
+note top of Orchestrator
+  build_orchestrator() constrói e injeta os componentes.
+  O orquestrador também usa 1 Logger e
+  0..1 VisualDebugRecorder (depuração opcional).
+end note
+
+legend bottom
+  Classes abstratas correspondem às ABCs de interfaces.py.
+  Triângulo vazio: herança. Seta simples: associação navegável.
+  Métodos das implementações e detalhes de configuração foram omitidos.
+  Alternativas de teste: SyntheticCamera, DatasetCamera, OpenCVCamera,
+  SyntheticPersonDetector e MockCommunicationLink.
+endlegend
+@enduml

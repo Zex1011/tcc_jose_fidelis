@@ -1,0 +1,215 @@
+% !TEX root = ../monografia.tex
+% Integrado do rascunho em 26/10/2026; revisão de conteúdo permanece aberta.
+\chapter{Fundamentação Teórica}
+\label{cap:fundamentacao}
+
+Este texto apresenta os fundamentos necessários para compreender a detecção de pessoas por redes neurais executadas em um sistema embarcado. A exposição parte da representação digital das imagens, introduz o funcionamento das redes convolucionais, apresenta a detecção de objetos com \gls{yolo} e discute a execução de modelos em hardware com recursos limitados. As escolhas de implementação, o acompanhamento do alvo, o controle da plataforma e os procedimentos experimentais serão tratados posteriormente, na metodologia e no desenvolvimento.
+
+Os exemplos numéricos apresentados neste capítulo são didáticos e não representam resultados medidos no projeto.
+
+\section{Imagens digitais e visão computacional}
+\label{sec:imagens-digitais}
+
+\subsection{Representação de uma imagem}
+\label{subsec:representacao-imagem}
+
+Para o processamento computacional, uma imagem digital pode ser representada por um arranjo de valores numéricos. Sua organização espacial é dada por linhas e colunas, cujas posições correspondem aos pixels. Em uma representação colorida \gls{rgb}, cada posição contém três componentes, associadas ao vermelho, ao verde e ao azul. Quando cada componente utiliza oito bits sem sinal, seus valores variam de 0 a 255. Essa é uma representação comum, embora existam imagens com outros números de canais e outras profundidades numéricas \cite{stanford-imagens}.
+
+Considere, como exemplo, uma imagem \gls{rgb} com largura de 640 pixels e altura de 480 pixels. Ela contém 307.200 posições espaciais e 921.600 valores de componentes de cor. Se cada valor ocupar um byte, o arranjo exige 921.600 bytes, aproximadamente 0,88 MiB, antes de considerar metadados, alinhamento ou cópias. Aqui, um mebibyte, ou MiB, corresponde a \(2^{20}\) bytes. Esse cálculo descreve o arranjo descomprimido; não corresponde necessariamente ao tamanho de um arquivo \gls{jpeg} salvo em disco.
+
+A organização dos dados também faz parte da representação. Um tensor é, neste contexto, um arranjo numérico com uma ou mais dimensões. Uma imagem pode ser organizada como altura \(\times\) largura \(\times\) canais, enquanto bibliotecas de redes neurais podem utilizar lote \(\times\) canais \(\times\) altura \(\times\) largura. A ordem dos canais também precisa ser conhecida: \gls{rgb} e \gls{bgr} contêm as mesmas componentes, mas em posições diferentes. A documentação de inferência da Ultralytics, por exemplo, especifica convenções distintas para imagens NumPy e tensores de entrada \cite{ultralytics-predict}.
+
+\subsection{Da imagem numérica à informação sobre objetos}
+\label{subsec:tarefas-visao}
+
+As tarefas de visão computacional se distinguem pela informação que produzem. Na classificação, o resultado indica uma categoria ou a presença de determinadas categorias na imagem. Na detecção, também é necessário localizar os objetos, normalmente por caixas delimitadoras. Na segmentação, a descrição espacial é mais detalhada, atribuindo rótulos a regiões ou pixels. Essas diferenças aparecem, por exemplo, na definição das tarefas do desafio PASCAL VOC \cite{pascal}.
+
+Para situar essas tarefas, imagine uma imagem com duas pessoas. Uma classificação pode indicar a presença da categoria ``pessoa''. Um detector pode retornar duas caixas, cada uma associada à categoria prevista. Uma segmentação pode representar as regiões ocupadas pelos corpos. O resultado de detecção, isoladamente, fornece categoria e localização. Neste texto, ``detecção de pessoas'' designa essa tarefa; a correspondência entre instantes não integra a saída aqui definida \cite{pascal}.
+
+A relação entre os valores dos pixels e a categoria de um objeto não é fixa. Iluminação, escala, orientação, postura, fundo e oclusões podem alterar a aparência observada. Pessoas diferentes também apresentam variações de roupa e características visuais. Portanto, o sistema precisa lidar com variações dentro da mesma categoria, além de distinguir categorias diferentes \cite{stanford-imagens}.
+
+\subsection{Preparação das imagens para a rede}
+\label{subsec:pre-processamento}
+
+O pré-processamento adapta a imagem ao formato esperado pelo modelo. Uma operação frequente é o redimensionamento, que calcula uma nova grade de pixels a partir da imagem original. Para isso, utilizam-se métodos de interpolação, como vizinho mais próximo, bilinear ou métodos baseados em áreas. Redimensionar para uma quantidade menor de pixels reduz a representação espacial disponível; ampliar uma imagem por interpolação não equivale a adquirir novos detalhes com a câmera \cite{opencv-transform}.
+
+As proporções também precisam ser consideradas. Em um exemplo geométrico, transformar diretamente 640 \(\times\) 480 em 320 \(\times\) 320 aplica fatores diferentes aos dois eixos. Uma alternativa é redimensionar proporcionalmente e completar as bordas, procedimento conhecido como \textit{letterbox}. O preenchimento e as dimensões efetivas dependem da implementação e da configuração do detector. Ao interpretar as caixas previstas, deve-se considerar a transformação realizada sobre a imagem \cite{ultralytics-predict}.
+
+Outra operação é a adequação da escala numérica dos valores. Dependendo da rede, isso pode envolver divisão por uma constante, subtração de médias ou divisão por desvios-padrão. A transformação deve seguir a convenção prevista pelo modelo: normalizar valores e redimensionar a imagem são operações distintas. A primeira altera a representação numérica; a segunda modifica as dimensões espaciais. A preparação utilizada na inferência deve ser compatível com aquela associada ao treinamento \cite{stanford-preprocess}.
+
+\section{Redes neurais convolucionais}
+\label{sec:redes-convolucionais}
+
+\subsection{Aprendizado a partir de exemplos}
+\label{subsec:aprendizado-supervisionado}
+
+O aprendizado de máquina permite ajustar modelos a partir de dados. No aprendizado supervisionado, os exemplos são acompanhados por respostas de referência, como classes de imagens ou anotações de objetos. Uma rede neural aplica transformações parametrizadas à entrada e produz uma saída. Durante o treinamento, seus parâmetros são ajustados para reduzir uma função de perda, que expressa a discrepância entre as previsões e as referências segundo o problema considerado \cite{lecun-2015}.
+
+O treinamento inclui a propagação dos dados pela rede, o cálculo da perda e a obtenção de gradientes por retropropagação. Um algoritmo de otimização utiliza esses gradientes para atualizar os parâmetros. Na inferência, a rede utiliza os parâmetros já aprendidos para calcular respostas para novas entradas. Assim, empregar um modelo pré-treinado na câmera não significa que ele esteja aprendendo continuamente com as imagens recebidas \cite{lecun-2015}.
+
+\subsection{Pesos e funções de ativação}
+\label{subsec:pesos-ativacoes}
+
+Uma unidade básica de uma rede pode ser descrita por uma soma ponderada seguida de uma função de ativação:
+
+\begin{equation}
+    \label{eq:neuronio}
+    \begin{aligned}
+        z &= \sum_{i=1}^{n} w_i x_i + b, \\
+        y &= f(z).
+    \end{aligned}
+\end{equation}
+
+Na Equação~\ref{eq:neuronio}, \(x_i\) são valores de entrada, \(w_i\) são pesos, \(b\) é um termo de deslocamento, chamado viés, e \(f\) é a função de ativação. Os pesos determinam a contribuição das entradas. A composição de unidades e camadas permite produzir transformações mais elaboradas. Funções não lineares são necessárias para que uma sequência de camadas não se reduza apenas a uma transformação afim equivalente. Um exemplo didático é \gls{relu}, definida por \(f(z)=\max(0,z)\) \cite{stanford-neuron}.
+
+Por exemplo, uma unidade com entradas 0,2 e 0,8, pesos 0,5 e -0,25 e viés 0,1 produz \(z=0{,}5\cdot 0{,}2-0{,}25\cdot 0{,}8+0{,}1=0\). Alterar os pesos modifica a resposta à mesma entrada. O exemplo ilustra o papel dos parâmetros, sem representar um neurônio específico do modelo utilizado.
+
+\subsection{Convolução e mapas de características}
+\label{subsec:convolucao-caracteristicas}
+
+As redes neurais convolucionais, do inglês \glspl{cnn}, exploram a estrutura espacial dos dados. Em uma camada convolucional, cada saída depende de uma região local da entrada, chamada campo receptivo local. Um mesmo conjunto de pesos é aplicado a diferentes posições, produzindo um mapa de características. Esse compartilhamento permite procurar uma característica em vários locais sem aprender um conjunto independente de pesos para cada posição. O trabalho de LeCun et al. sobre reconhecimento de documentos apresenta esses princípios em uma aplicação clássica de redes convolucionais \cite{lecun-1998}.
+
+O conjunto de pesos aplicado à região local é chamado filtro ou \textit{kernel}. A operação envolve multiplicar valores correspondentes da entrada e do filtro e somar os produtos. Nas implementações usuais de \glspl{cnn}, essa operação geralmente corresponde à correlação cruzada, na qual não se inverte espacialmente o filtro. A expressão ``convolução'' permanece consagrada para a camada na literatura de aprendizado profundo \cite{dumoulin}.
+
+Um exemplo com um único canal ajuda a visualizar a operação, conforme a Equação~\ref{eq:exemplo-correlacao}:
+
+\begin{equation}
+    \label{eq:exemplo-correlacao}
+    \begin{aligned}
+        X &= \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix},
+        \qquad K = \begin{bmatrix}1 & 0 \\ 0 & -1\end{bmatrix}, \\
+        y &= 1\cdot 1 + 2\cdot 0 + 3\cdot 0 + 4\cdot(-1) = -3.
+    \end{aligned}
+\end{equation}
+
+Ao deslocar esse filtro, calculam-se resultados para outras regiões. Em uma convolução convencional, sem agrupamento, o filtro considera todos os canais da entrada e acumula as contribuições correspondentes. Diferentes filtros produzem diferentes canais de saída. Seus valores são aprendidos no treinamento, permitindo extrair características úteis ao objetivo da rede \cite{stanford-cnn}.
+
+O compartilhamento pode ser ilustrado por uma camada convolucional convencional, sem agrupamento, com 16 filtros de tamanho 3 \(\times\) 3 sobre uma entrada de três canais. Considerando um viés por filtro, existem \(16\cdot(3\cdot 3\cdot 3+1)=448\) parâmetros. Esse número não depende diretamente de quantas posições da imagem serão percorridas. Entretanto, o número de operações aumenta quando há mais posições de saída. O exemplo separa duas grandezas: quantidade de parâmetros e quantidade de cálculos \cite{lecun-1998}.
+
+\subsection{Dimensões e composição das camadas}
+\label{subsec:dimensoes-camadas}
+
+O passo de deslocamento do filtro é denominado \textit{stride}. Um passo maior pode produzir um mapa espacialmente menor. O \textit{padding} acrescenta posições nas bordas, geralmente preenchidas com zeros, e influencia o tamanho da saída e o tratamento dos pixels próximos aos limites. Para uma dimensão de entrada \(i\), filtro de tamanho \(k\), preenchimento simétrico \(p\) e passo \(s\), sem dilatação, a dimensão de saída é \(\left\lfloor\frac{i+2p-k}{s}\right\rfloor+1\). Por exemplo, entrada 5, filtro 3, preenchimento 0 e passo 1 resultam em saída 3 \cite{dumoulin}.
+
+As \glspl{cnn} também podem empregar operações de redução, como \textit{pooling}, que agregam valores de uma vizinhança por uma regra, por exemplo máximo ou média. Camadas de ativação introduzem não linearidades entre transformações. A combinação concreta desses elementos depende da arquitetura; a presença de convoluções não obriga toda \gls{cnn} a ter a mesma sequência de camadas ou a utilizar pooling \cite{stanford-cnn}.
+
+Ao encadear camadas que combinam posições espaciais, o campo receptivo em relação à imagem original pode aumentar. A rede pode, assim, combinar informações locais em representações mais abrangentes. Operações pontuais, como uma ativação aplicada separadamente a cada posição, não ampliam por si só essa região. O significado das representações depende dos parâmetros aprendidos, sem exigir que cada filtro corresponda a uma parte fixa do objeto \cite[seção 7.2]{d2l-2023}.
+
+\subsection{Generalização e modelos pré-treinados}
+\label{subsec:generalizacao}
+
+A finalidade do treinamento é obter um modelo que produza respostas úteis também para exemplos não utilizados no ajuste. Essa capacidade é denominada generalização. Um modelo pode apresentar baixo erro nos dados de treinamento e ainda responder inadequadamente a novas imagens, fenômeno associado ao sobreajuste. Por isso, desempenho no conjunto de treinamento não constitui, por si só, garantia de funcionamento em outras condições \cite[seção 5.2]{goodfellow}.
+
+Modelos pré-treinados permitem aproveitar parâmetros obtidos em um treinamento anterior. É possível utilizá-los diretamente para inferência ou realizar um novo ajuste com dados específicos, procedimento denominado ajuste fino, ou \textit{fine-tuning}. Essas alternativas são distintas: carregar pesos e processar imagens não executa automaticamente um novo treinamento. A adequação dos pesos ao problema depende da relação entre o domínio original e as imagens de interesse \cite[seção 14.2]{d2l-2023}.
+
+\section{Detecção de objetos e família \texorpdfstring{\acrshort{yolo}}{YOLO}}
+\label{sec:deteccao-yolo}
+
+\subsection{Caixas delimitadoras}
+\label{subsec:caixas-delimitadoras}
+
+Um detector de objetos retorna previsões de localização e categoria. A localização pode ser representada por uma caixa delimitadora retangular alinhada aos eixos da imagem. Na convenção \texttt{xyxy}, os limites são \((x_{\min},y_{\min},x_{\max},y_{\max})\). Na convenção \texttt{xywh} empregada pela Ultralytics, a representação utiliza centro, largura e altura. Também existem coordenadas normalizadas em relação às dimensões da imagem \cite{ultralytics-detect}.
+
+Adotando coordenadas contínuas no plano da imagem, as relações geométricas são dadas pela Equação~\ref{eq:geometria-caixa}:
+
+\begin{equation}
+    \label{eq:geometria-caixa}
+    \begin{aligned}
+        c_x &= \frac{x_{\min}+x_{\max}}{2}, &
+        c_y &= \frac{y_{\min}+y_{\max}}{2}, \\
+        w &= x_{\max}-x_{\min}, &
+        h &= y_{\max}-y_{\min}.
+    \end{aligned}
+\end{equation}
+
+Por exemplo, a caixa \((100,40,220,360)\) tem centro \((160,200)\), largura 120 e altura 320, nas unidades de coordenadas adotadas. Essas informações descrevem a extensão prevista do objeto na imagem. A caixa pode incluir partes do fundo, pois não representa seu contorno exato. A distinção entre localização por caixa e descrição precisa da forma é parte da definição da tarefa de detecção \cite{ultralytics-detect}.
+
+\subsection{Classe e confiança da previsão}
+\label{subsec:classe-confianca}
+
+Além da caixa, o detector produz informações sobre a categoria prevista e uma pontuação de confiança. Essa pontuação é utilizada para ordenar previsões e aplicar limiares. Um limiar mais alto admite um subconjunto mais restrito de previsões, mas a decisão sobre quais detecções são úteis depende do problema. A interpretação do score como probabilidade de acerto exige considerar a calibração do detector: uma pontuação 0,8 não deve ser automaticamente apresentada como uma garantia de 80\% de acertos em qualquer situação \cite{kuppers}.
+
+É útil distinguir a decisão da rede e a decisão de uso da aplicação. A rede produz previsões; a aplicação pode conservar somente algumas classes ou pontuações. No código da Ultralytics consultado, o filtro de classes atua sobre previsões já produzidas. Consequentemente, selecionar apenas a classe ``pessoa'' não transforma automaticamente uma rede multiclasse em uma rede menor, embora possa reduzir o trabalho posterior sobre as saídas. Essa conclusão decorre do fluxo da implementação consultada, não de uma medição de ganho de desempenho neste projeto \cite{ultralytics-nms}.
+
+\subsection{Sobreposição e detecções redundantes}
+\label{subsec:sobreposicao-nms}
+
+A interseção sobre união, do inglês \gls{iou}, expressa a sobreposição entre duas caixas:
+
+\begin{equation}
+    \label{eq:iou}
+    \operatorname{IoU}(A,B) = \frac{|A\cap B|}{|A\cup B|}.
+\end{equation}
+
+Na Equação~\ref{eq:iou}, $|A\cap B|$ representa a área de interseção e $|A\cup B|$ a área de união. Para caixas válidas e união de área positiva, o resultado varia de zero, quando não há área comum, a um, quando as caixas coincidem. Se duas caixas têm área 100 cada e interseção de área 50, sua união tem área 150 e a \gls{iou} é \(50/150\), aproximadamente 0,33. É uma relação geométrica entre caixas, distinta da pontuação de confiança produzida pela rede \cite[seção 3]{iou}.
+
+Alguns detectores podem gerar várias caixas para um mesmo objeto. Na supressão de não máximos, ou \gls{nms}, previsões são ordenadas por pontuação; uma caixa selecionada é mantida e caixas suficientemente sobrepostas podem ser descartadas segundo um limiar. O tratamento pode ser realizado por classe. A finalidade é reduzir redundâncias, mas a necessidade dessa etapa depende da arquitetura e do caminho de inferência \cite{ultralytics-nms}.
+
+\subsection{A proposta de \texorpdfstring{\acrshort{yolo}}{YOLO}}
+\label{subsec:proposta-yolo}
+
+\acrshort{yolo} é a sigla de \textit{\acrlong{yolo}}. Na proposta original de Redmon et al., a detecção é formulada como uma predição conjunta de caixas e classes a partir da imagem completa em uma avaliação da rede. Essa formulação caracteriza uma abordagem de um estágio: não há um módulo separado de propostas de regiões que depois sejam classificadas individualmente. O termo não significa uma rede de uma única camada ou ausência de preparação e tratamento das saídas \cite{yolo-original}.
+
+A versão original organiza previsões por uma grade espacial e utiliza uma formulação específica para caixas, classes e confiança. Esses detalhes pertencem àquele modelo. A família evoluiu, e explicar uma versão posterior exige consultar sua arquitetura e implementação correspondentes. Assim, a ideia de detectar a partir de uma passagem pela rede pode ser apresentada como fundamento, enquanto números de células, quantidade de caixas por célula e fórmulas de score precisam ser associados à versão que os utiliza \cite{yolo-original}.
+
+\subsection{Componentes e variantes atuais}
+\label{subsec:variantes-yolo}
+
+Uma organização conceitual útil distingue extração de características (\textit{backbone}), combinação de características (\textit{neck}) e produção das previsões (\textit{head}). No YOLO26, os autores descrevem componentes de extração e fusão de características e cabeças destinadas às tarefas de saída. Para a detecção, essas estruturas devem produzir informações de localização e categoria. Diferentes escalas do modelo, identificadas como \texttt{n}, \texttt{s}, \texttt{m}, \texttt{l} e \texttt{x}, correspondem a configurações distintas da família. O artigo que descreve YOLO26 é, na versão consultada, um preprint \cite{yolo26-paper}.
+
+YOLO26 oferece caminhos de detecção com associação de treinamento \textit{one-to-many} e \textit{one-to-one}: associam-se múltiplas previsões a um objeto, no primeiro caso, ou uma previsão a cada objeto, no segundo. O primeiro caminho utiliza \gls{nms}; o segundo permite inferência sem essa supressão. Portanto, \gls{nms} não é uma etapa obrigatória de toda execução da família. O caminho efetivo depende da versão e da configuração, inclusive na exportação \cite{yolo26-paper,ultralytics-yolo26}.
+
+O artigo original e a documentação da versão adotada cumprem, portanto, papéis complementares: o primeiro fundamenta a proposta de detecção, e os demais descrevem a concretização atual. As características específicas do modelo selecionado, de seu arquivo exportado e de seus parâmetros de execução serão registradas na metodologia, permitindo relacionar a fundamentação ao experimento efetivamente realizado.
+
+\section{Inferência em sistemas embarcados}
+\label{sec:inferencia-embarcada}
+
+\subsection{Do modelo treinado às operações no processador}
+\label{subsec:operacoes-processador}
+
+A inferência de uma rede envolve executar operações numéricas sobre os dados de entrada e os parâmetros aprendidos. Nas convoluções, são realizadas muitas multiplicações e acumulações; outras camadas aplicam ativações, reorganizam dados ou combinam resultados. A execução também exige movimentar pesos e resultados intermediários entre níveis de memória. Portanto, o custo depende tanto do cálculo quanto do acesso aos dados, e não apenas da quantidade de camadas descritas no modelo \cite[seções III e V]{sze}.
+
+Essa execução pode ser representada como um grafo: os nós correspondem a operações, e as conexões indicam os dados consumidos e produzidos. O \gls{onnx}, por exemplo, define entradas, saídas, operadores, atributos e inicializadores, que podem armazenar pesos. Um runtime executa esse grafo no ambiente de destino \cite{onnx}.
+
+Uma biblioteca de inferência permite integrar essas operações à aplicação embarcada. O NCNN é um exemplo, com implementação em C++ e interfaces para executar redes localmente em diferentes plataformas \cite{ncnn}.
+
+Na \gls{cpu}, o cálculo é realizado por instruções de máquina. A vetorização permite aplicar uma instrução a vários elementos, abordagem denominada \gls{simd}. A tecnologia Arm Neon oferece esse tipo de operação para dados inteiros e de ponto flutuante. Como exemplo conceitual, vários produtos entre entradas e pesos podem ser organizados em vetores, em vez de tratar cada par isoladamente. Essa forma de paralelismo ocorre no processamento das instruções e é distinta de simplesmente distribuir tarefas entre vários núcleos \cite{arm-neon}.
+
+\subsection{Armazenamento e memória durante a execução}
+\label{subsec:armazenamento-memoria}
+
+O arquivo de um modelo e a memória usada ao executá-lo representam grandezas diferentes. Além dos pesos, a execução mantém entradas, saídas e resultados intermediários, também chamados ativações, e pode utilizar áreas temporárias de trabalho. A organização e a reutilização dessas áreas dependem do runtime. Um grafo pode, por exemplo, permitir a reutilização de um buffer quando seu conteúdo anterior não é mais necessário \cite[seções V e VIII]{sze}; \cite{onnx}.
+
+Um cálculo simplificado ajuda a dimensionar os pesos. Se houver \(N\) parâmetros armazenados com \(b\) bits por parâmetro, seu armazenamento bruto será \(N\cdot b/8\) bytes. Em um exemplo hipotético de dois milhões de parâmetros, 32 bits por valor correspondem a oito milhões de bytes, aproximadamente 7,63 MiB. Com 16 bits, seriam aproximadamente 3,81 MiB. O cálculo não inclui estruturas do arquivo, metadados, ativação, cópias ou outras partes do processo.
+
+O mesmo raciocínio se aplica a um tensor. Uma entrada de 320 \(\times\) 320 com três canais tem 307.200 elementos. A oito bits por elemento, são aproximadamente 0,29 MiB; a 32 bits, aproximadamente 1,17 MiB. Os exemplos mostram por que a profundidade numérica importa mesmo quando as dimensões espaciais não mudam. A representação efetiva deve ser aquela exigida pela rede e pela implementação, e não uma redução arbitrária dos dados.
+
+\subsection{Resolução e custo da rede}
+\label{subsec:resolucao-custo}
+
+Reduzir a resolução da entrada e a largura de uma rede são estratégias distintas para diminuir seu custo. Em MobileNets, Howard et al. apresentam multiplicadores de resolução e de largura para explorar compromissos entre custo computacional e qualidade das respostas. A ideia geral é que mapas menores e menos canais reduzem a quantidade de operações e dados envolvidos, embora alterem a capacidade de representação disponível \cite{mobilenets}.
+
+Se largura e altura de um mapa forem reduzidas pela metade, o número de posições espaciais cai para um quarto. Mantidos filtro e canais de uma convolução convencional, essa redução diminui proporcionalmente o número de posições em que os produtos e somas são calculados. Ela não implica que a aplicação inteira execute exatamente quatro vezes mais rápido: preparação de imagens, transferências, demais operações e custos fixos também participam da execução. Esse exemplo expressa uma relação de contagem, não um benchmark do Raspberry \cite{mobilenets}.
+
+\subsection{Precisão numérica e quantização}
+\label{subsec:quantizacao}
+
+A quantização representa valores utilizando um conjunto mais limitado de níveis numéricos. Uma aproximação comum relaciona um inteiro \(q\) a um valor real por uma escala \(s\) e um ponto zero \(z\), na forma \(r\approx s\cdot(q-z)\). O trabalho de Jacob et al. apresenta uma abordagem de treinamento e inferência que permite realizar operações com aritmética inteira, buscando reduzir custos em dispositivos de aplicação prática \cite{jacob}.
+
+A redução de precisão pode diminuir armazenamento e custo de cálculo, mas introduz aproximações. O resultado depende do modelo, do método de quantização e do suporte do hardware e do software. Usar armazenamento de 16 bits, por exemplo, não significa necessariamente que todas as operações serão executadas nessa precisão ou que qualquer processador obterá aceleração. Assim, uma possibilidade de otimização precisa ser distinguida de uma característica realmente ativada e verificada na aplicação \cite{jacob,ncnn}.
+
+\subsection{Exportação e bibliotecas de inferência}
+\label{subsec:exportacao-runtime}
+
+Exportar um modelo consiste em representá-lo para execução no ambiente de destino, sem necessariamente treiná-lo novamente. A compatibilidade envolve tipos de dados, dimensões e operações. No \gls{onnx}, os operadores possuem definições e versões que precisam ser suportadas pelo runtime \cite{onnx}.
+
+O NCNN disponibiliza execução em \gls{cpu}, otimizações para arquiteturas ARM e caminhos de aceleração para plataformas compatíveis. Seu ecossistema também oferece ferramentas de conversão de modelos. A existência desses recursos na biblioteca não garante que todos estejam disponíveis em uma placa particular. A aplicação que envolve o runtime pode adicionar dependências e consumo de recursos próprios. Por isso, distinguir rede, formato exportado, runtime e aplicação completa é necessário para compreender o que será instalado e executado \cite{ncnn}.
+
+\subsection{Contexto do Raspberry Pi Zero 2 W}
+\label{subsec:raspberry-zero2}
+
+O Raspberry Pi Zero 2 W é um computador de placa única que utiliza processador Arm Cortex-A53 de quatro núcleos, arquitetura de 64 bits e frequência nominal de 1 GHz, acompanhado de 512 MB de memória \gls{lpddr2}. A placa possui interface \gls{csi2} para câmera e armazenamento por cartão microSD. Essas características são apresentadas na documentação técnica do fabricante \cite[p. 2--3]{raspberry}.
+
+O tempo e a memória necessários dependem da combinação de rede, representação dos dados, runtime e plataforma. Resultados de outro processador não estabelecem o desempenho deste dispositivo; a análise precisa considerar a execução concreta do conjunto \cite[seções V e VIII]{sze}.
+
+A fundamentação permite compreender essa combinação sem antecipar os resultados do projeto. A metodologia poderá especificar o modelo e a configuração adotados. O desenvolvimento mostrará a integração da aquisição de imagens, do pré-processamento e da inferência no Raspberry.

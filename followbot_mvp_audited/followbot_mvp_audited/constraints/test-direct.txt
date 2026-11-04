@@ -1,0 +1,6 @@
+# Versões diretas escolhidas para o procedimento de teste em PC.
+# Python 3.11+; NumPy 2.4.6 ainda suporta Python 3.11.
+numpy==2.4.6
+pyserial==3.5
+pytest==9.1.1
+ultralytics==8.4.108

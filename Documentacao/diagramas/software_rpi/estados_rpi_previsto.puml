@@ -1,0 +1,55 @@
+@startuml estados_rpi_previsto
+!include estilo.iuml
+top to bottom direction
+
+state "Inicializando" as Inicializar
+Inicializar : entry / preparar recursos; solicitar STOP
+
+state "Operação de seguimento visual" as Operacao {
+  state "Aguardando alvo" as Aguardar
+  Aguardar : entry / STOP; limpar referência
+  Aguardar : do / detectar candidatos
+
+  state "Acompanhando alvo" as Acompanhar
+  Acompanhar : do / observar alvo e controlar
+
+  state "Tratando perda" as Perda
+  Perda : entry / solicitar STOP
+  Perda : do / avaliar recuperação e direção
+
+  state "Buscando por rotação" as Busca #E0F2FE
+  Busca : entry / fixar direção; iniciar t = 0
+  Busca : do / observar; v = 0; w = dir * w_busca
+
+  [*] --> Aguardar
+  Aguardar --> Acompanhar : ciclo [candidato elegível]\n/ selecionar alvo
+  Acompanhar --> Perda : ciclo [sem associação válida]
+  Perda --> Acompanhar : ciclo [associação recuperada]
+  Perda --> Busca : ciclo [perda confirmada\ne direção disponível]
+  Perda --> Aguardar : ciclo [perda confirmada\ne direção indisponível]
+  Busca --> Acompanhar : ciclo [recuperação aceita\ne t < T_busca]\n/ cessar busca
+  Busca --> Aguardar : ciclo [t >= T_busca]
+}
+
+state "Tratando falha" as Falha
+Falha : entry / registrar falha; tentar STOP
+state "Encerrando" as Encerrar
+Encerrar : entry / tentar STOP; liberar recursos
+
+[*] --> Inicializar
+Inicializar --> Operacao : [pronto]
+Inicializar --> Falha : falha na\ninicialização
+Operacao --> Falha : falha fatal
+Operacao --> Encerrar : encerrar\nou finalizar ensaio
+Falha --> Encerrar
+Encerrar --> [*]
+
+legend bottom
+  COMPORTAMENTO PREVISTO — busca a implementar.
+  ciclo: conclusão do processamento de um quadro.
+  STOP solicita v = 0 e w = 0; não confirma parada física.
+  w_busca: lento e limitado; dir: sentido do giro.
+  Critérios e limites: definir na metodologia.
+  Sem direção ou tempo esgotado: STOP e nova seleção permitida.
+endlegend
+@enduml

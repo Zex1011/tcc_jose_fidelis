@@ -1,0 +1,206 @@
+--- a/tex/cap1.tex
++++ b/tex/cap1.tex
+@@ -1,40 +1,62 @@
+ \chapter{Introdução}
+ \label{cap:intro}
+ 
++O desenvolvimento de técnicas de inteligência artificial e visão computacional tem ampliado as possibilidades de aplicação de sistemas capazes de interpretar informações obtidas por câmeras e utilizá-las para interagir com o ambiente. Entre essas aplicações encontram-se os sistemas robóticos móveis, nos quais a percepção visual pode ser empregada para detectar objetos e pessoas e fornecer informações utilizadas na tomada de decisões de movimento.
+ 
++Uma das tarefas fundamentais nesse contexto é a detecção de objetos em imagens. Modelos baseados em redes neurais convolucionais possibilitaram avanços nesse campo, com destaque para a família \gls{yolo}, cuja proposta original consiste em realizar a predição de caixas delimitadoras e classes de objetos em uma única avaliação da rede. A existência de variantes com diferentes dimensões e requisitos computacionais permite investigar sua aplicação em dispositivos embarcados com recursos limitados. \marcador{alterar}{[A preencher: referência sobre \gls{yolo} e suas variantes]}.
+ 
+-A ascensão da Indústria 4.0 e da \gls{iot} consolidou a integração entre \emph{hardware} e \emph{software} como um pilar fundamental da automação moderna. Nesse cenário, a robótica móvel surge como uma das vertentes mais dinâmicas da engenharia, unificando mecânica, eletrônica e computação para a criação de sistemas capazes de interagir e deslocar-se de forma coordenada em ambientes físicos reais.
++A execução de modelos de visão computacional diretamente no dispositivo responsável pela aquisição dos dados dispensa o envio contínuo das imagens para servidores externos e permite realizar a percepção visual sem depender de uma conexão com a Internet. Entretanto, essa abordagem exige adequar o processamento à capacidade computacional e à memória disponíveis, considerando também o tempo necessário para produzir informações úteis ao controle do robô.
+ 
+-No âmbito acadêmico e de formação tecnológica, a utilização de plataformas robóticas móveis consolidou-se como uma ferramenta pedagógica de elevado valor experimental. De acordo com \citeonline{pinto2025juca}, o contato prático com esses sistemas permite aos estudantes de engenharia a aplicação direta de conceitos complexos de sistemas embarcados, teoria de controle e cinemática. Robôs dotados de rodas apresentam uma complexidade mecânica otimizada quando comparados a sistemas baseados em pernas (\emph{legged robots}), tornando-se os modelos ideais para laboratórios de ensino devido à sua alta manobrabilidade, replicabilidade de ensaios e facilidade de isolamento de variáveis dinâmicas~\cite{siegwart2011introduction}.
++Neste trabalho, será utilizado o Raspberry Pi Zero 2 W, um computador de placa única equipado com processador ARM Cortex-A53 de quatro núcleos operando a 1 GHz e 512 MB de \gls{ram}. Essas características tornam a plataforma de interesse para aplicações embarcadas de baixo custo, ao mesmo tempo que impõem restrições à execução de modelos de aprendizado profundo. \marcador{alterar}{[A preencher: referência da documentação técnica do Raspberry Pi Zero 2 W]}. A escolha do modelo, da resolução de entrada e do formato de execução será considerada na adequação do sistema a essas restrições.
+ 
+-Posto isto, a plataforma robótica Juca foi desenvolvida no âmbito do \gls{daeln} do \gls{ifsc} como uma ferramenta de ensino e pesquisa voltada à robótica móvel~\cite{pinto2025juca}. Por se tratar de um ecossistema educacional concebido em ambiente acadêmico, sua consolidação e usabilidade prática demandam a contínua evolução de suas ferramentas de interatividade e supervisão. Nesse contexto, este trabalho tem como propósito expandir a operabilidade da plataforma Juca por meio do desenvolvimento de um aplicativo móvel dedicado, capaz de estabelecer a comunicação sem fio para a transmissão de comandos de controle e a recepção contínua de telemetria em tempo real.
++Nesse contexto, este trabalho propõe o desenvolvimento e a avaliação de um sistema de seguimento de pessoas com processamento de visão computacional realizado integralmente em um Raspberry Pi Zero 2 W. Uma Raspberry Pi Camera, modelo \marcador{alterar}{[A preencher: modelo da câmera]}, será utilizada para adquirir imagens do ambiente, que serão processadas por modelos pré-treinados da família \gls{yolo}. As detecções serão filtradas para a classe correspondente a pessoas, e as posições e dimensões das caixas delimitadoras fornecerão as informações visuais utilizadas no acompanhamento.
+ 
++A seleção inicial do alvo considerará a primeira pessoa detectada. Caso sejam detectadas várias pessoas na mesma imagem durante essa seleção, uma delas será escolhida aleatoriamente. Nas imagens seguintes, será empregado um algoritmo simples de associação espacial entre as detecções atuais e a posição anteriormente observada do alvo. Essa estratégia buscará manter a continuidade do acompanhamento, mas estará sujeita a trocas de alvo em situações como cruzamentos entre pessoas, oclusões ou perdas prolongadas de detecção, uma vez que não será baseada no reconhecimento da identidade dos indivíduos.
+ 
++As informações do alvo serão utilizadas por um algoritmo de controle de alto nível para determinar referências de velocidade linear e angular para a plataforma robótica móvel. O desvio horizontal do centro da caixa delimitadora em relação ao centro da imagem será empregado para orientar a rotação do veículo. Para o movimento de aproximação ou afastamento, será investigado o uso das dimensões da caixa delimitadora como indicador indireto de proximidade.
++
++Será avaliada uma calibração básica que relacione o tamanho aparente da pessoa na imagem a distâncias conhecidas, com o propósito de estabelecer uma distância aproximada de referência para o acompanhamento. A precisão dessa estimativa será verificada experimentalmente, considerando suas limitações diante de variações na altura, na postura e na visibilidade da pessoa. Dessa forma, a manutenção da distância será tratada como um resultado a ser avaliado, sem pressupor a obtenção de uma medição precisa apenas a partir da caixa delimitadora.
++
++Quando o alvo deixar de ser detectado, o sistema interromperá o deslocamento linear e realizará uma busca por rotação lenta, orientada pela tendência de movimento horizontal observada nas últimas detecções válidas. Os critérios para caracterizar a perda do alvo, limitar a duração da busca e tratar situações sem uma tendência de movimento identificável serão definidos na metodologia. A recuperação do acompanhamento utilizará as informações visuais disponíveis, estando sujeita às limitações da associação espacial.
++
++Os comandos produzidos pelo Raspberry Pi serão enviados a um microcontrolador ESP32 previamente integrado à plataforma robótica e responsável pela execução dos comandos de movimento. Dessa forma, o sistema será dividido entre uma camada de percepção e decisão, executada no Raspberry Pi, e uma camada de controle de movimento, executada pelo microcontrolador. O projeto concentra-se na integração entre a visão computacional embarcada e uma plataforma móvel existente, não abrangendo o desenvolvimento dos circuitos de acionamento dos motores.
++
++Diferentes modelos e resoluções de entrada serão avaliados experimentalmente, iniciando-se por configurações de menor custo computacional e ampliando-se os testes conforme a capacidade do hardware. Essa abordagem permitirá investigar o compromisso entre qualidade das detecções e tempo de processamento. A seleção das configurações e as condições de comparação serão descritas na metodologia, considerando o desempenho do sistema durante a execução conjunta da aquisição de imagens, da detecção e do controle de alto nível.
++
++A avaliação considerará o tempo de inferência, a taxa efetiva de processamento de imagens e o tempo decorrido entre a aquisição de uma imagem e o envio do comando de movimento correspondente ao ESP32. A qualidade das detecções será analisada por meio de acertos, falsas detecções e falhas de detecção em amostras de imagens com referência estabelecida por avaliação manual. Durante o seguimento, serão observados o erro horizontal normalizado pela largura da imagem, a continuidade do acompanhamento, as perdas e eventuais trocas de alvo, além do comportamento da estimativa de distância em comparação com medidas de referência obtidas nos ensaios.
++
++Os experimentos serão realizados em ambiente predominantemente interno, com condições adequadas de iluminação, área de circulação livre de obstáculos e velocidades limitadas. O desvio de obstáculos ficará fora do escopo do trabalho. As condições dos ensaios, incluindo as velocidades da plataforma e da pessoa, a faixa de distâncias e os critérios de sucesso do acompanhamento, serão estabelecidas na metodologia: \marcador{alterar}{[A preencher: condições experimentais e critérios quantitativos de avaliação]}.
++
++Dessa forma, o trabalho busca investigar se e em quais condições as configurações avaliadas permitem realizar o seguimento de uma pessoa por meio de visão computacional executada localmente no Raspberry Pi Zero 2 W. A análise relacionará o desempenho das detecções e os atrasos de processamento ao comportamento da plataforma, permitindo caracterizar as possibilidades e limitações da solução nas condições experimentais adotadas.
++
++\section{Problema de pesquisa}
++
++Em quais condições de operação e com quais configurações de modelo \gls{yolo} e resolução de entrada, dentre as avaliadas, é possível realizar o seguimento de uma pessoa por uma plataforma robótica móvel de baixa velocidade utilizando processamento de visão computacional integralmente local no Raspberry Pi Zero 2 W, considerando a qualidade das detecções, o tempo de resposta e o desempenho do acompanhamento?
+ 
+ \section{Justificativa}
+ 
+-A robótica educacional propõe o uso de robôs como recurso didático que possibilita aos alunos se envolverem em temas que estão inclusive fora do campo da robótica (CRISTOFORIS et al., 2013).
+-O robô móvel Juca é uma plataforma didática relevante para o estudo prático de sistemas embarcados e engenharia de controle. Entretanto, a utilização plena e eficiente dessa plataforma em ensaios acadêmicos exige uma camada de interação com o usuário que seja intuitiva e capaz de exibir variáveis de telemetria em tempo real.
+-Dessa forma, este trabalho justifica-se pelo projeto e desenvolvimento de um sistema para comunicação e  focado na criação de um aplicativo móvel interativo para o controle e monitoramento do robô móvel Juca
++O seguimento visual de pessoas constitui uma aplicação que integra percepção, processamento e controle em uma tarefa física, permitindo avaliar como as informações extraídas de imagens podem orientar o movimento de uma plataforma robótica. Sua implementação em um dispositivo com recursos computacionais limitados oferece um contexto experimental para estudar a adequação de modelos de inteligência artificial às exigências de uma aplicação embarcada.
+ 
+-\section{Definição do Problema}
++Embora o desempenho de um detector possa ser caracterizado isoladamente, sua utilização em uma plataforma móvel depende também do tempo necessário para adquirir imagens, interpretar as detecções e produzir comandos de movimento. Assim, a avaliação do sistema integrado permite investigar como a qualidade e a frequência das informações visuais se relacionam com a capacidade de acompanhar uma pessoa. \marcador{alterar}{[A preencher: referências sobre seguimento visual de pessoas e avaliação de visão computacional embarcada]}.
+ 
+-Plataformas robóticas didáticas, como o robô móvel Juca, necessitam de meios eficientes para o envio de comandos de movimentação e a recepção de dados de telemetria em tempo real durante ensaios práticos. No entanto, a ausência de uma interface de controle móvel dedicada e intuitiva restringe a operação do robô a conexões cabeadas ou a interfaces genéricas e pouco flexíveis. Essa limitação compromete a usabilidade do equipamento em ambientes de teste e dificulta a visualização dinâmica de variáveis operacionais essenciais, como velocidade, estado dos sensores.
+-Além disso, o estabelecimento de uma comunicação sem fio entre dispositivos móveis e sistemas embarcados impõe desafios técnicos em relação à latência de resposta, ao consumo energético e à estabilidade da transmissão de dados. 
++A utilização do Raspberry Pi Zero 2 W e de uma plataforma existente controlada por ESP32 permite concentrar o estudo na execução local dos modelos e na integração entre percepção e movimento. O trabalho poderá contribuir com uma caracterização experimental das configurações avaliadas, das condições em que o acompanhamento se mostra viável e das limitações observadas no hardware utilizado.
+ 
+-\section{Objetivo Geral}
++\section{Objetivo geral}
+ 
+-Projetar e implementar uma interface móvel interativa para o controle operacional e monitoramento de telemetria em tempo real da plataforma robótica móvel Juca.
++Desenvolver e avaliar um sistema embarcado de visão computacional para seguimento de pessoas, utilizando modelos da família \gls{yolo} executados localmente em um Raspberry Pi Zero 2 W e integrados a uma plataforma robótica móvel controlada por ESP32, investigando a relação entre qualidade das detecções, tempo de resposta e capacidade de acompanhamento do alvo em condições controladas de operação.
+ 
+-\section{Objetivos Específicos}
++\section{Objetivos específicos}
+ 
+ \begin{alineas}
+-    \item Projetar a interface gráfica do usuário do aplicativo móvel, desenvolvendo componentes interativos para o envio de comandos de movimentação e visualização dos dados do robô Juca.
+-    \item Implementar a arquitetura de comunicação sem fio no microcontrolador ESP32-S3 da plataforma embarcada, configurando o protocolo Bluetooth Low Energy (BLE) para o envio e recebimento de pacotes de dados. 
+-    \item Desenvolver a lógica de integração e o tratamento de dados no aplicativo para estabelecer  conexão, leitura e escrita de características BLE com baixa latência e tratamento de desconexões.
+-    \item Realizar ensaios práticos e testes de validação com o robô móvel Juca, avaliando o desempenho do sistema integrado em termos de estabilidade da conexão, latência de resposta dos comandos e precisão do monitoramento.
++    \item Implementar a aquisição e o processamento das imagens provenientes de uma Raspberry Pi Camera no Raspberry Pi Zero 2 W.
++    \item Implementar a detecção de pessoas utilizando modelos pré-treinados da família \gls{yolo}, restringindo as detecções utilizadas pelo sistema à classe correspondente a pessoas.
++    \item Desenvolver uma estratégia de seleção inicial do alvo e de manutenção do acompanhamento por associação espacial entre detecções sucessivas.
++    \item Avaliar diferentes modelos e resoluções de entrada, considerando a qualidade das detecções, o tempo de inferência e a taxa efetiva de processamento de imagens.
++    \item Investigar uma calibração básica entre o tamanho aparente da pessoa e distâncias conhecidas, avaliando sua utilização como referência aproximada para o controle da distância de acompanhamento.
++    \item Desenvolver um algoritmo de controle de alto nível que utilize a posição e as dimensões da caixa delimitadora do alvo para produzir referências de velocidade linear e angular.
++    \item Integrar o sistema executado no Raspberry Pi Zero 2 W ao ESP32 responsável pelo controle da plataforma móvel.
++    \item Implementar uma estratégia de busca do alvo por rotação lenta, orientada pela tendência de movimento observada nas últimas detecções válidas.
++    \item Medir o tempo entre a aquisição da imagem e o envio do comando de movimento ao ESP32, relacionando-o ao desempenho do acompanhamento.
++    \item Avaliar experimentalmente a centralização do alvo na imagem, a continuidade do seguimento, a recuperação após perdas de detecção e o comportamento do controle de distância em área livre de obstáculos.
++    \item Analisar a viabilidade e as limitações das configurações avaliadas para a execução integralmente local do sistema de visão computacional no Raspberry Pi Zero 2 W.
+ \end{alineas}
+-    
+-\section{Estrutura do Trabalho}
+-
+-Este trabalho está organizado da seguinte forma: o Capítulo 1 apresenta a contextualização do tema, a justificativa do projeto, a definição do problema, os objetivos e a estrutura do documento. O Capítulo 2 reúne a fundamentação teórica necessária para a compreensão dos conceitos de robótica móvel, a arquitetura do microcontrolador ESP32-S3, o protocolo Bluetooth Low Energy (BLE) e o desenvolvimento de interfaces reativas em Flutter. O Capítulo 3 descreve a metodologia adotada, incluindo o levantamento de requisitos do sistema, a concepção da interface do aplicativo, a implementação do protocolo BLE na plataforma embarcada e a lógica do joystick no aplicativo. O Capítulo 4 apresenta o desenvolvimento do ecossistema de software, detalhando a arquitetura de comunicação proposta, o fluxo de envio e recepção de pacotes e a integração entre o aplicativo móvel e o robô Juca. O Capítulo 5 apresenta os resultados experimentais de bancada e ensaios práticos, com as análises de latência, estabilidade do link sem fio e desempenho da telemetria em tempo real. Por fim, o Capítulo 6 reúne as conclusões do trabalho e as sugestões para pesquisas futuras.
+--- a/tex/siglas.tex
++++ b/tex/siglas.tex
+@@ -0,0 +1,15 @@
++% Usa glossaries já carregado e preserva a lista de siglas do IFSC.
++% Sintaxe: \registrarsigla{chave}{SIGLA}{nome por extenso}
++\newcommand{\registrarsigla}[3]{%
++    \newacronym{#1}{#2}{#3}%
++    \abreviatura{#2}{#3}%
++}
++
++\registrarsigla{yolo}{YOLO}{You Only Look Once}
++\registrarsigla{ram}{RAM}{memória de acesso aleatório}
++
++% Mantidas para compatibilidade com os demais capítulos do modelo.
++\registrarsigla{ifsc}{IFSC}{Instituto Federal de Santa Catarina}
++\registrarsigla{daeln}{DAELN}{Departamento Acadêmico de Eletrônica}
++\registrarsigla{ihm}{IHM}{Interface Homem-Máquina}
++\registrarsigla{iot}{IoT}{Internet das Coisas -- \textit{Internet of Things}}
+--- a/monografia.tex
++++ b/monografia.tex
+@@ -43,7 +43,7 @@
+ \usepackage{tocloft}
+ \usepackage{tocvsec2}
+ \usepackage{boxhandler}
+-\usepackage[font={bf,small},labelfont=small]{caption}
++\captionsetup{font={bf,small},labelfont=small}
+ %\usepackage{todonotes}
+ \usepackage[acronym]{glossaries}
+ %\makeglossaries
+@@ -86,19 +86,8 @@
+ 
+ 
+ 
+-% Sintaxe: \newacronym{rótulo}{ABREV}{Nome por extenso}
+-\newacronym{ifsc}{IFSC}{Instituto Federal de Santa Catarina}
+-\abreviatura{IFSC}{Instituto Federal de Santa Catarina}
+-
+-\newacronym{daeln}{DAELN}{Departamento Acadêmico de Eletrônica}
+-\abreviatura{DAELN}{Departamento Acadêmico de Eletrônica}
+-
+-\newacronym{ihm}{IHM}{Interface Homem-Máquina}
+-\abreviatura{IHM}{Interface Homem-Máquina}
+-
+-\newacronym{iot}{IoT}{Internet das Coisas -- \textit{Internet of Things}}
+-\abreviatura{IoT}{Internet das Coisas -- \textit{Internet of Things}}
+-
++% Cadastro único de siglas: expansão no texto e lista institucional.
++\input{tex/siglas}
+ 
+ %---------------------------------------------------------------------%
+ %---------------------------------------------------------------------%
+@@ -307,6 +296,7 @@
+ % Inclusão dos capítulos que estão em outros arquivos .tex
+ % ----------------------------------------------------------
+ 
++\glsresetall
+ \include{tex/cap1}
+ \include{tex/cap2}
+ \include{tex/cap3}
+--- a/conf-pacotes.sty
++++ b/conf-pacotes.sty
+@@ -29,7 +29,6 @@
+ \usepackage{caption}
+ \usepackage{subcaption}
+ \usepackage[printonlyused,withpage]{acronym}
+-\usepackage[withpage]{acronym}
+ \usepackage{lipsum}				% para geração de dummy text
+ \usepackage{float}              % Inclusão de numeros float
+ \usepackage[final]{pdfpages}    % Inclusão de PDFs
+--- a/GUIA_LATEX.md
++++ b/GUIA_LATEX.md
+@@ -0,0 +1,49 @@
++# Escrita do TCC em LaTeX
++
++Arquivo principal: `monografia.tex`. Introdução: `tex/cap1.tex`.
++A introdução foi convertida do Word com quatro seções e onze objetivos específicos. As cinco pendências de referências, câmera e critérios experimentais continuam visíveis em vermelho; não foram inventados dados ou fontes. O Word permanece como fonte original da conversão.
++
++## Siglas e outras entidades
++
++Defina cada sigla uma vez em `tex/siglas.tex`:
++
++```latex
++\registrarsigla{yolo}{YOLO}{You Only Look Once}
++```
++
++No texto, use `\gls{yolo}`: primeira ocorrência por extenso e sigla; seguintes abreviadas. Use `\acrshort{yolo}` para somente a sigla e `\acrlong{yolo}` para o nome por extenso. `\glsresetall` antes da introdução reinicia a apresentação das siglas, útil quando forem usadas também no resumo.
++
++O cadastro alimenta o `glossaries` e a lista institucional já existente. Não precisa executar `makeglossaries`: a lista usa o arquivo auxiliar `.abrv` do modelo. Nesta solução todas as siglas cadastradas entram na lista; remova cadastros sem uso ao revisar os capítulos herdados. Siglas não são sinônimo de produtos: ESP32 é um nome de família de microcontroladores e pode permanecer como nome próprio.
++
++Use referências e numeração automáticas:
++
++```latex
++\section{Procedimento experimental}\label{sec:procedimento}
++Conforme a Seção~\ref{sec:procedimento}...
++\begin{equation}\label{eq:erro}
++    e_x = \frac{x_c-x_p}{W/2}
++\end{equation}
++Segundo \citeonline{chaveNoBib}, ...
++Uma afirmação com fonte~\cite{chaveNoBib}.
++```
++
++Cadastre as fontes reais em `referencias.bib`; `chaveNoBib` acima é um exemplo, não uma referência existente. Em figuras, coloque `\label` depois de `\caption`. O modelo também já oferece `siunitx` para unidades e `\simbolo{...}{...}` para cadastro de símbolos. Evite escrever números de capítulos, figuras e referências manualmente.
++
++## Compilação
++
++No Overleaf, envie o conteúdo completo de `projeto_base`, selecione `monografia.tex` como principal e pdfLaTeX como compilador. O modelo usa abnTeX2 com BibTeX (`abntex2cite`), não Biber. Localmente, com uma distribuição TeX instalada, execute dentro de `projeto_base`:
++
++```text
++pdflatex -interaction=nonstopmode -halt-on-error monografia.tex
++bibtex monografia
++pdflatex -interaction=nonstopmode -halt-on-error monografia.tex
++pdflatex -interaction=nonstopmode -halt-on-error monografia.tex
++```
++
++Recompile até estabilizar sumário, referências e lista de siglas. A conversão passou por verificações estruturais, mas não foi compilada nem conferida visualmente porque não foi encontrado compilador nesta máquina.
++
++## Antes de entregar
++
++A capa ainda contém o nome MATHEUS RODRIGUES DA CUNHA e título sobre aplicativo móvel de outro trabalho. Substitua pelos seus dados confirmados. Os outros capítulos, referências, ficha catalográfica e folha de aprovação também vieram do modelo e precisam de revisão. Não use PDFs de aprovação de outra pessoa como seus. O conteúdo do capítulo 1 foi trocado; o restante do modelo não representa automaticamente este TCC.
++
++As propostas de escolha aleatória, calibração da distância e busca por rotação foram preservadas do Word; ainda não correspondem ao comportamento atual do MVP. Consulte `../../REVISAO_INICIAL_2026-10-07.md` para o diagnóstico e decisões pendentes.

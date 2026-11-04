@@ -1,0 +1,20 @@
+--- a/src/libcamera/pipeline/rpi/vc4/vc4.cpp
++++ b/src/libcamera/pipeline/rpi/vc4/vc4.cpp
+@@ -945,6 +945,7 @@ void Vc4CameraData::tryRunPipeline()
+ 	params.requestControls = request->controls();
+ 	params.ipaContext = request->sequence();
+ 	params.delayContext = bayerFrame.delayContext;
++	params.buffers.embedded = 0;
+ 
+ 	if (embeddedBuffer) {
+ 		unsigned int embeddedId = unicam_[Unicam::Embedded].getBufferId(embeddedBuffer);
+--- a/src/libcamera/proxy/worker/meson.build
++++ b/src/libcamera/proxy/worker/meson.build
+@@ -23,6 +23,7 @@ foreach mojom : ipa_mojoms
+                        [worker, libcamera_generated_ipa_headers],
+                        install : true,
+                        install_dir : proxy_install_dir,
++                       cpp_args : ['-Wno-error=maybe-uninitialized'],
+                        dependencies : libcamera_private)
+ endforeach
+ 

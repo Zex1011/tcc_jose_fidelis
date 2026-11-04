@@ -1,0 +1,59 @@
+# Benchmark profile: dataset (real images) + Ultralytics detector
+# Purpose: deterministic benchmarking with real-world images
+# Images read in alphabetical order from datasets/ folder
+
+[camera]
+backend = "dataset"
+dataset_path = "datasets/sample"
+width = 640
+height = 480
+warmup_s = 0.0
+
+[detector]
+backend = "ultralytics"
+model_path = "models/yolo26n_ncnn_model"
+imgsz = 320
+confidence = 0.30
+class_name = "person"
+
+[tracking]
+initial_strategy = "first"
+max_center_distance = 0.30
+max_missed_frames = 3
+
+[control]
+# Razão entre a altura da bbox e a altura da imagem desejada.
+desired_height_ratio = 0.55
+height_deadband = 0.05
+horizontal_deadband = 0.06
+kp_linear = 1.0
+kp_angular = 1.3
+max_linear = 0.40
+max_angular = 1.20
+allow_reverse = false
+forward_slowdown_error = 0.35
+forward_stop_error = 0.75
+angular_sign = 1.0
+
+[communication]
+backend = "mock"
+port = "/dev/ttyACM0"
+baudrate = 115200
+ack_timeout_s = 0.25
+write_timeout_s = 0.25
+retries = 2
+startup_delay_s = 0.0
+
+[logging]
+level = "INFO"
+file = "logs/followbot.log"
+max_bytes = 2000000
+backup_count = 3
+console = true
+
+[system]
+abort_on_comm_failure = true
+
+[debug]
+enabled = false
+output_dir = "logs/visual_debug/dataset_ultralytics"

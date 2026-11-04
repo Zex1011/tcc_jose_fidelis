@@ -1,0 +1,41 @@
+' Estilo comum: figuras sem título interno, para receber legenda no TCC.
+' No Windows, a distribuição utilizada fornece o mecanismo Graphviz.
+skinparam backgroundColor white
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam shadowing false
+skinparam dpi 200
+skinparam ArrowColor #334155
+skinparam ArrowThickness 1.2
+skinparam defaultTextAlignment center
+skinparam roundcorner 8
+skinparam nodesep 30
+skinparam ranksep 40
+skinparam classAttributeIconSize 0
+skinparam class {
+  BackgroundColor #F1F5F9
+  BorderColor #334155
+  FontColor #0F172A
+}
+skinparam state {
+  BackgroundColor #F1F5F9
+  BorderColor #334155
+  FontColor #0F172A
+  StartColor #334155
+  EndColor #334155
+}
+skinparam rectangle {
+  BackgroundColor #F1F5F9
+  BorderColor #334155
+  FontColor #0F172A
+}
+skinparam package {
+  BackgroundColor white
+  BorderColor #64748B
+  FontColor #0F172A
+}
+skinparam note {
+  BackgroundColor #FFFBEB
+  BorderColor #A16207
+  FontColor #1E293B
+}

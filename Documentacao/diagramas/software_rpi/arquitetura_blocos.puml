@@ -1,0 +1,39 @@
+@startuml arquitetura_blocos
+!include estilo.iuml
+top to bottom direction
+
+rectangle "Câmera conectada ao Raspberry Pi\nSensor e interface CSI" as Sensor #E2E8F0
+
+package "Software no Raspberry Pi — Orchestrator coordena o ciclo" as RPi {
+  rectangle "1. Captura\nPicamera2Camera\nPicamera2 / libcamera" as Camera
+  rectangle "2. Detecção de pessoas\nUltralyticsPersonDetector\nModelo YOLO" as Detector
+  rectangle "3. Seleção e associação do alvo\nNearestBBoxSelector\nMemória da caixa anterior" as Selector
+  rectangle "4. Preparação do comando\nCom alvo: BBoxProportionalController\nSem alvo: MotionCommand.stop()" as Control
+  rectangle "5. Comunicação\nSerialCommunicationLink\nou MockCommunicationLink" as Comm
+}
+
+rectangle "Microcontrolador ESP\nInterface com o carrinho" as ESP #E2E8F0
+rectangle "Configuração TOML + main.py\nbuild_orchestrator()\nSeleciona e injeta os componentes" as Config #E0F2FE
+rectangle "Registro de cada ciclo\nlogging.Logger\nVisualDebugRecorder (opcional)" as Debug #E0F2FE
+
+Sensor -right-> Camera : imagem
+Camera -down-> Detector : Frame (imagem RGB)
+Detector -down-> Selector : list[Detection]
+Selector -down-> Control : Detection ou None
+Control -down-> Comm : MotionCommand\n(linear, angular)
+Comm -down-> ESP : CMD (serial)
+ESP -up-> Comm : ACK / ERR
+Config ..> RPi : montagem
+RPi ..> Debug : dados e tempos do ciclo
+
+note right of Comm
+  send() retorna CommunicationResult.
+  No perfil rpi_vision.toml, o backend é mock:
+  não há envio físico ao ESP.
+end note
+legend bottom
+  Arquitetura implementada: as setas internas representam fluxo de dados.
+  O Orchestrator faz as chamadas de forma sequencial e síncrona.
+  O Frame também é usado na seleção e no cálculo do comando.
+endlegend
+@enduml

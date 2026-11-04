@@ -1,0 +1,41 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "TCC - MiKTeX (PDF e referencias)",
+      "tools": ["miktex-texify"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "miktex-texify",
+      "command": "C:/Users/zehen/AppData/Local/Programs/MiKTeX/miktex/bin/x64/texify.exe",
+      "args": [
+        "--pdf",
+        "--quiet",
+        "--tex-option=--enable-installer",
+        "--tex-option=--synctex=1",
+        "--tex-option=--interaction=nonstopmode",
+        "--tex-option=--file-line-error",
+        "--tex-option=--halt-on-error",
+        "%DOC_EXT%"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "first",
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.outDir": "%DIR%",
+  "latex-workshop.latex.search.rootFiles.include": [
+    "Documentacao/Doc/projeto_base/monografia.tex"
+  ],
+  "latex-workshop.latex.search.rootFiles.exclude": [
+    "**/projeto_exemplo/**",
+    "**/backup*/**",
+    "**/integracao_latex_*/**",
+    "**/.venv/**"
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.view.pdf.tab.editorGroup": "right",
+  "[latex]": {
+    "editor.wordWrap": "on"
+  }
+}

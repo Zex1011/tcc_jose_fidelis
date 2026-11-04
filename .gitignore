@@ -1,0 +1,64 @@
+# Ambientes Python, caches e arquivos de empacotamento.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+# Configuracao privada local; modelos de configuracao podem ser versionados.
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Ferramentas baixadas e arquivos temporarios locais.
+.tools/
+/tmp/
+*.log
+*.log.*
+*~
+Thumbs.db
+.DS_Store
+
+# Pesos e exportacoes gerados/baixados para os detectores.
+*.pt
+*.pth
+*.onnx
+*.ncnn.bin
+**/yolo*_ncnn_model/
+
+# Capturas locais da camera e saidas de depuracao; manter a pasta vazia.
+/followbot_mvp_audited/followbot_mvp_audited/logs/*
+!/followbot_mvp_audited/followbot_mvp_audited/logs/.gitkeep
+
+# Auxiliares do LaTeX. Manter os fontes, figuras e PDFs no repositorio.
+*.aux
+*.bbl
+*.blg
+*.brf
+*.toc
+*.lof
+*.lot
+*.loq
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.abrv
+*.idx
+*.ilg
+*.ind
+*.acn
+*.acr
+*.alg
+*.glo
+*.glg
+*.gls
+*.glsdefs
+*.ist
+
+# Nao ignorar genericamente .pdf, .docx, .bib, .tex, .sty, .bst ou figuras.
+# Backups anteriores ao Git permanecem elegiveis para preservar o historico.

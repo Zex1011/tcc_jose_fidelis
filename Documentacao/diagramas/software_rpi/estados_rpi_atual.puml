@@ -1,0 +1,65 @@
+@startuml estados_rpi_atual
+!include estilo.iuml
+top to bottom direction
+
+state "Solicitando STOP inicial" as Inicio
+Inicio : entry / tentar enviar MotionCommand.stop()
+
+state "Executando o ciclo de visão e controle" as Executando {
+  state Limite <<choice>>
+  state "Observando a cena" as Observar
+  Observar : entry / frame = camera.capture()
+  Observar : entry / detections = detector.detect(frame)
+  Observar : entry / target = selector.select(detections, frame)
+  state Alvo <<choice>>
+  state "Calculando comando" as Calcular
+  Calcular : entry / command = controller.compute(target, frame)
+  state "Preparando STOP" as Parar
+  Parar : entry / command = MotionCommand.stop()
+  state "Enviando comando" as Enviar
+  Enviar : entry / result = communication.send(command)
+  state "Registrando ciclo" as Registrar
+  Registrar : entry / registrar log e depuração visual opcional
+  state Resultado <<choice>>
+
+  [*] --> Limite
+  Limite --> Observar : [há próximo ciclo]\n/ cycle += 1
+  Observar --> Alvo
+  Alvo --> Calcular : [target != None]
+  Alvo --> Parar : [target == None]
+  Calcular --> Enviar
+  Parar --> Enviar
+  Enviar --> Registrar
+  Registrar --> Resultado
+  Resultado --> Limite : [sucesso ou não abortar]\n/ registrar falha, se houver
+}
+
+state "Registrando falha fatal" as Falha
+Falha : entry / registrar exceção e preservar erro
+state "Encerrando" as Encerrar
+Encerrar : entry / tentar enviar STOP final
+Encerrar : entry / fechar detector, câmera, comunicação e depurador
+Encerrar : entry / registrar finalização
+state Saida <<choice>>
+state "Propagando exceção" as Propagar
+
+[*] --> Inicio : componentes construídos
+Inicio --> Executando : tentativa concluída
+Limite --> Encerrar : [limite atingido]
+Resultado --> Falha : [falha e abortar]\n/ RuntimeError
+Executando --> Encerrar : KeyboardInterrupt\n/ registrar interrupção
+Executando --> Falha : Exception não tratada no ciclo
+Falha --> Encerrar
+Encerrar --> Saida
+Saida --> [*] : [sem erro fatal]
+Saida --> Propagar : [erro fatal pendente]
+Propagar --> [*]
+
+legend bottom
+  Representação comportamental de Orchestrator.run(); não há FSM explícita no código.
+  há próximo ciclo: max_cycles é None ou cycle < max_cycles.
+  sucesso: result.success; abortar: abort_on_comm_failure.
+  Sem alvo selecionado: STOP neste ciclo e nova captura no ciclo seguinte.
+  Tentativas de STOP não garantem confirmação ou parada física.
+endlegend
+@enduml
