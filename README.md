@@ -10,7 +10,7 @@ Engenharia Eletrônica · IFSC, campus Florianópolis · Orientador: Matheus Lei
 |---|---|
 | Software FollowBot, instalação e testes | [README do software](followbot_mvp_audited/followbot_mvp_audited/README.md) |
 | Hardware e conexão Raspberry–carrinho | [Hardware](Hardware/README.md) |
-| Texto do TCC em LaTeX | [Documento principal](Documentacao/Doc/projeto_base/monografia.tex) |
+| Texto do TCC em LaTeX | [Documento principal](Documentacao/Doc/doc_latex/monografia.tex) |
 | Blocos de escrita e rascunhos | [Pasta de escrita](Documentacao/Doc/blocos_de_escrita/) |
 | Diagramas de software e estados previstos | [Guia dos diagramas](Documentacao/diagramas/software_rpi/README.md) |
 

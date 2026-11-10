@@ -5,7 +5,7 @@
 
 **Trabalho:** Sistema de seguimento de pessoas com visão computacional embarcada no Raspberry Pi Zero 2 W.
 
-**Recorte da fundamentação:** tópicos **1 a 4**. Seleção e acompanhamento, robótica móvel e avaliação pertencem à metodologia e ao desenvolvimento. As referências a outros trabalhos são distribuídas nos assuntos pertinentes, sem uma seção autônoma de trabalhos relacionados nesta etapa. Os tópicos adicionais abaixo servem como planejamento das demais partes do TCC. A redação está em [FUNDAMENTACAO_TEORICA_RASCUNHO.md](FUNDAMENTACAO_TEORICA_RASCUNHO.md) e no [capítulo 2 em LaTeX](../projeto_base/tex/cap2.tex).
+**Recorte da fundamentação:** tópicos **1 a 4**. Seleção e acompanhamento, robótica móvel e avaliação pertencem à metodologia e ao desenvolvimento. As referências a outros trabalhos são distribuídas nos assuntos pertinentes, sem uma seção autônoma de trabalhos relacionados nesta etapa. Os tópicos adicionais abaixo servem como planejamento das demais partes do TCC. A redação está em [FUNDAMENTACAO_TEORICA_RASCUNHO.md](FUNDAMENTACAO_TEORICA_RASCUNHO.md) e no [capítulo 2 em LaTeX](../doc_latex/tex/cap2.tex).
 
 ## Direção proposta
 

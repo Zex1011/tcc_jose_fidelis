@@ -15,12 +15,12 @@ O cadastro de siglas foi ampliado para RGB, BGR, JPEG, CNN, ReLU, IoU, NMS, ONNX
 
 Abra a pasta `C:\Zeral\TCC\tcc_jose_fidelis` no VS Code para carregar a configuração de `.vscode/settings.json`.
 
-1. Abra `Documentacao/Doc/projeto_base/monografia.tex`.
+1. Abra `Documentacao/Doc/doc_latex/monografia.tex`.
 2. Pressione **Ctrl+Alt+B** para compilar. Pela paleta (**Ctrl+Shift+P**), o comando equivalente é **LaTeX Workshop: Build LaTeX project**.
 3. Pressione **Ctrl+Alt+V** para abrir o PDF ao lado do texto. Pela paleta, use **LaTeX Workshop: View LaTeX PDF file**.
 4. Edite os capítulos em `tex/cap1.tex` a `tex/cap5.tex`. Ao salvar (**Ctrl+S**), a extensão recompila o documento principal e atualiza a prévia.
 
-Os comentários `% !TEX root = ../monografia.tex` nos capítulos indicam o arquivo principal. A busca automática foi limitada ao `projeto_base` para não compilar por engano o modelo de exemplo ou os backups. O PDF gerado é `monografia.pdf` nessa pasta; os PDFs em `pdf/` são elementos pré-textuais herdados do modelo.
+Os comentários `% !TEX root = ../monografia.tex` nos capítulos indicam o arquivo principal. A busca automática foi limitada ao `doc_latex` para não compilar por engano o modelo de exemplo ou os backups. O PDF gerado é `monografia.pdf` nessa pasta; os PDFs em `pdf/` são elementos pré-textuais herdados do modelo.
 
 A extensão **LaTeX Workshop** já estava instalada. O compilador **MiKTeX** foi instalado para o usuário `zehen`. A receita usa `texify`, que coordena as passagens de LaTeX e as referências bibliográficas sem depender de uma instalação separada de Perl. A primeira compilação pode baixar pacotes adicionais. O caminho do compilador em `.vscode/settings.json` corresponde a este computador; ajuste-o se mover o projeto para outra máquina.
 
@@ -56,7 +56,7 @@ Cadastre as fontes reais em `referencias.bib`; `chaveNoBib` acima é um exemplo,
 
 ## Compilação
 
-No Overleaf, envie o conteúdo completo de `projeto_base`, selecione `monografia.tex` como principal e pdfLaTeX como compilador. O modelo usa abnTeX2 com BibTeX (`abntex2cite`), não Biber. Localmente, com uma distribuição TeX instalada, execute dentro de `projeto_base`:
+No Overleaf, envie o conteúdo completo de `doc_latex`, selecione `monografia.tex` como principal e pdfLaTeX como compilador. O modelo usa abnTeX2 com BibTeX (`abntex2cite`), não Biber. Localmente, com uma distribuição TeX instalada, execute dentro de `doc_latex`:
 
 ```text
 pdflatex -interaction=nonstopmode -halt-on-error monografia.tex

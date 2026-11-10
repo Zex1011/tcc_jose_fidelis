@@ -25,7 +25,7 @@
   "latex-workshop.latex.autoBuild.run": "onSave",
   "latex-workshop.latex.outDir": "%DIR%",
   "latex-workshop.latex.search.rootFiles.include": [
-    "Documentacao/Doc/projeto_base/monografia.tex"
+    "Documentacao/Doc/doc_latex/monografia.tex"
   ],
   "latex-workshop.latex.search.rootFiles.exclude": [
     "**/projeto_exemplo/**",

@@ -46,8 +46,8 @@ chat_summary*.md
 /Documentacao/REVISAO_INICIAL_2026-10-07.md
 /Documentacao/preparar_integracao_latex.py
 /Documentacao/integracao_latex_*/
-/Documentacao/Doc/projeto_base/backup_integracao_*/
-/Documentacao/Doc/projeto_base/backup_fundamentacao_*/
+/Documentacao/Doc/doc_latex/backup_integracao_*/
+/Documentacao/Doc/doc_latex/backup_fundamentacao_*/
 
 # Pesos e exportacoes gerados/baixados para os detectores.
 *.pt

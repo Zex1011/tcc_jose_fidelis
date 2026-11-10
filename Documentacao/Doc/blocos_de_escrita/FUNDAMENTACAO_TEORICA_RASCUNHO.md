@@ -3,7 +3,7 @@
 **Versão para discussão — 9 de outubro de 2026**  
 **TCC de José Henrique Schmitt Fidelis**
 
-> Integrado ao [capítulo 2 em LaTeX](../projeto_base/tex/cap2.tex) em 26/10/2026, com citações em [referencias.bib](../projeto_base/referencias.bib). O corpo deste rascunho e suas notas de revisão foram preservados; a versão diagramada está no [PDF do TCC](../projeto_base/monografia.pdf).
+> Integrado ao [capítulo 2 em LaTeX](../doc_latex/tex/cap2.tex) em 26/10/2026, com citações em [referencias.bib](../doc_latex/referencias.bib). O corpo deste rascunho e suas notas de revisão foram preservados; a versão diagramada está no [PDF do TCC](../doc_latex/monografia.pdf).
 
 Este texto apresenta os fundamentos necessários para compreender a detecção de pessoas por redes neurais executadas em um sistema embarcado. A exposição parte da representação digital das imagens, introduz o funcionamento das redes convolucionais, apresenta a detecção de objetos com YOLO e discute a execução de modelos em hardware com recursos limitados. As escolhas de implementação, o acompanhamento do alvo, o controle da plataforma e os procedimentos experimentais serão tratados posteriormente, na metodologia e no desenvolvimento.
 

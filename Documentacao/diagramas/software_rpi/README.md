@@ -45,7 +45,7 @@ O caminho serial físico está disponível no código, mas o perfil [`rpi_vision
 
 ## Estados previstos: especificação inicial
 
-O desenho é uma proposta de comportamento, fundamentada na [introdução do TCC](../../Doc/projeto_base/tex/cap1.tex) e na decisão de incluir busca por rotação. Os estados operacionais processam sucessivos ciclos de imagem; as condições das transições são avaliadas após cada observação e quando há falha ou solicitação de encerramento. `entry` identifica uma ação ao entrar no estado; `do` resume seu processamento. Os colchetes indicam condições, e o texto após `/` indica uma ação de transição.
+O desenho é uma proposta de comportamento, fundamentada na [introdução do TCC](../../Doc/doc_latex/tex/cap1.tex) e na decisão de incluir busca por rotação. Os estados operacionais processam sucessivos ciclos de imagem; as condições das transições são avaliadas após cada observação e quando há falha ou solicitação de encerramento. `entry` identifica uma ação ao entrar no estado; `do` resume seu processamento. Os colchetes indicam condições, e o texto após `/` indica uma ação de transição.
 
 | Estado | Responsabilidade e condição de saída |
 | --- | --- |
@@ -111,7 +111,7 @@ Os diagramas foram conferidos com estes arquivos; não usam uma versão futura d
 | Associação | [`nearest_bbox_selector.py`](../../../followbot_mvp_audited/followbot_mvp_audited/src/followbot/tracking/nearest_bbox_selector.py) |
 | Controle | [`bbox_controller.py`](../../../followbot_mvp_audited/followbot_mvp_audited/src/followbot/control/bbox_controller.py) |
 | Comunicação | [`serial_link.py`](../../../followbot_mvp_audited/followbot_mvp_audited/src/followbot/communication/serial_link.py) |
-| Busca prevista | [`cap1.tex`](../../Doc/projeto_base/tex/cap1.tex), parágrafo sobre perda do alvo e objetivo específico da busca |
+| Busca prevista | [`cap1.tex`](../../Doc/doc_latex/tex/cap1.tex), parágrafo sobre perda do alvo e objetivo específico da busca |
 
 ## Gerar novamente
 
