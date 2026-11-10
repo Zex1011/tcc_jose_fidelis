@@ -4,7 +4,16 @@
 
 Protocolo simples, legível e fácil de depurar para o primeiro protótipo.
 
-Ainda não existe CRC/checksum porque USB serial já fornece uma camada de transporte razoavelmente confiável e a prioridade atual é validar o pipeline. Caso o meio físico mude ou os testes revelem corrupção, um checksum pode ser acrescentado.
+O protocolo atual não possui CRC/checksum. Essa escolha inicial foi feita para
+ensaios com USB serial e precisa ser reavaliada para o transporte UART previsto
+pela [shield Juca/Pi R02](../../Hardware/Juca_PiZero2_Shield/README.md), especialmente
+com motores em operação. O ACK de sequência confirma uma resposta do receptor;
+não verifica a integridade de todos os campos nem comprova execução física.
+
+O formato de aplicação abaixo pode ser usado sobre uma porta UART Linux pelo
+backend existente. Os perfis ainda apontam para exemplos USB; a configuração
+UART do Pi e o firmware/pinagem da Juca permanecem pendentes. Os requisitos e o
+roteiro de integração estão na [análise da R02](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
 
 ## Configuração inicial
 

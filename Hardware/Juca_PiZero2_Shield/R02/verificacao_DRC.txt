@@ -1,0 +1,10 @@
+** Drc report for /workspace/scratch/41f2b1465ece/deliverables/Juca_PiZero2_Shield_R02/Juca_PiZero2_Shield_R02.kicad_pcb **
+** Created on 2026-10-26 13:53:53 **
+
+** Found 0 DRC violations **
+
+** Found 0 unconnected pads **
+
+** Found 0 Footprint errors **
+
+** End of Report **

@@ -1,0 +1,15 @@
+(footprint "H4_Mount" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (attr board_only exclude_from_pos_files exclude_from_bom)
+  (fp_text reference "H4" (at 0 0) (layer "F.SilkS") hide
+      (effects (font (size 1.27 1.27) (thickness 0.15)))
+    (tstamp 1205721a-5a30-4987-9b4d-5fad68533f56)
+  )
+  (fp_text value "NPTH 3.2 mm" (at 0 0) (layer "F.SilkS") hide
+      (effects (font (size 1.27 1.27) (thickness 0.15)))
+    (tstamp 76b523ae-61fe-43c8-8c87-a347161564b9)
+  )
+  (fp_circle (center 0 0) (end 3.5 0)
+    (stroke (width 0.15) (type default)) (fill none) (layer "Dwgs.User") (tstamp f326c807-2857-4552-90ab-621e62c6be3a))
+  (pad "" np_thru_hole circle (at 0 0) (size 3.2 3.2) (drill 3.2) (layers "*.Cu") (tstamp 86e0b410-278e-47a4-a527-d44a52eef539))
+)

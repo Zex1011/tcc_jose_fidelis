@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "imported_on": "2026-11-04",
+  "source_archive": {
+    "path": "origem/Juca_PiZero2_Shield_R02.zip",
+    "size_bytes": 118453,
+    "sha256": "24813ab56b0659a78ba4a868a0fb1c38c630ac9f55f9d493f36e0447d3c4913f"
+  },
+  "extraction": "Top-level archive directory stripped; file bytes unchanged.",
+  "file_count": 31,
+  "files": [
+    {
+      "path": "R02/Guia_de_montagem_R02.pdf",
+      "size_bytes": 77139,
+      "sha256": "fb9ec6f5e804ef6e1005fa2863553ada4d6749b5e23b3ca6d4d971471bf050fa"
+    },
+    {
+      "path": "R02/JucaShield.kicad_sym",
+      "size_bytes": 10364,
+      "sha256": "8f1b7081e3e29f3066e091b776608bba791fda18948826d3a8f458d71469a8be"
+    },
+    {
+      "path": "R02/JucaShield.pretty/H1_Mount.kicad_mod",
+      "size_bytes": 769,
+      "sha256": "eabb8b5c5ecb766f2147969c982bd45934f363d06eac9dbeb82338ca980a8eed"
+    },
+    {
+      "path": "R02/JucaShield.pretty/H2_Mount.kicad_mod",
+      "size_bytes": 769,
+      "sha256": "fb8a4eb5bd4c362d9ed06520811fee89ca0633a965cffc8caeacef37e56a0736"
+    },
+    {
+      "path": "R02/JucaShield.pretty/H3_Mount.kicad_mod",
+      "size_bytes": 769,
+      "sha256": "1fd757df3b0bee339be3d13635538840f06f8671c777c5398d45b4fe3e26d6a6"
+    },
+    {
+      "path": "R02/JucaShield.pretty/H4_Mount.kicad_mod",
+      "size_bytes": 769,
+      "sha256": "64389d67d6f3c8f09a1dbaaa4589dfabf926341aea9e126b2401e2f72cb1a0bf"
+    },
+    {
+      "path": "R02/JucaShield.pretty/H5_Mount.kicad_mod",
+      "size_bytes": 773,
+      "sha256": "615f74c4b6ab7dc262b5a552186643497f191fd92f787c25f0f8954b929c7788"
+    },
+    {
+      "path": "R02/JucaShield.pretty/H6_Mount.kicad_mod",
+      "size_bytes": 773,
+      "sha256": "dfc3bcce445e529a84201637ae6c7b84a7d0db5c90c533081082a2e331574b7d"
+    },
+    {
+      "path": "R02/JucaShield.pretty/H7_Mount.kicad_mod",
+      "size_bytes": 773,
+      "sha256": "6b80f60b2174b3190524ea5b8960df80ce8c67050c2af50f839c140bb200c3de"
+    },
+    {
+      "path": "R02/JucaShield.pretty/H8_Mount.kicad_mod",
+      "size_bytes": 773,
+      "sha256": "06c4e6b7790d1b0d978ccef29d4f7a4d449699e0b35d684acd23c031a7183f01"
+    },
+    {
+      "path": "R02/JucaShield.pretty/JW3_Wire.kicad_mod",
+      "size_bytes": 753,
+      "sha256": "832a5e338af91105fcce86f1aa584b0d3f20228a19c97f00c6f9ce0348f0cde0"
+    },
+    {
+      "path": "R02/JucaShield.pretty/Juca_J11_1x04_Bottom.kicad_mod",
+      "size_bytes": 1709,
+      "sha256": "ca6b730fe06237a1fac54dfae6424c59dc8dd63f734553767ed5821e825d90fc"
+    },
+    {
+      "path": "R02/JucaShield.pretty/Juca_J5_1x13_Bottom.kicad_mod",
+      "size_bytes": 2909,
+      "sha256": "44c71efcbc574849d8b323d850c364938477fb38b290c0adb274e6c4680d030e"
+    },
+    {
+      "path": "R02/JucaShield.pretty/Pi_2x20_Top.kicad_mod",
+      "size_bytes": 6614,
+      "sha256": "4cf14ad87d9fbe9bdb03677ded6ef13627607a7533b3ec824b48164d9e99174e"
+    },
+    {
+      "path": "R02/Juca_PiZero2_Shield_R02.kicad_pcb",
+      "size_bytes": 30341,
+      "sha256": "d92c3564ee98d7dd00ead7fca51d19732dc4c8338dbada727d9f072219a5b11b"
+    },
+    {
+      "path": "R02/Juca_PiZero2_Shield_R02.kicad_pro",
+      "size_bytes": 6889,
+      "sha256": "a018d0a8a86d7e55999848dee0cb2bab3dea736af168ef79be57945dedfbb68f"
+    },
+    {
+      "path": "R02/Juca_PiZero2_Shield_R02.kicad_sch",
+      "size_bytes": 26732,
+      "sha256": "bc1feebb8f1861137c115ad7d83a9f86676c6f9ac23f5b5591d8b567d1740766"
+    },
+    {
+      "path": "R02/README.md",
+      "size_bytes": 5331,
+      "sha256": "fd83cf8d2c61dbc32bec77b29b45894fda211bcca71bb7a63c690c70e03e1d92"
+    },
+    {
+      "path": "R02/fabricacao/Juca_PiZero2_Shield_R02-B_Cu.gbl",
+      "size_bytes": 4864,
+      "sha256": "71d62ba385bf734b63f80496b08a4b6fc7ddd9cda7ae9757d87eb386acb57724"
+    },
+    {
+      "path": "R02/fabricacao/Juca_PiZero2_Shield_R02-Edge_Cuts.gm1",
+      "size_bytes": 727,
+      "sha256": "f42b179ab663c561f67ecf82977f0a16fd85174b3a5a769d0d8aad35b505c638"
+    },
+    {
+      "path": "R02/fabricacao/Juca_PiZero2_Shield_R02-F_Silkscreen.gto",
+      "size_bytes": 60821,
+      "sha256": "e344ccbaccff8ebc38c024223c9fb8e394e57fe0fd66a070614bd5a4f2d3939a"
+    },
+    {
+      "path": "R02/fabricacao/Juca_PiZero2_Shield_R02-NPTH.drl",
+      "size_bytes": 538,
+      "sha256": "d3813cbed7b9f579e264a70099d20fddae2f9c3b98ab7f5a5d69374a4e010852"
+    },
+    {
+      "path": "R02/fabricacao/Juca_PiZero2_Shield_R02-PTH.drl",
+      "size_bytes": 1360,
+      "sha256": "845ad19fd6484bf80f388e98c5dfc0168ee048e3ddb26a2188717728b6c3d89f"
+    },
+    {
+      "path": "R02/fabricacao/Juca_PiZero2_Shield_R02-job.gbrjob",
+      "size_bytes": 1836,
+      "sha256": "43892a5458d5c3d0405b23dcdc72b3327d5aa821480dbaa1e25f0dbc832dda7e"
+    },
+    {
+      "path": "R02/fabricacao/cobre_B_Cu_vista_inferior.svg",
+      "size_bytes": 48913,
+      "sha256": "7d06a4ad1792bba172d37d8a5c383f0591b929bd71ff9bb60a283d930ce0cfc9"
+    },
+    {
+      "path": "R02/fabricacao/cobre_B_Cu_visto_de_cima.svg",
+      "size_bytes": 48932,
+      "sha256": "f17e0f83ed967ad666cf5078039a1fb983c478eac3ffee17dcf7abad3160e9e0"
+    },
+    {
+      "path": "R02/fp-lib-table",
+      "size_bytes": 144,
+      "sha256": "96452a58fcd622e5949894cf4ecbbdd88d50688998992bfc36969d55edf1fba9"
+    },
+    {
+      "path": "R02/geometria_e_conexoes.json",
+      "size_bytes": 15476,
+      "sha256": "f5a91311c3b2bf4f221d235a3f1833c969a73ce50fcbb4f4b98d47c9816661cb"
+    },
+    {
+      "path": "R02/sym-lib-table",
+      "size_bytes": 154,
+      "sha256": "e707ce1c2dc16b2c2d7157cf73667f1a2c5f054b85dd83188952ed9c9fee4363"
+    },
+    {
+      "path": "R02/verificacao_DRC.txt",
+      "size_bytes": 276,
+      "sha256": "71d0c851078ddc75a4adbc00e2312a7b38cf24747e933669900bb201a9d1fa4d"
+    },
+    {
+      "path": "R02/verificacao_conexoes.json",
+      "size_bytes": 921,
+      "sha256": "a9e9b13e419b138db28954c2b37e68508098020ae71a9dba77e1189ab6516c2e"
+    }
+  ]
+}

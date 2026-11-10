@@ -9,7 +9,7 @@ O capítulo 2 substitui os exemplos herdados do modelo pelo conteúdo de `../blo
 
 As 26 fontes do rascunho foram cadastradas em BibTeX, com datas de acesso e metadados conferidos. As duas seções de *Dive into Deep Learning* usam a mesma entrada `d2l-2023`. As três referências preexistentes foram preservadas, totalizando 29 registros; somente as fontes citadas aparecem na bibliografia. Use `\cite{chave}` para citações entre parênteses e `\citeonline{chave}` para citar autores no texto. As letras de documentos do mesmo autor e sem data são calculadas automaticamente; não copie manualmente as letras do Markdown.
 
-O cadastro de siglas foi ampliado para RGB, BGR, JPEG, CNN, ReLU, IoU, NMS, ONNX, CPU, SIMD, CSI-2 e LPDDR2. Produtos e bibliotecas, como NCNN, continuam escritos como nomes próprios. As cópias anteriores dos arquivos alterados e do PDF estão em `backup_fundamentacao_2026-10-26/`.
+O cadastro de siglas foi ampliado para RGB, BGR, JPEG, CNN, ReLU, IoU, NMS, ONNX, CPU, SIMD, CSI-2 e LPDDR2. Produtos e bibliotecas, como NCNN, continuam escritos como nomes próprios.
 
 ## Edição e prévia no VS Code
 
@@ -75,9 +75,9 @@ As citações fictícias `ref:ibmm` e `ref:mulligan` saíram junto com o conteú
 
 ## Antes de entregar
 
-O nome **José Henrique Schmitt Fidelis** foi confirmado e registrado em `monografia.tex`, em caixa alta na capa e na folha de rosto. Os metadados do PDF também usam esse nome. Foram preenchidas as palavras-chave provisórias **Visão computacional**, **Robótica móvel** e **Seguimento de pessoas**, com suas versões em inglês; elas correspondem ao objetivo geral da introdução. Os comandos `\palavraschavetcc` e `\keywordstcc` centralizam os termos exibidos no resumo e no abstract.
+O nome **José Henrique Schmitt Fidelis** está registrado em `monografia.tex`, em caixa alta na capa e na folha de rosto. Os metadados do PDF também usam esse nome. As palavras-chave provisórias são **Visão computacional**, **Robótica móvel** e **Seguimento de pessoas**, com suas versões em inglês; elas correspondem ao objetivo geral da introdução. Os comandos `\palavraschavetcc` e `\keywordstcc` centralizam os termos exibidos no resumo e no abstract.
 
-O autor confirmou em 07/10/2026 o título sugerido e os dados acadêmicos abaixo.
+O título e os dados acadêmicos atuais estão relacionados abaixo.
 Departamento e curso do cabeçalho agora são definidos em `monografia.tex`, pelos
 comandos `\departamentotcc` e `\cursotcc`, e usados na capa e folha de rosto.
 A vinculação da Engenharia Eletrônica ao Departamento Acadêmico de Eletrônica

@@ -1,0 +1,60 @@
+{
+  "result": "PASS",
+  "native_parser": "KiCad 7.0.11",
+  "electrical_pads": 59,
+  "pcb_tracks": 24,
+  "front_copper_electrical_pads": 0,
+  "vias": 0,
+  "zones": 0,
+  "schematic_board_net_parity": true,
+  "schematic_paths_match": true,
+  "all_electrical_pads_match_manifest": true,
+  "jumper_connectivity_match": true,
+  "external_connector_ports": [
+    [
+      [
+        "J5",
+        "3"
+      ],
+      [
+        "JPI1",
+        "10"
+      ]
+    ],
+    [
+      [
+        "J5",
+        "4"
+      ],
+      [
+        "JPI1",
+        "8"
+      ]
+    ],
+    [
+      [
+        "J11",
+        "2"
+      ],
+      [
+        "JPI1",
+        "2"
+      ],
+      [
+        "JPI1",
+        "4"
+      ]
+    ],
+    [
+      [
+        "J11",
+        "4"
+      ],
+      [
+        "JPI1",
+        "9"
+      ]
+    ]
+  ],
+  "scope": "Digital checks; hardware source, connector part and assembled heights remain to be checked physically."
+}

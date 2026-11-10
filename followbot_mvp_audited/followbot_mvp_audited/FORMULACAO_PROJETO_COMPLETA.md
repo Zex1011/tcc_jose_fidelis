@@ -3,6 +3,14 @@
 **Versão documental:** 0.2 — consolidada após auditoria de instalação Windows/Ubuntu  
 **Objetivo desta versão:** reunir em um único documento a arquitetura, decisões já tomadas, hipóteses ainda em validação, processo de instalação/teste, riscos e próximos passos do protótipo.
 
+**Atualização de hardware — 04/11/2026:** a
+[shield Juca/Pi R02](../../Hardware/Juca_PiZero2_Shield/README.md) foi incorporada
+como referência preservada para futuras adaptações. Ela prevê UART pelo header
+do Pi; os exemplos USB/Serial deste documento descrevem a configuração anterior,
+ainda presente nos perfis. Alimentação, pinagem da Juca, UART no Ubuntu e firmware
+do carrinho permanecem pendentes conforme a
+[análise de integração](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
+
 ---
 
 ## 1. Visão geral

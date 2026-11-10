@@ -23,6 +23,32 @@ __pycache__/
 Thumbs.db
 .DS_Store
 
+# Registros locais de conversa e configuracao de agentes.
+.codex/
+.agents/
+AGENTS.md
+AGENTS.override.md
+.claude/
+CLAUDE.md
+.gemini/
+GEMINI.md
+.cursor/rules/
+.cursorrules
+.github/copilot-instructions.md
+.github/instructions/
+.github/prompts/
+RESUMO_DO_CHAT*.md
+resumo_do_chat*.md
+CHAT_SUMMARY*.md
+chat_summary*.md
+
+# Relato e artefatos locais da migracao inicial; manter fora do Git.
+/Documentacao/REVISAO_INICIAL_2026-10-07.md
+/Documentacao/preparar_integracao_latex.py
+/Documentacao/integracao_latex_*/
+/Documentacao/Doc/projeto_base/backup_integracao_*/
+/Documentacao/Doc/projeto_base/backup_fundamentacao_*/
+
 # Pesos e exportacoes gerados/baixados para os detectores.
 *.pt
 *.pth
@@ -61,4 +87,3 @@ Thumbs.db
 *.ist
 
 # Nao ignorar genericamente .pdf, .docx, .bib, .tex, .sty, .bst ou figuras.
-# Backups anteriores ao Git permanecem elegiveis para preservar o historico.

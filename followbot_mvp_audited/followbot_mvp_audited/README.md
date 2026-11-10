@@ -41,6 +41,12 @@ O objetivo desta versão é validar o sistema completo antes de introduzir conco
 
 Estado atual das decisões do MVP:
 
+A placa de interligação prevista com o carrinho está em
+[Hardware/Juca_PiZero2_Shield](../../Hardware/Juca_PiZero2_Shield/README.md).
+A R02 recebida foi preservada em 04/11/2026, com análise elétrica/mecânica e
+pendências para adaptações. Sua ligação usa UART pelo header do Pi; a integração
+física e o firmware do carrinho ainda precisam ser validados.
+
 ```text
 Raspberry Pi Zero 2
 ESP32
@@ -406,7 +412,12 @@ v e w em uma faixa abstrata, por exemplo [-1, 1]
 
 Esta decisão ainda está aberta.
 
-## 7. Comunicação USB/Serial
+## 7. Comunicação serial
+
+Os perfis atuais usam exemplos de serial USB (`/dev/ttyACM0`). A shield R02 prevê
+UART nos pinos físicos 8/10 do Pi. `SerialCommunicationLink` já aceita uma porta
+configurável, mas a UART no Ubuntu e os pinos/firmware da Juca ainda precisam de
+integração. Consulte a [análise da shield](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
 
 Protocolo inicial:
 

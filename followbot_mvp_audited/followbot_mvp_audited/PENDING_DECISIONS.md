@@ -43,7 +43,12 @@ O backend atual `Picamera2Camera` só deve ser usado se o hardware for compatív
 ESP32
 ```
 
-A conexão prevista é USB/Serial. Ainda verificar no hardware real se abrir a serial provoca reset e qual `startup_delay_s` é adequado.
+Os exemplos atuais usam USB/Serial. A shield Juca/Pi R02, incorporada em
+04/11/2026, prevê UART pelo header do Raspberry. O ESP32 permanece definido;
+o transporte físico e sua configuração ainda exigem integração. Em USB,
+verificar se abrir a serial provoca reset e qual `startup_delay_s` é adequado;
+em UART direta, confirmar os pinos e o comportamento efetivo de inicialização.
+Veja a [análise da shield](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
 
 ## 5. Tipo de locomoção — RESOLVIDO
 
@@ -264,3 +269,17 @@ Se futuramente imagens forem persistidas para análise, definir:
 - descarte.
 
 Isso é particularmente relevante para um trabalho acadêmico envolvendo imagens de pessoas.
+
+## 21. Shield Juca / Raspberry Pi Zero 2 W — R02 INCORPORADA; INTEGRAÇÃO PENDENTE
+
+A [R02 original](../../Hardware/Juca_PiZero2_Shield/README.md) foi preservada com
+ZIP, fontes KiCad, guia de montagem e arquivos de fabricação. Antes da próxima
+revisão, confirmar o esquema/revisão da Juca, alimentação de 5 V e convivência
+com USB, conectores/espaçadores e processo de fabricação. JW3 é o retorno de
+terra obrigatório; o pacote industrial declara duas camadas e furos PTH,
+enquanto o guia descreve fabricação manual de uma face.
+
+Para o software, identificar UART e GPIOs reais, integrar o acionamento e a
+parada do firmware existente e validar STOP/ACK antes de movimento. O roteiro
+e os limites da conferência digital estão na
+[revisão técnica](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).

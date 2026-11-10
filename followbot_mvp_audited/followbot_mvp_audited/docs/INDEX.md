@@ -16,6 +16,12 @@ Este indice organiza os documentos por objetivo de uso.
 - Diagramas de blocos, classes e estados do RPi: [guia e imagens](../../../Documentacao/diagramas/software_rpi/README.md)
 - Protocolo serial com ESP: [SERIAL_PROTOCOL.md](../SERIAL_PROTOCOL.md)
 
+## Hardware e integração com o carrinho
+
+- Organização do hardware: [Hardware](../../../Hardware/README.md)
+- Shield Juca/Pi R02, arquivos KiCad e guia: [documentação da placa](../../../Hardware/Juca_PiZero2_Shield/README.md)
+- Pinagem, alimentação, montagem e integração UART pendente: [análise da R02](../../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md)
+
 ## Executar testes por perfil
 
 - Guia operacional de perfis: [TESTING_PLAYBOOK.md](TESTING_PLAYBOOK.md)

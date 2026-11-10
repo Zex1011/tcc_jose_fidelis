@@ -39,6 +39,11 @@ O orquestrador deve conhecer **contratos**, não bibliotecas e hardware concreto
 
 O `Orchestrator` apenas executa essas etapas na ordem correta.
 
+O transporte USB/Serial do exemplo acima continua nos perfis atuais. A
+[shield Juca/Pi R02](../../Hardware/Juca_PiZero2_Shield/README.md) prevê UART pelo
+header, com integração física pendente. O backend serial já permite configurar
+a porta, preservando o contrato `CommunicationLink` e o restante do pipeline.
+
 ## Modelos compartilhados
 
 Arquivo: `src/followbot/models.py`

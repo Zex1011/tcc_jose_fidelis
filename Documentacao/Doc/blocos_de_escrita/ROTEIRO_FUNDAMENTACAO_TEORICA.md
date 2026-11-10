@@ -1,10 +1,11 @@
-# Roteiro para discutir a fundamentação teórica
+# Roteiro da fundamentação teórica
 
 **Data:** 9 de outubro de 2026.  
-**Situação:** proposta de organização para discussão; ainda não é a redação do capítulo.  
+**Situação:** roteiro de organização do conteúdo; a redação está no rascunho e no capítulo 2 em LaTeX.
+
 **Trabalho:** Sistema de seguimento de pessoas com visão computacional embarcada no Raspberry Pi Zero 2 W.
 
-**Recorte atualizado após discussão:** a fundamentação será concentrada nos tópicos **1 a 4**. Seleção e acompanhamento, robótica móvel e avaliação serão tratados na metodologia e no desenvolvimento. As referências a outros trabalhos serão distribuídas nos assuntos pertinentes, sem uma seção autônoma de trabalhos relacionados nesta etapa. As propostas ampliadas abaixo ficam como registro da discussão inicial. A primeira redação está em [FUNDAMENTACAO_TEORICA_RASCUNHO.md](FUNDAMENTACAO_TEORICA_RASCUNHO.md).
+**Recorte da fundamentação:** tópicos **1 a 4**. Seleção e acompanhamento, robótica móvel e avaliação pertencem à metodologia e ao desenvolvimento. As referências a outros trabalhos são distribuídas nos assuntos pertinentes, sem uma seção autônoma de trabalhos relacionados nesta etapa. Os tópicos adicionais abaixo servem como planejamento das demais partes do TCC. A redação está em [FUNDAMENTACAO_TEORICA_RASCUNHO.md](FUNDAMENTACAO_TEORICA_RASCUNHO.md) e no [capítulo 2 em LaTeX](../projeto_base/tex/cap2.tex).
 
 ## Direção proposta
 
@@ -178,12 +179,12 @@ Figuras candidatas: filtro sobre uma imagem pequena; entrada/saída de uma CNN; 
 | Princípios de associação e controle visual | Algoritmo, estados, ganhos e limites adotados | Centralização, perdas, trocas e comportamento do robô |
 | Definição e interpretação das métricas | Protocolo experimental e obtenção das referências | Tabelas, gráficos e discussão das limitações |
 
-O capítulo 2 atual ainda contém material herdado sobre educação, BLE e Flutter. Esses assuntos devem ser reavaliados pelo vínculo com este projeto; a presença no modelo não justifica sua permanência. O roteiro não altera esse capítulo.
+O capítulo 2 em LaTeX contém a fundamentação de imagens digitais, CNN, detecção/YOLO e inferência embarcada, integrada em 26/10/2026.
 
-## Pontos para alinharmos antes de redigir
+## Pendências de redação e desenvolvimento
 
-1. Manter o equilíbrio proposto, com maior espaço para visão/IA embarcada e explicação suficiente de robótica e controle?
-2. A busca por rotação está confirmada; falta definir seus parâmetros na metodologia e detalhar a calibração aproximada de distância.
-3. Apresentar métricas e trabalhos relacionados no fim deste capítulo ou em seções separadas, conforme preferência do orientador?
+1. Revisar a profundidade dos tópicos de visão e IA embarcada; desenvolver robótica e controle na metodologia conforme o recorte definido.
+2. Definir os parâmetros da busca por rotação na metodologia e detalhar a calibração aproximada de distância.
+3. Detalhar as métricas na avaliação experimental e distribuir as referências a trabalhos relacionados nos assuntos pertinentes.
 
-Pode-se começar a futura redação pelos conceitos estáveis: imagens, CNN, bounding boxes e inferência. O detalhamento da variante YOLO, dos estados e da calibração deve acompanhar as decisões e os ensaios do projeto.
+O detalhamento da variante YOLO, dos estados e da calibração deve acompanhar as decisões e os ensaios do projeto.

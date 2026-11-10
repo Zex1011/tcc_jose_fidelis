@@ -1,0 +1,15 @@
+(footprint "JW3_Wire" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (attr through_hole)
+  (fp_text reference "JW3" (at 0 0) (layer "F.SilkS") hide
+      (effects (font (size 1.27 1.27) (thickness 0.15)))
+    (tstamp 24946fb6-74a7-48c7-9929-0ff0dd8d6794)
+  )
+  (fp_text value "Fio isolado - lado superior" (at 0 0) (layer "F.SilkS") hide
+      (effects (font (size 1.27 1.27) (thickness 0.15)))
+    (tstamp 7bf0e745-e44f-4f9d-97c1-1bc7ce8c4dfc)
+  )
+  (pad "1" thru_hole rect (at 0 0) (size 2 2) (drill 0.9) (layers "B.Cu" "B.Mask")
+    (thermal_bridge_angle 45) (tstamp 6ba770c6-5516-464f-9a3b-3157580cc46c))
+  (pad "2" thru_hole circle (at 6 0) (size 2 2) (drill 0.9) (layers "B.Cu" "B.Mask") (tstamp 0ad6e559-3282-40c0-9c84-ca58d3b55a20))
+)

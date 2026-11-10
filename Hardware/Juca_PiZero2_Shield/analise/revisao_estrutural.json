@@ -1,0 +1,151 @@
+{
+  "result": "PASS_STRUCTURAL_CHECKS_ONLY",
+  "verification": "Independent Python stdlib parsing and byte comparison; not native KiCad DRC/ERC.",
+  "archive_sha256": "24813ab56b0659a78ba4a868a0fb1c38c630ac9f55f9d493f36e0447d3c4913f",
+  "original_files_unchanged": 31,
+  "pcb_dimensions_mm": [
+    48,
+    88
+  ],
+  "pcb_thickness_mm": 1.6,
+  "electrical_pads": 59,
+  "mounting_holes": 8,
+  "tracks": 24,
+  "electrical_copper_layers": [
+    "B.Cu"
+  ],
+  "vias": 0,
+  "zones": 0,
+  "schematic_pcb_manifest_pad_parity": true,
+  "track_endpoints_connected_within_each_net": true,
+  "track_centerline_lengths_mm": {
+    "+5V": 122.028658,
+    "ESP_RX": 54.789754,
+    "ESP_TX": 68.426727,
+    "GND_JUCA": 77.5171,
+    "GND_PI": 5.729999
+  },
+  "drill_files_match_pcb": {
+    "PTH": 59,
+    "NPTH": 8
+  },
+  "external_ports_with_JW3_installed": {
+    "+5V": [
+      [
+        "JPI1",
+        "2"
+      ],
+      [
+        "JPI1",
+        "4"
+      ],
+      [
+        "J11",
+        "2"
+      ]
+    ],
+    "ESP_RX": [
+      [
+        "JPI1",
+        "8"
+      ],
+      [
+        "J5",
+        "4"
+      ]
+    ],
+    "ESP_TX": [
+      [
+        "JPI1",
+        "10"
+      ],
+      [
+        "J5",
+        "3"
+      ]
+    ],
+    "GND": [
+      [
+        "JPI1",
+        "9"
+      ],
+      [
+        "J11",
+        "4"
+      ]
+    ]
+  },
+  "unrouted_external_pins": [
+    "JPI1-1",
+    "JPI1-3",
+    "JPI1-5",
+    "JPI1-6",
+    "JPI1-7",
+    "JPI1-11",
+    "JPI1-12",
+    "JPI1-13",
+    "JPI1-14",
+    "JPI1-15",
+    "JPI1-16",
+    "JPI1-17",
+    "JPI1-18",
+    "JPI1-19",
+    "JPI1-20",
+    "JPI1-21",
+    "JPI1-22",
+    "JPI1-23",
+    "JPI1-24",
+    "JPI1-25",
+    "JPI1-26",
+    "JPI1-27",
+    "JPI1-28",
+    "JPI1-29",
+    "JPI1-30",
+    "JPI1-31",
+    "JPI1-32",
+    "JPI1-33",
+    "JPI1-34",
+    "JPI1-35",
+    "JPI1-36",
+    "JPI1-37",
+    "JPI1-38",
+    "JPI1-39",
+    "JPI1-40",
+    "J11-1",
+    "J11-3",
+    "J5-1",
+    "J5-2",
+    "J5-5",
+    "J5-6",
+    "J5-7",
+    "J5-8",
+    "J5-9",
+    "J5-10",
+    "J5-11",
+    "J5-12",
+    "J5-13"
+  ],
+  "minimum_mounting_clearance_circle_gap_mm": 0.741635,
+  "minimum_mounting_clearance_circle_pair": [
+    "H4",
+    "H7"
+  ],
+  "pi_mounting_hole_span_xy_mm": [
+    23.0,
+    58.0
+  ],
+  "gerber_job_layer_count": 2,
+  "gerber_job_size_including_outline_stroke_mm": {
+    "X": 48.05,
+    "Y": 88.05
+  },
+  "limitations": [
+    "No native KiCad DRC/ERC run; supplied reports remain external evidence.",
+    "Endpoint connectivity is not a geometric copper/short-circuit/clearance test.",
+    "Gerber copper and silkscreen were not geometrically reconstructed.",
+    "Ground connection between GND_JUCA and GND_PI assumes physical JW3 installation.",
+    "Mounting-circle gap is 2D drawing geometry, not actual spacer/component clearance.",
+    "No verification of Juca source schematic, current capacity, logic levels, firmware, or assembled hardware.",
+    "Job declares two CAD layers and PTH drill plating; manufacturing process must be specified separately."
+  ]
+}
