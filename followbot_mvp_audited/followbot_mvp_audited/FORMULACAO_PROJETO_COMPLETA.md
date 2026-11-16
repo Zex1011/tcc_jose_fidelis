@@ -3,13 +3,17 @@
 **Versão documental:** 0.2 — consolidada após auditoria de instalação Windows/Ubuntu  
 **Objetivo desta versão:** reunir em um único documento a arquitetura, decisões já tomadas, hipóteses ainda em validação, processo de instalação/teste, riscos e próximos passos do protótipo.
 
-**Atualização de hardware — 04/11/2026:** a
-[shield Juca/Pi R02](../../Hardware/Juca_PiZero2_Shield/README.md) foi incorporada
-como referência preservada para futuras adaptações. Ela prevê UART pelo header
-do Pi; os exemplos USB/Serial deste documento descrevem a configuração anterior,
-ainda presente nos perfis. Alimentação, pinagem da Juca, UART no Ubuntu e firmware
-do carrinho permanecem pendentes conforme a
-[análise de integração](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
+**Atualização de hardware — 16/11/2026:** a
+[shield Juca/Pi R05](../../Hardware/Juca_PiZero2_Shield/R05/README.md) é a revisão
+de trabalho, com R02 e R04 preservadas como histórico. A R05 monta o Raspberry
+com a face dos componentes para baixo e usa jumpers PTH com capinhas removíveis;
+a UART de comandos/ACK exige JP3/JP4 fechados e mantém a pinagem da R04.
+Na R05, JP13 liga o GPIO3 da Juca ao **GPIO17 do Raspberry, pino físico 11**;
+o pino físico 18 (GPIO24) fica sem conexão na shield. Permanecem as
+[restrições de integração da Juca identificadas na R04](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R04.md).
+Os exemplos USB/Serial deste documento continuam presentes nos perfis.
+Fabricação, alimentação, pinagem da Juca, UART no Ubuntu e firmware do
+carrinho permanecem pendentes de validação.
 
 ---
 

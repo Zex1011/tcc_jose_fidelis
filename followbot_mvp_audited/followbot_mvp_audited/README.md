@@ -43,9 +43,11 @@ Estado atual das decisões do MVP:
 
 A placa de interligação prevista com o carrinho está em
 [Hardware/Juca_PiZero2_Shield](../../Hardware/Juca_PiZero2_Shield/README.md).
-A R02 recebida foi preservada em 04/11/2026, com análise elétrica/mecânica e
-pendências para adaptações. Sua ligação usa UART pelo header do Pi; a integração
-física e o firmware do carrinho ainda precisam ser validados.
+A revisão de trabalho é a [R05](../../Hardware/Juca_PiZero2_Shield/R05/README.md),
+com o Raspberry voltado para baixo e 13 jumpers PTH de capinha removível,
+inicialmente abertos. A UART do protocolo atual requer JP3 e JP4 fechados.
+R02 e R04 permanecem como histórico. Fabricação, integração física e firmware
+do carrinho ainda precisam ser validados.
 
 ```text
 Raspberry Pi Zero 2
@@ -414,10 +416,12 @@ Esta decisão ainda está aberta.
 
 ## 7. Comunicação serial
 
-Os perfis atuais usam exemplos de serial USB (`/dev/ttyACM0`). A shield R02 prevê
+Os perfis atuais usam exemplos de serial USB (`/dev/ttyACM0`). A shield R05 prevê
 UART nos pinos físicos 8/10 do Pi. `SerialCommunicationLink` já aceita uma porta
 configurável, mas a UART no Ubuntu e os pinos/firmware da Juca ainda precisam de
-integração. Consulte a [análise da shield](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
+integração. Na R05, fechar JP4 com a capinha habilita Pi → ESP, e fechar JP3
+habilita ESP → Pi; ambos são necessários para comandos e ACK. Consulte a
+[documentação da R05](../../Hardware/Juca_PiZero2_Shield/R05/README.md).
 
 Protocolo inicial:
 

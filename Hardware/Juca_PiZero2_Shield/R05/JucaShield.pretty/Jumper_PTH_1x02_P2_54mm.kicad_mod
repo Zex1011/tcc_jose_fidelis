@@ -1,0 +1,112 @@
+(footprint "Jumper_PTH_1x02_P2_54mm"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "JP10"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "6c523a3c-1cf4-4c89-a786-5d6826d3a516")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "PTH 1x02 / shunt aberto"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "226f2220-6a05-4fcc-a392-777b06b3d4e2")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ee5943d2-baa1-488d-b493-e469a085e8ca")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "41676404-fa3b-44ed-a15d-59c1c92dbc0d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -1.269999 -1.27)
+		(end 1.270001 -1.27)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "4b5d8ff0-a918-401d-b4a8-1f3de735f5ef")
+	)
+	(fp_line
+		(start -1.269999 3.81)
+		(end -1.269999 -1.27)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "f0ad04c9-09dd-4d37-bc11-555f35823a16")
+	)
+	(fp_line
+		(start 1.270001 -1.27)
+		(end 1.270001 3.81)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "f9ff2107-80d5-4ed4-9f7a-13a08cc532e1")
+	)
+	(fp_line
+		(start 1.270001 3.81)
+		(end -1.269999 3.81)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "b4b531bc-41e8-49ce-a443-da98e0faee9f")
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 2 2)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "80508590-3f0b-473e-8ba7-5a4bd6f0139f")
+	)
+	(pad "2" thru_hole circle
+		(at 0 2.539999)
+		(size 2 2)
+		(drill 1)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "f56ba656-d994-48da-8ac3-951fefaf4ca9")
+	)
+	(embedded_fonts no)
+)

@@ -1,0 +1,35 @@
+{
+  "result": "PASS_STRUCTURAL_CHECKS_ONLY",
+  "revision": "R04",
+  "original_files_unchanged": 37,
+  "archive_sha256": "9280bf475b4d60a5972cab2b5af624c640d00af0b831829559bf93a90abe0d67",
+  "pcb_dimensions_mm": [
+    48,
+    88
+  ],
+  "electrical_pads": 83,
+  "tracks": 452,
+  "vias": 23,
+  "mounting_holes": 8,
+  "named_nets": 28,
+  "signal_selectors_initially_dnp": 13,
+  "schematic_pcb_geometry_mapping_csv_parity": true,
+  "routing_and_vias_match_geometry_manifest": true,
+  "connector_and_hole_positions_match_R02": true,
+  "drill_hits_match_pcb": 88,
+  "trace_widths_mm": [
+    0.508,
+    0.762,
+    1.8
+  ],
+  "project_rules_match_declared_R04_values": true,
+  "gerber_job_layer_count": 2,
+  "limitations": [
+    "No native KiCad DRC/ERC run; original reports are supplied evidence.",
+    "Named nets and serialized routes are not geometric connectivity or clearance verification.",
+    "Gerber copper geometry, CAM process, and CNC rules source PDF were not independently verified.",
+    "ESP GPIO identities follow supplied mapping; complete Juca source and physical module variant are not included.",
+    "DNP flags describe design intent; actual selector assembly and via continuity require inspection.",
+    "No physical power, connector, firmware, UART, or motor test was performed."
+  ]
+}

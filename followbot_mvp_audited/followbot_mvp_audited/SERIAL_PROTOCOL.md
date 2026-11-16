@@ -6,14 +6,21 @@ Protocolo simples, legível e fácil de depurar para o primeiro protótipo.
 
 O protocolo atual não possui CRC/checksum. Essa escolha inicial foi feita para
 ensaios com USB serial e precisa ser reavaliada para o transporte UART previsto
-pela [shield Juca/Pi R02](../../Hardware/Juca_PiZero2_Shield/README.md), especialmente
+pela [shield Juca/Pi R05](../../Hardware/Juca_PiZero2_Shield/R05/README.md), especialmente
 com motores em operação. O ACK de sequência confirma uma resposta do receptor;
 não verifica a integridade de todos os campos nem comprova execução física.
 
 O formato de aplicação abaixo pode ser usado sobre uma porta UART Linux pelo
 backend existente. Os perfis ainda apontam para exemplos USB; a configuração
-UART do Pi e o firmware/pinagem da Juca permanecem pendentes. Os requisitos e o
-roteiro de integração estão na [análise da R02](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
+UART do Pi e o firmware/pinagem da Juca permanecem pendentes. A R05 mantém a
+pinagem UART de JP3/JP4. JP13 passa a ligar o GPIO3 da Juca ao **GPIO17 do Pi,
+pino físico 11**; o pino físico 18 (GPIO24) fica sem conexão na shield.
+Permanecem as [restrições de integração da Juca identificadas na R04](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R04.md).
+
+Na R05, os headers PTH estão previstos instalados, mas as duas linhas UART
+começam abertas, sem capinhas. O protocolo exige fechar JP4 para transmitir
+os comandos Pi → ESP e JP3 para receber os ACKs ESP → Pi. A configuração da
+UART também é necessária; a revisão CAD não representa integração física.
 
 ## Configuração inicial
 

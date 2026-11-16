@@ -1,0 +1,62 @@
+{
+  "result": "PASS",
+  "native_parser": "7.0.11+dfsg-1build4",
+  "named_nets": 28,
+  "signal_selectors": 13,
+  "all_signal_selectors_initially_open": true,
+  "schematic_matches_pcb_and_pin_mapping": true,
+  "schematic_paths_match": true,
+  "electrical_pads": 83,
+  "tracks": 452,
+  "vias": 23,
+  "wire_jumpers": 0,
+  "clearance_rule_mm": 0.508,
+  "minimum_track_width_rule_mm": 0.508,
+  "signal_track_widths_mm": [
+    0.508,
+    0.762
+  ],
+  "power_track_widths_mm": [
+    1.8
+  ],
+  "via_diameter_mm": 1.8,
+  "via_drill_mm": 0.6,
+  "j11_pad_diameter_mm": 2.0,
+  "j11_pad_drill_mm": 1.0,
+  "persisted_kicad_rules_verified": {
+    "m_MinClearance": 0.508,
+    "m_TrackMinWidth": 0.508,
+    "m_CopperEdgeClearance": 0.508,
+    "m_HoleClearance": 0.508,
+    "m_HoleToHoleMin": 0.508,
+    "m_MinThroughDrill": 0.6,
+    "m_ViasMinSize": 1.8
+  },
+  "serialized_routes_and_vias_match_manifest": true,
+  "actual_copper_dimensions_verified": true,
+  "mechanical_geometry_unchanged": true,
+  "connector_tracks_on_accessible_solder_side": true,
+  "vias_outside_pi_socket": true,
+  "minimum_copper_to_mounting_head_reserve_mm": 0.602,
+  "hardware_verification_pending": [
+    "ESP32 module variant",
+    "Juca 5V supply under load",
+    "actual connector heights",
+    "manual via continuity if non-plated fabrication"
+  ],
+  "fabrication_exports": {
+    "gerber_layers": [
+      "F.Cu",
+      "B.Cu",
+      "F.Mask",
+      "B.Mask",
+      "F.Silkscreen",
+      "B.Silkscreen",
+      "Edge.Cuts"
+    ],
+    "drill_format": "Excellon mm",
+    "pth_and_npth_combined": true,
+    "drill_hits": 88,
+    "gcode_included": false
+  }
+}

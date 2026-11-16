@@ -1,0 +1,128 @@
+{
+  "status": "PASS_BOUNDED_CHECKS_ONLY",
+  "checks_passed": 29,
+  "failures": [],
+  "counts": {
+    "contact_pads": 83,
+    "vias": 41,
+    "mechanical_holes": 8,
+    "expected_drill_hits": 132,
+    "export_drill_hits": 132
+  },
+  "excellon": {
+    "tools_mm": {
+      "1": 1.0,
+      "2": 1.0,
+      "3": 2.75,
+      "4": 3.2
+    },
+    "coordinate_transform": "Excellon X = absolute CAD X; Excellon Y = -absolute CAD Y",
+    "position_tolerance_mm": 0.000501,
+    "missing_hits": [],
+    "unexpected_hits": [],
+    "ambiguous_hits": []
+  },
+  "inputs": [
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/Juca_PiZero2_Shield_R05.kicad_pcb",
+      "exists": true,
+      "bytes": 151131,
+      "sha256": "19188e2a967ff88cd83714f2d6aae1a4f16525704c54c818b5c4c1602b44df3d"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/Juca_PiZero2_Shield_R05.kicad_pro",
+      "exists": true,
+      "bytes": 9746,
+      "sha256": "b7f0162b447cc4214fa8c7a7086fcac20941111cb30812c60107e8c3ee04d468"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/analise/verificar_fabricacao_r05.py",
+      "exists": true,
+      "bytes": 11188,
+      "sha256": "78f6e4388574fef71b19ecbcbe43e14a811b8d1f6a5aeac69aa1d3fad306ed65"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/analise/verificar_r05.py",
+      "exists": true,
+      "bytes": 26474,
+      "sha256": "f0f0e20fbb5fc70b076b65ef2db8863d79b38b55531f54a832f1394068fe01d3"
+    }
+  ],
+  "exports": [
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05.drl",
+      "exists": true,
+      "bytes": 2680,
+      "sha256": "59f19c95a2ecec3cce5286f6ce72c6f7956637df21bbfcd785e9821604efd5ee"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-job.gbrjob",
+      "exists": true,
+      "bytes": 2621,
+      "sha256": "9505ad6da54ba8e7e0029b6265ce3baf6a66d8802645ab85a682d77d6e919f22"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-F_Cu.gtl",
+      "exists": true,
+      "bytes": 12963,
+      "sha256": "7a806ab8a18c8fc2ef3839854b36acec56985700c06b136e8ea5fc5fad671fde"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-B_Cu.gbl",
+      "exists": true,
+      "bytes": 14228,
+      "sha256": "e49784111dbd39aaf790f4aae075faeccb6daca01d5ee2483d926da39b11cdd9"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-F_Mask.gts",
+      "exists": true,
+      "bytes": 3092,
+      "sha256": "eae86847c4bb53a711f816486395da7c6800cccfe66cb27b2bca6ac637170765"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-B_Mask.gbs",
+      "exists": true,
+      "bytes": 3092,
+      "sha256": "714dfe117951b8ce3cdbeedfbf2b3ec3a0b1849024d773d624883c77a6682b72"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-F_Silkscreen.gto",
+      "exists": true,
+      "bytes": 13052,
+      "sha256": "7bf23052296f504c9aa66ea4e7be596fbc684939fe57c60303b1a5297dc25c3a"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-B_Silkscreen.gbo",
+      "exists": true,
+      "bytes": 963,
+      "sha256": "686f541fe028f0a67583c9291ab2a2470bfeb70bf4f195cca3d6430ae572c3ea"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-Edge_Cuts.gm1",
+      "exists": true,
+      "bytes": 725,
+      "sha256": "5705e7c6eb55eb0bc1984e2a818626b2da5a7732d295e51e21a6936d90b80680"
+    }
+  ],
+  "additional_export_files": [
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-drl_map.svg",
+      "exists": true,
+      "bytes": 88838,
+      "sha256": "82e21e4bd8e75abfe24f79f9db939d006fd57a1aca5d5c2d87cbb75df6b15080"
+    },
+    {
+      "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/relatorio_furacao_R05.txt",
+      "exists": true,
+      "bytes": 792,
+      "sha256": "0d29e480f980e9072b703128df0c6c58309d01c5bd293e7c2b998b47cd1379ee"
+    }
+  ],
+  "limits": [
+    "Gerber copper geometry has NOT been compared against PCB geometry.",
+    "Gerber checks cover file inventory and job metadata only; no aperture, mask or outline geometry validation.",
+    "Does not run or replace native DRC/ERC, connectivity or solder-access checks.",
+    "Does not validate CNC toolpaths, tool compensation, layer registration, plating, current or mechanical assembly.",
+    "Extra fabrication files are inventoried and hashed, not geometrically checked."
+  ]
+}

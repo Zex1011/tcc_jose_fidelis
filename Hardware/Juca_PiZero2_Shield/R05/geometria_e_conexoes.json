@@ -1,0 +1,4580 @@
+{
+  "revision": "R05",
+  "board_size": [
+    48,
+    88
+  ],
+  "kicad_origin": [
+    100,
+    60
+  ],
+  "pi_body_local": [
+    11,
+    20,
+    41,
+    85
+  ],
+  "pi_components_face": "down",
+  "pads": [
+    {
+      "ref": "JP4",
+      "pin": "1",
+      "x": 15.0944,
+      "y": 8.5,
+      "net": "JUCA_RXD0",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP4",
+      "pin": "2",
+      "x": 15.0944,
+      "y": 11.039999,
+      "net": "PI_GPIO14",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP9",
+      "pin": "1",
+      "x": 27.7944,
+      "y": 8.5,
+      "net": "JUCA_GPIO45",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP9",
+      "pin": "2",
+      "x": 27.7944,
+      "y": 11.039999,
+      "net": "PI_GPIO22",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP1",
+      "pin": "1",
+      "x": 7.4744,
+      "y": 8.5,
+      "net": "JUCA_SDA",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP1",
+      "pin": "2",
+      "x": 7.4744,
+      "y": 11.039999,
+      "net": "PI_GPIO2",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP2",
+      "pin": "1",
+      "x": 10.0144,
+      "y": 8.5,
+      "net": "JUCA_SCL",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP2",
+      "pin": "2",
+      "x": 10.0144,
+      "y": 11.039999,
+      "net": "PI_GPIO3",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP6",
+      "pin": "1",
+      "x": 20.174399,
+      "y": 8.5,
+      "net": "JUCA_GPIO37",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP6",
+      "pin": "2",
+      "x": 20.174399,
+      "y": 11.039999,
+      "net": "PI_GPIO9",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP8",
+      "pin": "1",
+      "x": 25.2544,
+      "y": 8.5,
+      "net": "JUCA_GPIO35",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP8",
+      "pin": "2",
+      "x": 25.2544,
+      "y": 11.039999,
+      "net": "PI_GPIO10",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP3",
+      "pin": "1",
+      "x": 12.5544,
+      "y": 8.5,
+      "net": "JUCA_TXD0",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP3",
+      "pin": "2",
+      "x": 12.5544,
+      "y": 11.039999,
+      "net": "PI_GPIO15",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP7",
+      "pin": "1",
+      "x": 22.7144,
+      "y": 8.5,
+      "net": "JUCA_GPIO36",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP7",
+      "pin": "2",
+      "x": 22.7144,
+      "y": 11.039999,
+      "net": "PI_GPIO11",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP5",
+      "pin": "1",
+      "x": 17.6344,
+      "y": 8.5,
+      "net": "JUCA_GPIO38",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP5",
+      "pin": "2",
+      "x": 17.6344,
+      "y": 11.039999,
+      "net": "PI_GPIO8",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP13",
+      "pin": "1",
+      "x": 37.9544,
+      "y": 8.5,
+      "net": "JUCA_GPIO3",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP13",
+      "pin": "2",
+      "x": 37.9544,
+      "y": 11.039999,
+      "net": "PI_GPIO17",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP12",
+      "pin": "1",
+      "x": 35.4144,
+      "y": 8.5,
+      "net": "JUCA_GPIO46",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP12",
+      "pin": "2",
+      "x": 35.4144,
+      "y": 11.039999,
+      "net": "PI_GPIO23",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "1",
+      "x": 15.77,
+      "y": 28.37,
+      "net": "unconnected-(JPI1-Pad1)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": true,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "2",
+      "x": 13.23,
+      "y": 28.37,
+      "net": "+5V",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "3",
+      "x": 15.77,
+      "y": 30.91,
+      "net": "PI_GPIO2",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "4",
+      "x": 13.23,
+      "y": 30.91,
+      "net": "+5V",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "5",
+      "x": 15.77,
+      "y": 33.45,
+      "net": "PI_GPIO3",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "6",
+      "x": 13.23,
+      "y": 33.45,
+      "net": "unconnected-(JPI1-Pad6)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "7",
+      "x": 15.77,
+      "y": 35.99,
+      "net": "unconnected-(JPI1-Pad7)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "8",
+      "x": 13.23,
+      "y": 35.99,
+      "net": "PI_GPIO14",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "9",
+      "x": 15.77,
+      "y": 38.53,
+      "net": "GND",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "10",
+      "x": 13.23,
+      "y": 38.53,
+      "net": "PI_GPIO15",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "11",
+      "x": 15.77,
+      "y": 41.07,
+      "net": "PI_GPIO17",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "12",
+      "x": 13.23,
+      "y": 41.07,
+      "net": "PI_GPIO18",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "13",
+      "x": 15.77,
+      "y": 43.61,
+      "net": "unconnected-(JPI1-Pad13)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "14",
+      "x": 13.23,
+      "y": 43.61,
+      "net": "unconnected-(JPI1-Pad14)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "15",
+      "x": 15.77,
+      "y": 46.15,
+      "net": "PI_GPIO22",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "16",
+      "x": 13.23,
+      "y": 46.15,
+      "net": "PI_GPIO23",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "17",
+      "x": 15.77,
+      "y": 48.69,
+      "net": "unconnected-(JPI1-Pad17)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "18",
+      "x": 13.23,
+      "y": 48.69,
+      "net": "unconnected-(JPI1-Pad18)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "19",
+      "x": 15.77,
+      "y": 51.23,
+      "net": "PI_GPIO10",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "20",
+      "x": 13.23,
+      "y": 51.23,
+      "net": "unconnected-(JPI1-Pad20)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "21",
+      "x": 15.77,
+      "y": 53.77,
+      "net": "PI_GPIO9",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "22",
+      "x": 13.23,
+      "y": 53.77,
+      "net": "unconnected-(JPI1-Pad22)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "23",
+      "x": 15.77,
+      "y": 56.31,
+      "net": "PI_GPIO11",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "24",
+      "x": 13.23,
+      "y": 56.31,
+      "net": "PI_GPIO8",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "25",
+      "x": 15.77,
+      "y": 58.85,
+      "net": "unconnected-(JPI1-Pad25)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "26",
+      "x": 13.23,
+      "y": 58.85,
+      "net": "unconnected-(JPI1-Pad26)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "27",
+      "x": 15.77,
+      "y": 61.39,
+      "net": "unconnected-(JPI1-Pad27)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "28",
+      "x": 13.23,
+      "y": 61.39,
+      "net": "unconnected-(JPI1-Pad28)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "29",
+      "x": 15.77,
+      "y": 63.93,
+      "net": "unconnected-(JPI1-Pad29)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "30",
+      "x": 13.23,
+      "y": 63.93,
+      "net": "unconnected-(JPI1-Pad30)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "31",
+      "x": 15.77,
+      "y": 66.47,
+      "net": "unconnected-(JPI1-Pad31)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "32",
+      "x": 13.23,
+      "y": 66.47,
+      "net": "unconnected-(JPI1-Pad32)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "33",
+      "x": 15.77,
+      "y": 69.009999,
+      "net": "PI_GPIO13",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "34",
+      "x": 13.23,
+      "y": 69.009999,
+      "net": "unconnected-(JPI1-Pad34)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "35",
+      "x": 15.77,
+      "y": 71.55,
+      "net": "unconnected-(JPI1-Pad35)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "36",
+      "x": 13.23,
+      "y": 71.55,
+      "net": "unconnected-(JPI1-Pad36)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "37",
+      "x": 15.77,
+      "y": 74.09,
+      "net": "unconnected-(JPI1-Pad37)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "38",
+      "x": 13.23,
+      "y": 74.09,
+      "net": "unconnected-(JPI1-Pad38)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "39",
+      "x": 15.77,
+      "y": 76.63,
+      "net": "unconnected-(JPI1-Pad39)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JPI1",
+      "pin": "40",
+      "x": 13.23,
+      "y": 76.63,
+      "net": "unconnected-(JPI1-Pad40)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP11",
+      "pin": "1",
+      "x": 32.8744,
+      "y": 8.5,
+      "net": "JUCA_GPIO47",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP11",
+      "pin": "2",
+      "x": 32.8744,
+      "y": 11.039999,
+      "net": "PI_GPIO13",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP10",
+      "pin": "1",
+      "x": 30.334399,
+      "y": 8.5,
+      "net": "JUCA_GPIO48",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "JP10",
+      "pin": "2",
+      "x": 30.334399,
+      "y": 11.039999,
+      "net": "PI_GPIO18",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J11",
+      "pin": "1",
+      "x": 45.1794,
+      "y": 77.2477,
+      "net": "unconnected-(J11-Pad1)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": true,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J11",
+      "pin": "2",
+      "x": 45.1794,
+      "y": 79.7877,
+      "net": "+5V",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J11",
+      "pin": "3",
+      "x": 45.1794,
+      "y": 82.3277,
+      "net": "unconnected-(J11-Pad3)",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J11",
+      "pin": "4",
+      "x": 45.1794,
+      "y": 84.8677,
+      "net": "GND",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "1",
+      "x": 7.4744,
+      "y": 3.0927,
+      "net": "JUCA_SDA",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": true,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "2",
+      "x": 10.0144,
+      "y": 3.0927,
+      "net": "JUCA_SCL",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "3",
+      "x": 12.5544,
+      "y": 3.0927,
+      "net": "JUCA_TXD0",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "4",
+      "x": 15.0944,
+      "y": 3.0927,
+      "net": "JUCA_RXD0",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "5",
+      "x": 17.6344,
+      "y": 3.0927,
+      "net": "JUCA_GPIO38",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "6",
+      "x": 20.1744,
+      "y": 3.0927,
+      "net": "JUCA_GPIO37",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "7",
+      "x": 22.7144,
+      "y": 3.0927,
+      "net": "JUCA_GPIO36",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "8",
+      "x": 25.2544,
+      "y": 3.0927,
+      "net": "JUCA_GPIO35",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "9",
+      "x": 27.7944,
+      "y": 3.0927,
+      "net": "JUCA_GPIO45",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "10",
+      "x": 30.3344,
+      "y": 3.0927,
+      "net": "JUCA_GPIO48",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "11",
+      "x": 32.8744,
+      "y": 3.0927,
+      "net": "JUCA_GPIO47",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "12",
+      "x": 35.4144,
+      "y": 3.0927,
+      "net": "JUCA_GPIO46",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "ref": "J5",
+      "pin": "13",
+      "x": 37.9544,
+      "y": 3.0927,
+      "net": "JUCA_GPIO3",
+      "diam": 2.0,
+      "size": [
+        2.0,
+        2.0
+      ],
+      "kind": "pth",
+      "square": false,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    }
+  ],
+  "holes": [
+    {
+      "ref": "H6",
+      "x": 37.5,
+      "y": 23.5,
+      "drill": 2.75,
+      "clear_radius": 3.1
+    },
+    {
+      "ref": "H1",
+      "x": 4.3,
+      "y": 43.21,
+      "drill": 3.2,
+      "clear_radius": 3.5
+    },
+    {
+      "ref": "H4",
+      "x": 4.3,
+      "y": 82.14,
+      "drill": 3.2,
+      "clear_radius": 3.5
+    },
+    {
+      "ref": "H5",
+      "x": 14.5,
+      "y": 23.5,
+      "drill": 2.75,
+      "clear_radius": 3.1
+    },
+    {
+      "ref": "H8",
+      "x": 37.5,
+      "y": 81.5,
+      "drill": 2.75,
+      "clear_radius": 3.1
+    },
+    {
+      "ref": "H3",
+      "x": 39.0,
+      "y": 68.0,
+      "drill": 3.2,
+      "clear_radius": 3.5
+    },
+    {
+      "ref": "H7",
+      "x": 14.5,
+      "y": 81.5,
+      "drill": 2.75,
+      "clear_radius": 3.1
+    },
+    {
+      "ref": "H2",
+      "x": 4.35,
+      "y": 68.0,
+      "drill": 3.2,
+      "clear_radius": 3.5
+    }
+  ],
+  "tracks": [
+    {
+      "net": "+5V",
+      "a": [
+        41.7,
+        83.5
+      ],
+      "b": [
+        39.2,
+        86.0
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        10.15,
+        86.0
+      ],
+      "b": [
+        8.65,
+        84.5
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        41.7,
+        80.4877
+      ],
+      "b": [
+        41.7,
+        83.5
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        45.1794,
+        79.7877
+      ],
+      "b": [
+        42.4,
+        79.7877
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        42.4,
+        79.7877
+      ],
+      "b": [
+        41.7,
+        80.4877
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        39.2,
+        86.0
+      ],
+      "b": [
+        10.15,
+        86.0
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        11.27,
+        28.37
+      ],
+      "b": [
+        13.23,
+        28.37
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        9.0,
+        44.7
+      ],
+      "b": [
+        9.0,
+        40.6
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        10.0,
+        29.64
+      ],
+      "b": [
+        10.35,
+        29.64
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        9.0,
+        40.6
+      ],
+      "b": [
+        8.0,
+        39.6
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.95,
+        64.25
+      ],
+      "b": [
+        8.0,
+        63.3
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.95,
+        84.2
+      ],
+      "b": [
+        8.95,
+        64.25
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.0,
+        31.64
+      ],
+      "b": [
+        10.0,
+        29.64
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.5,
+        45.6
+      ],
+      "b": [
+        8.5,
+        45.2
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        10.0,
+        29.64
+      ],
+      "b": [
+        11.27,
+        28.37
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        10.35,
+        29.64
+      ],
+      "b": [
+        11.62,
+        30.91
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.5,
+        45.2
+      ],
+      "b": [
+        9.0,
+        44.7
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.0,
+        63.3
+      ],
+      "b": [
+        8.0,
+        46.1
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.0,
+        46.1
+      ],
+      "b": [
+        8.5,
+        45.6
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.0,
+        39.6
+      ],
+      "b": [
+        8.0,
+        31.64
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        8.65,
+        84.5
+      ],
+      "b": [
+        8.95,
+        84.2
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "+5V",
+      "a": [
+        11.62,
+        30.91
+      ],
+      "b": [
+        13.23,
+        30.91
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        19.9,
+        77.9
+      ],
+      "b": [
+        19.9,
+        43.8
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        20.0,
+        78.0
+      ],
+      "b": [
+        19.9,
+        77.9
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        44.0323,
+        84.8677
+      ],
+      "b": [
+        42.6,
+        86.3
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        45.1794,
+        84.8677
+      ],
+      "b": [
+        44.0323,
+        84.8677
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        19.9,
+        43.8
+      ],
+      "b": [
+        20.9,
+        42.8
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        20.9,
+        42.8
+      ],
+      "b": [
+        20.9,
+        40.43
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        20.9,
+        40.43
+      ],
+      "b": [
+        19.0,
+        38.53
+      ],
+      "width": 2.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        42.6,
+        86.3
+      ],
+      "b": [
+        22.1,
+        86.3
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        19.0,
+        38.53
+      ],
+      "b": [
+        15.77,
+        38.53
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        20.0,
+        84.2
+      ],
+      "b": [
+        20.0,
+        78.0
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "GND",
+      "a": [
+        22.1,
+        86.3
+      ],
+      "b": [
+        20.0,
+        84.2
+      ],
+      "width": 2.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO3",
+      "a": [
+        37.9544,
+        3.0927
+      ],
+      "b": [
+        37.9544,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO3",
+      "a": [
+        37.9544,
+        5.8
+      ],
+      "b": [
+        37.9544,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO35",
+      "a": [
+        25.2544,
+        3.0927
+      ],
+      "b": [
+        25.2544,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO35",
+      "a": [
+        25.2544,
+        5.8
+      ],
+      "b": [
+        25.2544,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO36",
+      "a": [
+        22.7144,
+        3.0927
+      ],
+      "b": [
+        22.7144,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO36",
+      "a": [
+        22.7144,
+        5.8
+      ],
+      "b": [
+        22.7144,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO37",
+      "a": [
+        20.174399,
+        3.0927
+      ],
+      "b": [
+        20.174399,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO37",
+      "a": [
+        20.174399,
+        5.8
+      ],
+      "b": [
+        20.174399,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO38",
+      "a": [
+        17.6344,
+        3.0927
+      ],
+      "b": [
+        17.6344,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO38",
+      "a": [
+        17.6344,
+        5.8
+      ],
+      "b": [
+        17.6344,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO45",
+      "a": [
+        27.7944,
+        3.0927
+      ],
+      "b": [
+        27.7944,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO45",
+      "a": [
+        27.7944,
+        5.8
+      ],
+      "b": [
+        27.7944,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO46",
+      "a": [
+        35.4144,
+        3.0927
+      ],
+      "b": [
+        35.4144,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO46",
+      "a": [
+        35.4144,
+        5.8
+      ],
+      "b": [
+        35.4144,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO47",
+      "a": [
+        32.8744,
+        3.0927
+      ],
+      "b": [
+        32.8744,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO47",
+      "a": [
+        32.8744,
+        5.8
+      ],
+      "b": [
+        32.8744,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_GPIO48",
+      "a": [
+        30.334398,
+        3.0927
+      ],
+      "b": [
+        30.334398,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_GPIO48",
+      "a": [
+        30.334398,
+        5.8
+      ],
+      "b": [
+        30.334398,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_RXD0",
+      "a": [
+        15.0944,
+        3.0927
+      ],
+      "b": [
+        15.0944,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_RXD0",
+      "a": [
+        15.0944,
+        5.8
+      ],
+      "b": [
+        15.0944,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_SCL",
+      "a": [
+        10.0144,
+        3.0927
+      ],
+      "b": [
+        10.0144,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_SCL",
+      "a": [
+        10.0144,
+        5.8
+      ],
+      "b": [
+        10.0144,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_SDA",
+      "a": [
+        7.4744,
+        3.0927
+      ],
+      "b": [
+        7.4744,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_SDA",
+      "a": [
+        7.4744,
+        5.8
+      ],
+      "b": [
+        7.4744,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "JUCA_TXD0",
+      "a": [
+        12.5544,
+        3.0927
+      ],
+      "b": [
+        12.5544,
+        5.8
+      ],
+      "width": 1.0,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "JUCA_TXD0",
+      "a": [
+        12.5544,
+        5.8
+      ],
+      "b": [
+        12.5544,
+        8.5
+      ],
+      "width": 1.0,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        23.5,
+        14.6
+      ],
+      "b": [
+        23.5,
+        14.75
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        23.5,
+        14.75
+      ],
+      "b": [
+        20.7,
+        17.55
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        20.7,
+        17.55
+      ],
+      "b": [
+        20.7,
+        36.6
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        25.2544,
+        11.039999
+      ],
+      "b": [
+        25.2544,
+        13.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        20.7,
+        36.6
+      ],
+      "b": [
+        24.3,
+        40.2
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        24.3,
+        40.2
+      ],
+      "b": [
+        24.3,
+        49.43
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        24.3,
+        49.43
+      ],
+      "b": [
+        22.5,
+        51.229998
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        23.6544,
+        14.6
+      ],
+      "b": [
+        23.5,
+        14.6
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        22.5,
+        51.229998
+      ],
+      "b": [
+        15.77,
+        51.229998
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO10",
+      "a": [
+        25.2544,
+        13.0
+      ],
+      "b": [
+        23.6544,
+        14.6
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        20.9,
+        14.5
+      ],
+      "b": [
+        23.25,
+        12.15
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        26.5,
+        14.9
+      ],
+      "b": [
+        26.5,
+        33.0
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        20.9,
+        14.8
+      ],
+      "b": [
+        20.9,
+        14.5
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        23.75,
+        12.15
+      ],
+      "b": [
+        26.5,
+        14.9
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        23.25,
+        12.15
+      ],
+      "b": [
+        23.75,
+        12.15
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        22.5,
+        56.31
+      ],
+      "b": [
+        15.77,
+        56.31
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        22.7144,
+        11.039999
+      ],
+      "b": [
+        22.7144,
+        12.5
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        20.9,
+        14.3144
+      ],
+      "b": [
+        20.9,
+        14.8
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        22.7144,
+        12.5
+      ],
+      "b": [
+        20.9,
+        14.3144
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        26.5,
+        52.31
+      ],
+      "b": [
+        22.5,
+        56.31
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO11",
+      "a": [
+        26.5,
+        33.0
+      ],
+      "b": [
+        26.5,
+        52.31
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO13",
+      "a": [
+        29.5,
+        16.3744
+      ],
+      "b": [
+        29.5,
+        33.2
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO13",
+      "a": [
+        24.3,
+        38.4
+      ],
+      "b": [
+        24.3,
+        67.209999
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO13",
+      "a": [
+        29.5,
+        33.2
+      ],
+      "b": [
+        24.3,
+        38.4
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO13",
+      "a": [
+        24.3,
+        67.209999
+      ],
+      "b": [
+        22.5,
+        69.009999
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO13",
+      "a": [
+        22.5,
+        69.009999
+      ],
+      "b": [
+        15.77,
+        69.009999
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO13",
+      "a": [
+        32.8744,
+        13.0
+      ],
+      "b": [
+        29.5,
+        16.3744
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO13",
+      "a": [
+        32.8744,
+        11.039999
+      ],
+      "b": [
+        32.8744,
+        13.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO14",
+      "a": [
+        10.7,
+        17.9
+      ],
+      "b": [
+        10.7,
+        33.3
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO14",
+      "a": [
+        14.9,
+        13.6
+      ],
+      "b": [
+        14.9,
+        13.7
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO14",
+      "a": [
+        14.9,
+        13.7
+      ],
+      "b": [
+        10.7,
+        17.9
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO14",
+      "a": [
+        10.7,
+        33.46
+      ],
+      "b": [
+        13.23,
+        35.99
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO14",
+      "a": [
+        15.0944,
+        11.039999
+      ],
+      "b": [
+        15.0944,
+        13.4056
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO14",
+      "a": [
+        15.0944,
+        13.4056
+      ],
+      "b": [
+        14.9,
+        13.6
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO14",
+      "a": [
+        10.7,
+        33.3
+      ],
+      "b": [
+        10.7,
+        33.46
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO15",
+      "a": [
+        12.3,
+        13.6
+      ],
+      "b": [
+        8.8,
+        17.1
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO15",
+      "a": [
+        8.8,
+        34.15
+      ],
+      "b": [
+        10.7,
+        36.05
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO15",
+      "a": [
+        8.8,
+        17.1
+      ],
+      "b": [
+        8.8,
+        34.15
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO15",
+      "a": [
+        12.5544,
+        11.039999
+      ],
+      "b": [
+        12.5544,
+        13.3456
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO15",
+      "a": [
+        13.18,
+        38.53
+      ],
+      "b": [
+        13.23,
+        38.53
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO15",
+      "a": [
+        12.5544,
+        13.3456
+      ],
+      "b": [
+        12.3,
+        13.6
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO15",
+      "a": [
+        10.7,
+        36.05
+      ],
+      "b": [
+        13.18,
+        38.53
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        7.7,
+        19.1
+      ],
+      "b": [
+        7.7,
+        35.65
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        7.0,
+        19.0
+      ],
+      "b": [
+        7.6,
+        19.0
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        7.6,
+        19.0
+      ],
+      "b": [
+        7.7,
+        19.1
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        7.7,
+        35.65
+      ],
+      "b": [
+        10.7,
+        38.65
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        10.7,
+        38.65
+      ],
+      "b": [
+        13.12,
+        41.07
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        24.334399,
+        19.0
+      ],
+      "b": [
+        18.2,
+        19.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        18.2,
+        19.0
+      ],
+      "b": [
+        17.05,
+        17.85
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        30.334398,
+        13.0
+      ],
+      "b": [
+        24.334399,
+        19.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        8.15,
+        17.85
+      ],
+      "b": [
+        7.0,
+        19.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        17.05,
+        17.85
+      ],
+      "b": [
+        8.15,
+        17.85
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        13.12,
+        41.07
+      ],
+      "b": [
+        13.23,
+        41.07
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO18",
+      "a": [
+        30.334398,
+        11.039999
+      ],
+      "b": [
+        30.334398,
+        13.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO2",
+      "a": [
+        5.5,
+        9.065599
+      ],
+      "b": [
+        5.5,
+        1.4
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO2",
+      "a": [
+        23.19,
+        30.91
+      ],
+      "b": [
+        15.77,
+        30.91
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO2",
+      "a": [
+        5.5,
+        1.4
+      ],
+      "b": [
+        5.6,
+        1.3
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO2",
+      "a": [
+        39.8,
+        2.3
+      ],
+      "b": [
+        39.8,
+        14.3
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO2",
+      "a": [
+        39.8,
+        14.3
+      ],
+      "b": [
+        23.19,
+        30.91
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO2",
+      "a": [
+        5.5,
+        9.065599
+      ],
+      "b": [
+        7.217201,
+        10.7828
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO2",
+      "a": [
+        5.6,
+        1.3
+      ],
+      "b": [
+        38.8,
+        1.3
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO2",
+      "a": [
+        38.8,
+        1.3
+      ],
+      "b": [
+        39.8,
+        2.3
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        22.5,
+        38.4
+      ],
+      "b": [
+        22.8,
+        38.7
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        22.5,
+        18.3
+      ],
+      "b": [
+        22.5,
+        38.4
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        22.8,
+        44.8
+      ],
+      "b": [
+        22.5,
+        45.1
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        22.5,
+        45.1
+      ],
+      "b": [
+        22.5,
+        46.15
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        23.6,
+        17.2
+      ],
+      "b": [
+        22.5,
+        18.3
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        22.8,
+        38.7
+      ],
+      "b": [
+        22.8,
+        44.8
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        27.7944,
+        11.039999
+      ],
+      "b": [
+        27.7944,
+        13.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        22.5,
+        46.15
+      ],
+      "b": [
+        15.77,
+        46.15
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        27.7944,
+        13.0
+      ],
+      "b": [
+        23.6,
+        17.1944
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO22",
+      "a": [
+        23.6,
+        17.1944
+      ],
+      "b": [
+        23.6,
+        17.2
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        6.5,
+        37.0
+      ],
+      "b": [
+        10.7,
+        41.2
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        6.5,
+        37.0
+      ],
+      "b": [
+        6.5,
+        23.6
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        5.9,
+        23.0
+      ],
+      "b": [
+        6.5,
+        23.6
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        10.7,
+        41.2
+      ],
+      "b": [
+        10.7,
+        47.0
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        16.3,
+        19.0
+      ],
+      "b": [
+        9.9,
+        19.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        9.9,
+        19.0
+      ],
+      "b": [
+        5.9,
+        23.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        11.55,
+        46.15
+      ],
+      "b": [
+        13.23,
+        46.15
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        35.4144,
+        11.039999
+      ],
+      "b": [
+        35.4144,
+        13.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        17.4,
+        20.1
+      ],
+      "b": [
+        16.3,
+        19.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        28.3144,
+        20.1
+      ],
+      "b": [
+        17.4,
+        20.1
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        35.4144,
+        13.0
+      ],
+      "b": [
+        28.3144,
+        20.1
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO23",
+      "a": [
+        10.7,
+        47.0
+      ],
+      "b": [
+        11.55,
+        46.15
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        20.9,
+        79.8
+      ],
+      "b": [
+        19.1,
+        79.8
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        34.6,
+        16.4
+      ],
+      "b": [
+        30.6,
+        20.4
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        19.1,
+        79.8
+      ],
+      "b": [
+        17.6,
+        78.3
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        30.6,
+        70.1
+      ],
+      "b": [
+        20.9,
+        79.8
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        17.6,
+        78.3
+      ],
+      "b": [
+        17.6,
+        43.5
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        30.6,
+        20.4
+      ],
+      "b": [
+        30.6,
+        70.1
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        17.6,
+        43.5
+      ],
+      "b": [
+        18.3,
+        42.8
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        18.3,
+        42.8
+      ],
+      "b": [
+        18.3,
+        41.5
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        37.9544,
+        13.0456
+      ],
+      "b": [
+        34.6,
+        16.4
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        18.3,
+        41.5
+      ],
+      "b": [
+        17.87,
+        41.07
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        17.87,
+        41.07
+      ],
+      "b": [
+        15.77,
+        41.07
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO17",
+      "a": [
+        37.9544,
+        11.039999
+      ],
+      "b": [
+        37.9544,
+        13.0456
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        9.3,
+        13.6
+      ],
+      "b": [
+        7.4,
+        13.6
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        42.3,
+        4.8
+      ],
+      "b": [
+        42.3,
+        13.9
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        5.5,
+        1.4
+      ],
+      "b": [
+        5.6,
+        1.3
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        7.4,
+        13.6
+      ],
+      "b": [
+        5.5,
+        11.7
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        38.8,
+        1.3
+      ],
+      "b": [
+        42.3,
+        4.8
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        5.6,
+        1.3
+      ],
+      "b": [
+        38.8,
+        1.3
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        5.5,
+        11.7
+      ],
+      "b": [
+        5.5,
+        1.4
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        22.75,
+        33.45
+      ],
+      "b": [
+        15.77,
+        33.45
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        10.0144,
+        12.8856
+      ],
+      "b": [
+        9.3,
+        13.6
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        10.0144,
+        11.039999
+      ],
+      "b": [
+        10.0144,
+        12.8856
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO3",
+      "a": [
+        42.3,
+        13.9
+      ],
+      "b": [
+        22.75,
+        33.45
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        2.0,
+        34.0
+      ],
+      "b": [
+        4.0,
+        36.0
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        2.0,
+        20.8
+      ],
+      "b": [
+        2.0,
+        34.0
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        8.5,
+        42.0
+      ],
+      "b": [
+        8.5,
+        44.5
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        6.5,
+        46.5
+      ],
+      "b": [
+        6.5,
+        52.11
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        4.0,
+        37.5
+      ],
+      "b": [
+        8.5,
+        42.0
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        4.0,
+        36.0
+      ],
+      "b": [
+        4.0,
+        37.5
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        8.5,
+        44.5
+      ],
+      "b": [
+        6.5,
+        46.5
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        6.5,
+        52.11
+      ],
+      "b": [
+        10.7,
+        56.31
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        4.4,
+        18.4
+      ],
+      "b": [
+        2.0,
+        20.8
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        14.4344,
+        16.7
+      ],
+      "b": [
+        6.1,
+        16.7
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        6.1,
+        16.7
+      ],
+      "b": [
+        4.4,
+        18.4
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        10.7,
+        56.31
+      ],
+      "b": [
+        13.23,
+        56.31
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        17.6344,
+        11.039999
+      ],
+      "b": [
+        17.6344,
+        13.5
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO8",
+      "a": [
+        17.6344,
+        13.5
+      ],
+      "b": [
+        14.4344,
+        16.7
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        18.5,
+        16.7
+      ],
+      "b": [
+        18.5,
+        35.3
+      ],
+      "width": 0.55,
+      "layer": "F.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        18.5,
+        35.3
+      ],
+      "b": [
+        19.0,
+        34.8
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        19.0,
+        34.8
+      ],
+      "b": [
+        21.6,
+        34.8
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        18.5,
+        14.674399
+      ],
+      "b": [
+        18.5,
+        16.7
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        25.4,
+        51.0
+      ],
+      "b": [
+        22.63,
+        53.77
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        25.4,
+        38.6
+      ],
+      "b": [
+        25.4,
+        51.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        21.6,
+        34.8
+      ],
+      "b": [
+        25.4,
+        38.6
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        20.174399,
+        13.0
+      ],
+      "b": [
+        18.5,
+        14.674399
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        20.174399,
+        11.039999
+      ],
+      "b": [
+        20.174399,
+        13.0
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    },
+    {
+      "net": "PI_GPIO9",
+      "a": [
+        15.77,
+        53.77
+      ],
+      "b": [
+        22.63,
+        53.77
+      ],
+      "width": 0.55,
+      "layer": "B.Cu"
+    }
+  ],
+  "vias": [
+    {
+      "net": "+5V",
+      "x": 8.65,
+      "y": 84.5,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "GND",
+      "x": 19.0,
+      "y": 38.53,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "GND",
+      "x": 20.0,
+      "y": 78.0,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "GND",
+      "x": 42.6,
+      "y": 86.3,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO3",
+      "x": 37.9544,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO35",
+      "x": 25.2544,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO36",
+      "x": 22.7144,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO37",
+      "x": 20.174399,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO38",
+      "x": 17.6344,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO45",
+      "x": 27.7944,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO46",
+      "x": 35.4144,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO47",
+      "x": 32.8744,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_GPIO48",
+      "x": 30.334398,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_RXD0",
+      "x": 15.0944,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_SCL",
+      "x": 10.0144,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_SDA",
+      "x": 7.4744,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "JUCA_TXD0",
+      "x": 12.5544,
+      "y": 5.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO10",
+      "x": 20.7,
+      "y": 36.6,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO10",
+      "x": 23.5,
+      "y": 14.6,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO11",
+      "x": 26.5,
+      "y": 33.0,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO11",
+      "x": 20.9,
+      "y": 14.8,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO13",
+      "x": 29.5,
+      "y": 16.3744,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO13",
+      "x": 22.5,
+      "y": 69.009999,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO14",
+      "x": 14.9,
+      "y": 13.6,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO14",
+      "x": 10.7,
+      "y": 33.3,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO15",
+      "x": 12.3,
+      "y": 13.6,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO15",
+      "x": 10.7,
+      "y": 36.05,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO18",
+      "x": 7.0,
+      "y": 19.0,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO18",
+      "x": 10.7,
+      "y": 38.65,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO22",
+      "x": 22.5,
+      "y": 46.15,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO22",
+      "x": 23.6,
+      "y": 17.2,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO23",
+      "x": 10.7,
+      "y": 47.0,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO23",
+      "x": 5.9,
+      "y": 23.0,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO17",
+      "x": 34.6,
+      "y": 16.4,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO17",
+      "x": 18.3,
+      "y": 41.5,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO3",
+      "x": 42.3,
+      "y": 13.9,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO3",
+      "x": 9.3,
+      "y": 13.6,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO8",
+      "x": 4.4,
+      "y": 18.4,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO8",
+      "x": 10.7,
+      "y": 56.31,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO9",
+      "x": 18.5,
+      "y": 16.7,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    },
+    {
+      "net": "PI_GPIO9",
+      "x": 18.5,
+      "y": 35.3,
+      "diam": 2.0,
+      "drill": 1.0,
+      "layers": [
+        "F.Cu",
+        "B.Cu"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # Análise da shield Juca / Raspberry Pi Zero 2 W — R02
 
+> Documento histórico da R02. A revisão atual de trabalho é a [R05](../R05/README.md); a [R04](REVISAO_R04.md) permanece como referência recebida. A exigência de JW3 e as instruções de fabricação de uma face abaixo aplicam-se à R02.
+
 Data da incorporação e revisão: **04/11/2026**. Situação: **referência de projeto preservada; integração com o carrinho e adaptações futuras pendentes**.
 
 ## 1. Escopo e origem

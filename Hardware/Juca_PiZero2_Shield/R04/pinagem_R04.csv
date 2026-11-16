@@ -1,0 +1,14 @@
+Jumper,J5 pino,Sinal Juca,GPIO ESP32-S3,Raspberry pino fisico,Raspberry BCM,Funcao sugerida,Padrao,Restricoes
+JP1,1,SDA,40,3,2,I2C SDA,Aberto / DNP,Barramento compartilhado com MPU6050; Pi tem pull-ups. Coordenar controlador/enderecos.
+JP2,2,SCL,39,5,3,I2C SCL,Aberto / DNP,Barramento compartilhado com MPU6050; Pi tem pull-ups. Coordenar controlador/enderecos.
+JP3,3,TXD0,43,10,15,UART ESP TX > Pi RX,Aberto / DNP,
+JP4,4,RXD0,44,8,14,UART Pi TX > ESP RX,Aberto / DNP,
+JP5,5,GPIO38,38,24,8,SPI0 CE0,Aberto / DNP,
+JP6,6,GPIO37,37,21,9,SPI0 MISO,Aberto / DNP,Nao habilitar em modulo com PSRAM Octal R8/R16V; conferir variante fisica.
+JP7,7,GPIO36,36,23,11,SPI0 SCLK,Aberto / DNP,Nao habilitar em modulo com PSRAM Octal R8/R16V; conferir variante fisica.
+JP8,8,GPIO35,35,19,10,SPI0 MOSI,Aberto / DNP,Nao habilitar em modulo com PSRAM Octal R8/R16V; conferir variante fisica.
+JP9,9,GPIO45,45,15,22,GPIO / strapping VDD_SPI,Aberto / DNP,Strapping VDD_SPI; Juca possui pull-down 10 kohm. Nao forcar alto durante reset.
+JP10,10,GPIO48,48,12,18,PWM0 / GPIO,Aberto / DNP,"Nao habilitar ligacao direta em R16V: dominio 1,8 V; Pi usa 3,3 V."
+JP11,11,GPIO47,47,33,13,PWM1 / GPIO,Aberto / DNP,"Nao habilitar ligacao direta em R16V: dominio 1,8 V; Pi usa 3,3 V."
+JP12,12,GPIO46,46,16,23,GPIO / strapping boot,Aberto / DNP,Strapping boot; nivel baixo para download com GPIO0 baixo.
+JP13,13,GPIO3,3,18,24,GPIO / strapping JTAG,Aberto / DNP,Strapping JTAG dependente de eFuse; conferir reset/depuracao.

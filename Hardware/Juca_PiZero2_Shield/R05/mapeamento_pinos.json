@@ -1,0 +1,217 @@
+[
+  {
+    "j5_pin": 1,
+    "juca_signal": "SDA",
+    "esp_gpio": 40,
+    "pi_physical": 3,
+    "pi_bcm": 2,
+    "function": "I2C SDA",
+    "jumper": "JP1",
+    "juca_net": "JUCA_SDA",
+    "pi_net": "PI_GPIO2",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "R04 informa barramento compartilhado com MPU6050; confirmar placa real. Pi tem pull-ups. Coordenar controlador/enderecos."
+    ],
+    "pi_x_mm": 15.77,
+    "pi_y_mm": 30.91
+  },
+  {
+    "j5_pin": 2,
+    "juca_signal": "SCL",
+    "esp_gpio": 39,
+    "pi_physical": 5,
+    "pi_bcm": 3,
+    "function": "I2C SCL",
+    "jumper": "JP2",
+    "juca_net": "JUCA_SCL",
+    "pi_net": "PI_GPIO3",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "R04 informa barramento compartilhado com MPU6050; confirmar placa real. Pi tem pull-ups. Coordenar controlador/enderecos."
+    ],
+    "pi_x_mm": 15.77,
+    "pi_y_mm": 33.45
+  },
+  {
+    "j5_pin": 3,
+    "juca_signal": "TXD0",
+    "esp_gpio": 43,
+    "pi_physical": 10,
+    "pi_bcm": 15,
+    "function": "UART ESP TX > Pi RX",
+    "jumper": "JP3",
+    "juca_net": "JUCA_TXD0",
+    "pi_net": "PI_GPIO15",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [],
+    "pi_x_mm": 13.23,
+    "pi_y_mm": 38.53
+  },
+  {
+    "j5_pin": 4,
+    "juca_signal": "RXD0",
+    "esp_gpio": 44,
+    "pi_physical": 8,
+    "pi_bcm": 14,
+    "function": "UART Pi TX > ESP RX",
+    "jumper": "JP4",
+    "juca_net": "JUCA_RXD0",
+    "pi_net": "PI_GPIO14",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [],
+    "pi_x_mm": 13.23,
+    "pi_y_mm": 35.99
+  },
+  {
+    "j5_pin": 5,
+    "juca_signal": "GPIO38",
+    "esp_gpio": 38,
+    "pi_physical": 24,
+    "pi_bcm": 8,
+    "function": "SPI0 CE0",
+    "jumper": "JP5",
+    "juca_net": "JUCA_GPIO38",
+    "pi_net": "PI_GPIO8",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [],
+    "pi_x_mm": 13.23,
+    "pi_y_mm": 56.31
+  },
+  {
+    "j5_pin": 6,
+    "juca_signal": "GPIO37",
+    "esp_gpio": 37,
+    "pi_physical": 21,
+    "pi_bcm": 9,
+    "function": "SPI0 MISO",
+    "jumper": "JP6",
+    "juca_net": "JUCA_GPIO37",
+    "pi_net": "PI_GPIO9",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "Nao habilitar em modulo com PSRAM Octal R8/R16V; conferir variante fisica."
+    ],
+    "pi_x_mm": 15.77,
+    "pi_y_mm": 53.77
+  },
+  {
+    "j5_pin": 7,
+    "juca_signal": "GPIO36",
+    "esp_gpio": 36,
+    "pi_physical": 23,
+    "pi_bcm": 11,
+    "function": "SPI0 SCLK",
+    "jumper": "JP7",
+    "juca_net": "JUCA_GPIO36",
+    "pi_net": "PI_GPIO11",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "Nao habilitar em modulo com PSRAM Octal R8/R16V; conferir variante fisica."
+    ],
+    "pi_x_mm": 15.77,
+    "pi_y_mm": 56.31
+  },
+  {
+    "j5_pin": 8,
+    "juca_signal": "GPIO35",
+    "esp_gpio": 35,
+    "pi_physical": 19,
+    "pi_bcm": 10,
+    "function": "SPI0 MOSI",
+    "jumper": "JP8",
+    "juca_net": "JUCA_GPIO35",
+    "pi_net": "PI_GPIO10",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "Nao habilitar em modulo com PSRAM Octal R8/R16V; conferir variante fisica."
+    ],
+    "pi_x_mm": 15.77,
+    "pi_y_mm": 51.23
+  },
+  {
+    "j5_pin": 9,
+    "juca_signal": "GPIO45",
+    "esp_gpio": 45,
+    "pi_physical": 15,
+    "pi_bcm": 22,
+    "function": "GPIO / strapping VDD_SPI",
+    "jumper": "JP9",
+    "juca_net": "JUCA_GPIO45",
+    "pi_net": "PI_GPIO22",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "Strapping VDD_SPI; R04 informa pull-down de 10 kohm na Juca (R14), a confirmar na placa real. Nao forcar alto durante reset."
+    ],
+    "pi_x_mm": 15.77,
+    "pi_y_mm": 46.15
+  },
+  {
+    "j5_pin": 10,
+    "juca_signal": "GPIO48",
+    "esp_gpio": 48,
+    "pi_physical": 12,
+    "pi_bcm": 18,
+    "function": "PWM0 / GPIO",
+    "jumper": "JP10",
+    "juca_net": "JUCA_GPIO48",
+    "pi_net": "PI_GPIO18",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "Nao habilitar ligacao direta em R16V: dominio 1,8 V; Pi usa 3,3 V."
+    ],
+    "pi_x_mm": 13.23,
+    "pi_y_mm": 41.07
+  },
+  {
+    "j5_pin": 11,
+    "juca_signal": "GPIO47",
+    "esp_gpio": 47,
+    "pi_physical": 33,
+    "pi_bcm": 13,
+    "function": "PWM1 / GPIO",
+    "jumper": "JP11",
+    "juca_net": "JUCA_GPIO47",
+    "pi_net": "PI_GPIO13",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "Nao habilitar ligacao direta em R16V: dominio 1,8 V; Pi usa 3,3 V."
+    ],
+    "pi_x_mm": 15.77,
+    "pi_y_mm": 69.01
+  },
+  {
+    "j5_pin": 12,
+    "juca_signal": "GPIO46",
+    "esp_gpio": 46,
+    "pi_physical": 16,
+    "pi_bcm": 23,
+    "function": "GPIO / strapping boot",
+    "jumper": "JP12",
+    "juca_net": "JUCA_GPIO46",
+    "pi_net": "PI_GPIO23",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "Strapping boot; nivel baixo para download com GPIO0 baixo."
+    ],
+    "pi_x_mm": 13.23,
+    "pi_y_mm": 46.15
+  },
+  {
+    "j5_pin": 13,
+    "juca_signal": "GPIO3",
+    "esp_gpio": 3,
+    "pi_physical": 11,
+    "pi_bcm": 17,
+    "function": "GPIO / strapping JTAG",
+    "jumper": "JP13",
+    "juca_net": "JUCA_GPIO3",
+    "pi_net": "PI_GPIO17",
+    "default": "HEADER_INSTALLED_SHUNT_OPEN",
+    "notes": [
+      "Strapping JTAG dependente de eFuse; conferir reset/depuracao."
+    ],
+    "pi_x_mm": 15.77,
+    "pi_y_mm": 41.07
+  }
+]

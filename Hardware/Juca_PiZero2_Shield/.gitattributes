@@ -1,3 +1,5 @@
 # Preservar os bytes recebidos inclusive em checkouts Windows/Linux.
 R02/** -text
+R04/** -text
+R05/** -text
 origem/*.zip -text

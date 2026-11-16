@@ -1,0 +1,659 @@
+{
+  "status": "PASS_BOUNDED_CHECKS_ONLY",
+  "board": "C:\\Zeral\\TCC\\tcc_jose_fidelis\\Hardware\\Juca_PiZero2_Shield\\R05\\Juca_PiZero2_Shield_R05.kicad_pcb",
+  "board_sha256": "19188e2a967ff88cd83714f2d6aae1a4f16525704c54c818b5c4c1602b44df3d",
+  "project": "C:\\Zeral\\TCC\\tcc_jose_fidelis\\Hardware\\Juca_PiZero2_Shield\\R05\\Juca_PiZero2_Shield_R05.kicad_pro",
+  "project_sha256": "b7f0162b447cc4214fa8c7a7086fcac20941111cb30812c60107e8c3ee04d468",
+  "netlist_sha256": "43853308416c81c98b9d87460fb7d005faa6f243a2e7cbd65d34c2fd82886d5f",
+  "checks_passed": 408,
+  "failures": [],
+  "counts": {
+    "electrical_pads": 83,
+    "mounting_holes": 8,
+    "tracks": 190,
+    "vias": 41,
+    "nets": 54,
+    "used_pads": 57
+  },
+  "widths_by_net_mm": {
+    "+5V": [
+      2.0
+    ],
+    "GND": [
+      2.0
+    ],
+    "JUCA_GPIO3": [
+      1.0
+    ],
+    "JUCA_GPIO35": [
+      1.0
+    ],
+    "JUCA_GPIO36": [
+      1.0
+    ],
+    "JUCA_GPIO37": [
+      1.0
+    ],
+    "JUCA_GPIO38": [
+      1.0
+    ],
+    "JUCA_GPIO45": [
+      1.0
+    ],
+    "JUCA_GPIO46": [
+      1.0
+    ],
+    "JUCA_GPIO47": [
+      1.0
+    ],
+    "JUCA_GPIO48": [
+      1.0
+    ],
+    "JUCA_RXD0": [
+      1.0
+    ],
+    "JUCA_SCL": [
+      1.0
+    ],
+    "JUCA_SDA": [
+      1.0
+    ],
+    "JUCA_TXD0": [
+      1.0
+    ],
+    "PI_GPIO10": [
+      0.55
+    ],
+    "PI_GPIO11": [
+      0.55
+    ],
+    "PI_GPIO13": [
+      0.55
+    ],
+    "PI_GPIO14": [
+      0.55
+    ],
+    "PI_GPIO15": [
+      0.55
+    ],
+    "PI_GPIO17": [
+      0.55
+    ],
+    "PI_GPIO18": [
+      0.55
+    ],
+    "PI_GPIO2": [
+      0.55
+    ],
+    "PI_GPIO22": [
+      0.55
+    ],
+    "PI_GPIO23": [
+      0.55
+    ],
+    "PI_GPIO3": [
+      0.55
+    ],
+    "PI_GPIO8": [
+      0.55
+    ],
+    "PI_GPIO9": [
+      0.55
+    ]
+  },
+  "solder_face_contacts": [
+    {
+      "reference": "J11",
+      "pin": "2",
+      "net": "+5V",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        3
+      ]
+    },
+    {
+      "reference": "J11",
+      "pin": "4",
+      "net": "GND",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        24,
+        25
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "1",
+      "net": "JUCA_SDA",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        55
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "10",
+      "net": "JUCA_GPIO48",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        49
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "11",
+      "net": "JUCA_GPIO47",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        47
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "12",
+      "net": "JUCA_GPIO46",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        45
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "13",
+      "net": "JUCA_GPIO3",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        33
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "2",
+      "net": "JUCA_SCL",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        53
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "3",
+      "net": "JUCA_TXD0",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        57
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "4",
+      "net": "JUCA_RXD0",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        51
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "5",
+      "net": "JUCA_GPIO38",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        41
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "6",
+      "net": "JUCA_GPIO37",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        39
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "7",
+      "net": "JUCA_GPIO36",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        37
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "8",
+      "net": "JUCA_GPIO35",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        35
+      ]
+    },
+    {
+      "reference": "J5",
+      "pin": "9",
+      "net": "JUCA_GPIO45",
+      "required_face": "F.Cu",
+      "same_face_track_indices": [
+        43
+      ]
+    },
+    {
+      "reference": "JP1",
+      "pin": "1",
+      "net": "JUCA_SDA",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        56
+      ]
+    },
+    {
+      "reference": "JP1",
+      "pin": "2",
+      "net": "PI_GPIO2",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        118
+      ]
+    },
+    {
+      "reference": "JP10",
+      "pin": "1",
+      "net": "JUCA_GPIO48",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        50
+      ]
+    },
+    {
+      "reference": "JP10",
+      "pin": "2",
+      "net": "PI_GPIO18",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        112
+      ]
+    },
+    {
+      "reference": "JP11",
+      "pin": "1",
+      "net": "JUCA_GPIO47",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        48
+      ]
+    },
+    {
+      "reference": "JP11",
+      "pin": "2",
+      "net": "PI_GPIO13",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        86
+      ]
+    },
+    {
+      "reference": "JP12",
+      "pin": "1",
+      "net": "JUCA_GPIO46",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        46
+      ]
+    },
+    {
+      "reference": "JP12",
+      "pin": "2",
+      "net": "PI_GPIO23",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        138
+      ]
+    },
+    {
+      "reference": "JP13",
+      "pin": "1",
+      "net": "JUCA_GPIO3",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        34
+      ]
+    },
+    {
+      "reference": "JP13",
+      "pin": "2",
+      "net": "PI_GPIO17",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        154
+      ]
+    },
+    {
+      "reference": "JP2",
+      "pin": "1",
+      "net": "JUCA_SCL",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        54
+      ]
+    },
+    {
+      "reference": "JP2",
+      "pin": "2",
+      "net": "PI_GPIO3",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        164
+      ]
+    },
+    {
+      "reference": "JP3",
+      "pin": "1",
+      "net": "JUCA_TXD0",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        58
+      ]
+    },
+    {
+      "reference": "JP3",
+      "pin": "2",
+      "net": "PI_GPIO15",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        97
+      ]
+    },
+    {
+      "reference": "JP4",
+      "pin": "1",
+      "net": "JUCA_RXD0",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        52
+      ]
+    },
+    {
+      "reference": "JP4",
+      "pin": "2",
+      "net": "PI_GPIO14",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        91
+      ]
+    },
+    {
+      "reference": "JP5",
+      "pin": "1",
+      "net": "JUCA_GPIO38",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        42
+      ]
+    },
+    {
+      "reference": "JP5",
+      "pin": "2",
+      "net": "PI_GPIO8",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        178
+      ]
+    },
+    {
+      "reference": "JP6",
+      "pin": "1",
+      "net": "JUCA_GPIO37",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        40
+      ]
+    },
+    {
+      "reference": "JP6",
+      "pin": "2",
+      "net": "PI_GPIO9",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        188
+      ]
+    },
+    {
+      "reference": "JP7",
+      "pin": "1",
+      "net": "JUCA_GPIO36",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        38
+      ]
+    },
+    {
+      "reference": "JP7",
+      "pin": "2",
+      "net": "PI_GPIO11",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        75
+      ]
+    },
+    {
+      "reference": "JP8",
+      "pin": "1",
+      "net": "JUCA_GPIO35",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        36
+      ]
+    },
+    {
+      "reference": "JP8",
+      "pin": "2",
+      "net": "PI_GPIO10",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        62
+      ]
+    },
+    {
+      "reference": "JP9",
+      "pin": "1",
+      "net": "JUCA_GPIO45",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        44
+      ]
+    },
+    {
+      "reference": "JP9",
+      "pin": "2",
+      "net": "PI_GPIO22",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        127
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "10",
+      "net": "PI_GPIO15",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        98,
+        100
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "11",
+      "net": "PI_GPIO17",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        153
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "12",
+      "net": "PI_GPIO18",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        105,
+        111
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "15",
+      "net": "PI_GPIO22",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        128
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "16",
+      "net": "PI_GPIO23",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        137
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "19",
+      "net": "PI_GPIO10",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        67
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "2",
+      "net": "+5V",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        6,
+        14
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "21",
+      "net": "PI_GPIO9",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        189
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "23",
+      "net": "PI_GPIO11",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        74
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "24",
+      "net": "PI_GPIO8",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        177
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "3",
+      "net": "PI_GPIO2",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        114
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "33",
+      "net": "PI_GPIO13",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        84
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "4",
+      "net": "+5V",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        15,
+        21
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "5",
+      "net": "PI_GPIO3",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        162
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "8",
+      "net": "PI_GPIO14",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        90
+      ]
+    },
+    {
+      "reference": "JPI1",
+      "pin": "9",
+      "net": "GND",
+      "required_face": "B.Cu",
+      "same_face_track_indices": [
+        30
+      ]
+    }
+  ],
+  "routing_findings": {
+    "non_0_45_segments_outside_pads": [],
+    "turns_over_45_outside_pads_vias": [],
+    "dangling_endpoint_candidates": [],
+    "duplicate_segments": [],
+    "zero_length_segments": [],
+    "one_sided_via_candidates": [],
+    "pads_missing_solder_face_contact": []
+  },
+  "native_reports": {
+    "drc": {
+      "status": "PASS",
+      "count": 0,
+      "types": {},
+      "version": "9.0.8",
+      "report": "Hardware\\Juca_PiZero2_Shield\\R05\\verificacao\\DRC_R05.json"
+    },
+    "erc": {
+      "status": "PASS",
+      "count": 0,
+      "types": {},
+      "version": "9.0.8",
+      "report": "Hardware\\Juca_PiZero2_Shield\\R05\\verificacao\\ERC_R05.json"
+    }
+  },
+  "limits": [
+    "No clearance, short-circuit or full geometric-connectivity computation.",
+    "Dangling-end checks use same-net copper contact candidates, not a connectivity proof.",
+    "Solder-face checks require a directly touching same-net track on the intended solder side; they do not assume plating through connector holes or prove full nonplated-board connectivity.",
+    "Two-sided via copper contact still requires a physical wire/rivet soldered on both faces; plastic-body, solder-fillet and assembly-height clearance are not checked.",
+    "Turn checks cover degree-two endpoint junctions outside pads/vias; not every geometric junction.",
+    "Does not identify all redundant detours, overlapping segments or cycles.",
+    "Provided native reports are not rerun; caller must ensure reports were generated for this board.",
+    "No Gerber/Excellon, machine process, current, mechanical mating or physical validation."
+  ]
+}

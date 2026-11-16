@@ -1,0 +1,194 @@
+{
+  "revision": "R05",
+  "date": "2026-11-16",
+  "native_tool": "KiCad 9.0.8",
+  "jp13_destination": "GPIO17 / JPI1 pin 11; JPI1 pin 18 unconnected",
+  "scope": "CAD, local libraries, pin mapping, native and bounded verification reports, manufacturing exports. Excludes narrative documentation, previews, editor state and automatic backups.",
+  "files": [
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-B_Cu.gbl",
+      "bytes": 14228,
+      "sha256": "e49784111dbd39aaf790f4aae075faeccb6daca01d5ee2483d926da39b11cdd9"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-B_Mask.gbs",
+      "bytes": 3092,
+      "sha256": "714dfe117951b8ce3cdbeedfbf2b3ec3a0b1849024d773d624883c77a6682b72"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-B_Silkscreen.gbo",
+      "bytes": 963,
+      "sha256": "686f541fe028f0a67583c9291ab2a2470bfeb70bf4f195cca3d6430ae572c3ea"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-drl_map.svg",
+      "bytes": 88838,
+      "sha256": "82e21e4bd8e75abfe24f79f9db939d006fd57a1aca5d5c2d87cbb75df6b15080"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-Edge_Cuts.gm1",
+      "bytes": 725,
+      "sha256": "5705e7c6eb55eb0bc1984e2a818626b2da5a7732d295e51e21a6936d90b80680"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-F_Cu.gtl",
+      "bytes": 12963,
+      "sha256": "7a806ab8a18c8fc2ef3839854b36acec56985700c06b136e8ea5fc5fad671fde"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-F_Mask.gts",
+      "bytes": 3092,
+      "sha256": "eae86847c4bb53a711f816486395da7c6800cccfe66cb27b2bca6ac637170765"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-F_Silkscreen.gto",
+      "bytes": 13052,
+      "sha256": "7bf23052296f504c9aa66ea4e7be596fbc684939fe57c60303b1a5297dc25c3a"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05-job.gbrjob",
+      "bytes": 2621,
+      "sha256": "9505ad6da54ba8e7e0029b6265ce3baf6a66d8802645ab85a682d77d6e919f22"
+    },
+    {
+      "path": "fabricacao/Juca_PiZero2_Shield_R05.drl",
+      "bytes": 2680,
+      "sha256": "59f19c95a2ecec3cce5286f6ce72c6f7956637df21bbfcd785e9821604efd5ee"
+    },
+    {
+      "path": "fabricacao/relatorio_furacao_R05.txt",
+      "bytes": 792,
+      "sha256": "0d29e480f980e9072b703128df0c6c58309d01c5bd293e7c2b998b47cd1379ee"
+    },
+    {
+      "path": "fp-lib-table",
+      "bytes": 137,
+      "sha256": "f638521b1c7bf3035023146c258e86c861827a6b0586051b420caeadf64a9eb3"
+    },
+    {
+      "path": "geometria_e_conexoes.json",
+      "bytes": 72899,
+      "sha256": "2f3c5809a9b223ef913c71550a759ff8549432d1e13b93ae92ee4f366e93e209"
+    },
+    {
+      "path": "Juca_PiZero2_Shield_R05.kicad_pcb",
+      "bytes": 151131,
+      "sha256": "19188e2a967ff88cd83714f2d6aae1a4f16525704c54c818b5c4c1602b44df3d"
+    },
+    {
+      "path": "Juca_PiZero2_Shield_R05.kicad_pro",
+      "bytes": 9746,
+      "sha256": "b7f0162b447cc4214fa8c7a7086fcac20941111cb30812c60107e8c3ee04d468"
+    },
+    {
+      "path": "Juca_PiZero2_Shield_R05.kicad_sch",
+      "bytes": 66593,
+      "sha256": "e7e3b70d45c6fe7e6d5b52b2bb81fc34a8ec5fea1d4fbd62c46d18bfcfa2f571"
+    },
+    {
+      "path": "JucaShield.kicad_sym",
+      "bytes": 10403,
+      "sha256": "78aa3cfbf0615eab173f2b5d19f72edc93ab1159a59cdc88d228aa21c7860bfe"
+    },
+    {
+      "path": "JucaShield.pretty/H1_Mount.kicad_mod",
+      "bytes": 1360,
+      "sha256": "95c6b6b7f9283415c54d60b1aad6b55248f1524101df59b1a3dbddde601540dd"
+    },
+    {
+      "path": "JucaShield.pretty/H2_Mount.kicad_mod",
+      "bytes": 1360,
+      "sha256": "2ac2a8eaa9032f25f2886157f053f226fb8fc29d9dca6870b6dd512f82a66119"
+    },
+    {
+      "path": "JucaShield.pretty/H3_Mount.kicad_mod",
+      "bytes": 1360,
+      "sha256": "fc9baa648369f92a17685a5ad5b70512120f66b2ee85b5e7039f9fcff5378961"
+    },
+    {
+      "path": "JucaShield.pretty/H4_Mount.kicad_mod",
+      "bytes": 1360,
+      "sha256": "e11c9ccaf1b3bc87dec429052bfea1739951faa5a7820d61b33775829d4928e9"
+    },
+    {
+      "path": "JucaShield.pretty/H5_Mount.kicad_mod",
+      "bytes": 1364,
+      "sha256": "5331b8a80ad2ff646e42a79ab07bc3cef84aced6560640a02ad1a4b1aaf73446"
+    },
+    {
+      "path": "JucaShield.pretty/H6_Mount.kicad_mod",
+      "bytes": 1364,
+      "sha256": "0f19c2a988b4f865a872809effc72ac91db3c3aa3c7855e0378f4d7fdb3e4ee5"
+    },
+    {
+      "path": "JucaShield.pretty/H7_Mount.kicad_mod",
+      "bytes": 1364,
+      "sha256": "928f7e3c6acc98def07f6a6b2ffdfe839117105a39425c1a0699b307f11ed874"
+    },
+    {
+      "path": "JucaShield.pretty/H8_Mount.kicad_mod",
+      "bytes": 1364,
+      "sha256": "925885ebd22b7e43a1111cbaf979d9a5b8be0e4df482dcb31fb0b605b1cd8dcd"
+    },
+    {
+      "path": "JucaShield.pretty/Juca_J11_1x04_Bottom.kicad_mod",
+      "bytes": 2569,
+      "sha256": "41ab93eeb64809692c946be9732cd9981e5d230a8110cdeebc86b55740052f78"
+    },
+    {
+      "path": "JucaShield.pretty/Juca_J5_1x13_Bottom.kicad_mod",
+      "bytes": 4198,
+      "sha256": "fad06f9bee745e4ca6a57511940cca352e9cb22005bf3ca53c36420aaf575151"
+    },
+    {
+      "path": "JucaShield.pretty/Jumper_PTH_1x02_P2_54mm.kicad_mod",
+      "bytes": 2116,
+      "sha256": "a50b69cc97feca0161ee528641338cd57e3da80bd4e55df8015c044ff0a31ff5"
+    },
+    {
+      "path": "JucaShield.pretty/Pi_2x20_FaceDown.kicad_mod",
+      "bytes": 9118,
+      "sha256": "8a4f7053f03bd704ea223f6bd9f549ee1541a53d1652320903483d6daa6b3a6b"
+    },
+    {
+      "path": "mapeamento_pinos.json",
+      "bytes": 5304,
+      "sha256": "ae3482b6b2c5cd515f33e01213c553b34d0f7ef180675ecc932343116913ec27"
+    },
+    {
+      "path": "pinagem_R05.csv",
+      "bytes": 1073,
+      "sha256": "23e6700cec7a14151276376fffd963d5c7c6cb3bb1c3273270a15518a0a338f0"
+    },
+    {
+      "path": "sym-lib-table",
+      "bytes": 181,
+      "sha256": "c9a48ef6dd6fa8c938ee54c1a0a868b7f31b34ec7c7d26c1872206bee0e44719"
+    },
+    {
+      "path": "verificacao/DRC_R05.json",
+      "bytes": 374,
+      "sha256": "26c042e207d474adb18617bec739dc277279763cbc441b1950f9529f9dccb68d"
+    },
+    {
+      "path": "verificacao/ERC_R05.json",
+      "bytes": 462,
+      "sha256": "8a8a741430dc68ed36f5b8c3e339e4c7082b970216ceac8d0a1fe139581ef96a"
+    },
+    {
+      "path": "verificacao/ESTRUTURA_R05.json",
+      "bytes": 13768,
+      "sha256": "5bd80fe8ea3ff6e8a3ae80bff942659e59e6818139b738ba9a1365e2d64aafee"
+    },
+    {
+      "path": "verificacao/FABRICACAO_R05.json",
+      "bytes": 4706,
+      "sha256": "94e579d403f6093ce67378eae5ed0963481b794dbb66901886bb31313a4cb196"
+    },
+    {
+      "path": "verificacao/netlist_R05.net",
+      "bytes": 23480,
+      "sha256": "43853308416c81c98b9d87460fb7d005faa6f243a2e7cbd65d34c2fd82886d5f"
+    }
+  ]
+}

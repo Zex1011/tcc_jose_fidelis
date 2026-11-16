@@ -1,0 +1,74 @@
+(footprint "H8_Mount"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "H8"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "5621e5b6-fbea-4dc5-8138-a93b155ace74")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "NPTH 2.75 mm"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "39161f92-27b0-46a4-973c-19ae55115858")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "681d8dc0-92a2-4822-b5d1-268f0459f300")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "36e471e5-a902-4caa-90b4-00849f996517")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr board_only exclude_from_pos_files exclude_from_bom)
+	(fp_circle
+		(center 0 0)
+		(end 3.1 0)
+		(stroke
+			(width 0.12)
+			(type default)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "2a19d29a-f36e-478e-9401-56a87a63577e")
+	)
+	(pad "" np_thru_hole circle
+		(at 0 0)
+		(size 2.75 2.75)
+		(drill 2.75)
+		(layers "*.Cu")
+		(uuid "1d48f7aa-49cb-43d2-9c0f-2150c165718c")
+	)
+	(embedded_fonts no)
+)

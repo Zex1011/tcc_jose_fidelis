@@ -1,66 +1,92 @@
 # Shield Juca / Raspberry Pi Zero 2 W
 
-**Revisão de referência: R02, recebida e incorporada em 04/11/2026. Adaptações e integração física pendentes.**
+**Revisão CAD atual: [R05](R05/README.md)**, com Raspberry voltado para baixo, jumpers PTH com capinhas e furação elétrica de 1 mm. O roteamento está concluído, com DRC/ERC sem ocorrências. A R04 recebida em 16/11/2026 e a R02 permanecem preservadas como histórico. Fabricação, montagem e integração física com o carrinho ainda precisam de validação.
 
-Esta é a placa adaptadora prevista entre o Raspberry e a placa Juca do carrinho. Ela encaminha TX/RX, +5 V e GND e oferece pontos de fixação. A câmera continua conectada diretamente ao CSI do Raspberry; o acionamento dos motores continua a cargo da Juca/ESP32.
+## Abrir a R05
 
-## Começar por aqui
+- [Projeto KiCad](R05/Juca_PiZero2_Shield_R05.kicad_pro), [esquemático](R05/Juca_PiZero2_Shield_R05.kicad_sch) e [PCB](R05/Juca_PiZero2_Shield_R05.kicad_pcb).
+- [Montagem, pinagem, furação e estado de verificação](R05/README.md).
+- [Comparação visual da orientação do Raspberry](R05/documentacao/orientacao_R04_R05.png).
+- [Prévia do roteamento nas duas faces](R05/documentacao/roteamento_R05.png), [Gerbers e furação](R05/fabricacao/) e [relatórios de verificação](R05/verificacao/README.md).
 
-- [Análise da R02 e plano de integração](analise/REVISAO_R02.md): o que foi conferido, diferenças em relação ao software e decisões para a próxima revisão.
-- [Guia de montagem original, com vistas e molde](R02/Guia_de_montagem_R02.pdf).
-- [Projeto KiCad](R02/Juca_PiZero2_Shield_R02.kicad_pro), [esquemático](R02/Juca_PiZero2_Shield_R02.kicad_sch) e [PCB](R02/Juca_PiZero2_Shield_R02.kicad_pcb).
-- [README original](R02/README.md) e [arquivos de fabricação recebidos](R02/fabricacao/).
+A R05 mantém o CSI oposto a J5, espelha a montagem do Pi e desloca seu conjunto 5,5 mm para a direita e 5 mm para baixo. JP1–JP12 e a alimentação conservam o mapeamento da R04; **JP13 passa de GPIO24/pino físico 18 para GPIO17/pino físico 11 do Raspberry**, mantendo GPIO3 da Juca como origem. O pino físico 18 fica sem conexão na shield. Seus arquivos devem ser usados em conjunto; as figuras, os moldes e os Gerbers da R04 abaixo documentam exclusivamente a revisão original.
 
-![Primeira página do guia original: disposição da placa e suas conexões](analise/guia_montagem_pagina1.png)
+## R04 recebida — referência histórica
 
-A imagem acima é uma prévia renderizada do PDF original. Para o molde em escala, use a página 3 do PDF, imprima a 100% e confira a barra de 50 mm; a imagem do README não é um molde de fabricação.
+A shield faz a interligação entre o Raspberry e a placa Juca do carrinho: encaminha alimentação e sinais e oferece suporte mecânico. A câmera permanece no CSI do Raspberry, e o acionamento dos motores fica na Juca/ESP32. A R04 tem **13 linhas de sinal selecionáveis**, cobre nas duas faces e **23 vias**.
 
-## Conexões essenciais
+### Arquivos originais da R04
 
-Os números do Raspberry abaixo são **pinos físicos** do conector. Os nomes `ESP_TX` e `ESP_RX` são vistos do lado do ESP32.
+- [Projeto KiCad](R04/Juca_PiZero2_Shield_R04.kicad_pro), [esquemático](R04/Juca_PiZero2_Shield_R04.kicad_sch) e [PCB](R04/Juca_PiZero2_Shield_R04.kicad_pcb).
+- [Guia original de montagem e fabricação, com seis páginas](R04/Guia_de_montagem_R04.pdf).
+- [README original](R04/README.md), [pinagem CSV](R04/pinagem_R04.csv) e [mapeamento JSON](R04/mapeamento_pinos.json).
+- [Gerbers e Excellon](R04/fabricacao/).
+- [Análise da R04 e comparação com a R02](analise/REVISAO_R04.md).
 
-| Juca | Shield / Raspberry | Função |
+Abra o `.kicad_pro` com KiCad 7 ou posterior, conforme o pacote recebido. Mantenha juntos os fontes, `JucaShield.kicad_sym`, `JucaShield.pretty` e as tabelas locais de bibliotecas; elas usam `${KIPRJMOD}`. Para adaptar o circuito, trabalhe em uma nova revisão e regenere suas saídas de fabricação.
+
+![Vista da R04: duas faces de cobre, seletores e montagem do Raspberry](analise/guia_montagem_R04_pagina1.png)
+
+A imagem é uma prévia do guia original. O molde está na **página 5 do PDF da R04**: imprimir a 100% e conferir a barra de 50 mm. A prévia deste README não serve como máscara ou molde de fabricação.
+
+## Conexões da R04 com o FollowBot — referência histórica
+
+**Na R04, JP1 a JP13 começam abertos (DNP, sem componente montado).** São espaços para resistores/jumpers de **0 Ω em encapsulamento 1206**, que exigem soldagem. O número de cada JP corresponde ao pino de J5. Para a montagem com headers PTH e capinhas removíveis, seguir as [instruções da R05](R05/README.md#jumpers-pth-e-conexões).
+
+| Ligação na R04 | Destino no Raspberry | Condição |
 |---|---|---|
-| J5-3, TX | JPI1-10, GPIO15 / RX | ESP → Pi |
-| J5-4, RX | JPI1-8, GPIO14 / TX | Pi → ESP |
-| J11-2, +5 V | JPI1-2 e JPI1-4 | Alimentação encaminhada da Juca |
-| J11-4, GND | JW3 → JPI1-9 | Terra comum; **JW3 obrigatório** |
+| J5-3, TXD0 do ESP → JP3 | Pino físico 10 / GPIO15, RX | Montar JP3 para receber os ACKs do ESP |
+| J5-4, RXD0 do ESP ← JP4 | Pino físico 8 / GPIO14, TX | Montar JP4 para transmitir comandos ao ESP |
+| J11-2, +5 V | Pinos físicos 2 e 4 | Ligação permanente |
+| J11-4, GND | Pino físico 9 | Ligação permanente por cobre e vias, **sem JW3** |
 
-A correspondência física dos pinos UART do Pi segue a [documentação oficial Raspberry Pi](https://www.raspberrypi.com/documentation/computers/configuration.html#configuring-uarts). A identificação dos pinos da Juca vem do pacote recebido e ainda precisa ser confrontada com a revisão real do carrinho.
+O protocolo atual do FollowBot exige transmissão de comandos e retorno de ACK. Portanto, sua integração UART requer **JP3 e JP4**, além da configuração das duas pontas. Os GPIOs ESP indicados no mapeamento recebido são **43/TX e 44/RX, do ESP32-S3**; a correspondência com a Juca instalada ainda precisa ser conferida. Os demais seletores devem permanecer abertos enquanto seu uso não estiver definido.
 
-J11-1 (+BATT), J11-3 (+3,3 V) e os demais pinos dos conectores não têm trilhas de interligação. O pino físico 6 do Pi também fica sem trilha nesta shield. A R02 possui cobre elétrico apenas em B.Cu, 24 segmentos de trilha e um jumper de fio isolado no topo. Não inclui regulador, conversor USB–serial, conversor de níveis ou gerenciamento de fontes.
+J11-1 (+BATT), J11-3 (+3,3 V), o pino físico 6 do Raspberry e os pinos físicos 27/28 não recebem interligação na shield. O [mapeamento completo](R04/pinagem_R04.csv) inclui I²C, SPI e PWM/GPIO como possibilidades; habilitá-las depende da variante do ESP32-S3, dos níveis elétricos e do firmware. O fechamento de um JP apenas conecta a linha, sem configurar seu periférico.
 
-## Como abrir e preservar a revisão
+A alimentação não passa pelos seletores: **deixar todos os JPs abertos não isola os 5 V nem o GND**. A R04 continua sem regulador, conversor de níveis ou gerenciamento de fontes. Confirmar a alimentação da Juca e sua convivência com o USB do computador antes do uso conjunto.
 
-Abra o `.kicad_pro` com KiCad 7 ou posterior, conforme o guia recebido, mantendo juntos os arquivos em `R02/`. As bibliotecas locais usam `${KIPRJMOD}` e acompanham o projeto. Para alterações futuras, crie uma nova revisão; salve nela inclusive os arquivos que o KiCad converter ao migrar de versão.
+## Comparação histórica R02 e R04
+
+| Característica | R02 | R04 |
+|---|---|---|
+| Dimensões | 48 × 88 mm | 48 × 88 mm |
+| Cobre elétrico | B.Cu | F.Cu e B.Cu |
+| Sinais | UART ligada diretamente | 13 percursos com seletores 0 Ω 1206, inicialmente abertos |
+| Terra | Fio JW3 obrigatório | Trilhas e vias, sem JW3 |
+| Vias | Nenhuma | 23; ilha de 1,8 mm e furo de 0,6 mm |
+| Soldagem dos conectores | Cobre inferior; J5/J11 exigem acesso sob o soquete | J5/J11 recebem trilhas em F.Cu; JPI1 em B.Cu |
+| Furação exportada | PTH e NPTH separados | Excellon único, 88 furos |
+
+A **R03 não foi recebida**. As comparações com R03 no pacote original da R04 são informações fornecidas junto ao projeto; a comparação local usa R02 e R04. Em fabricação CNC sem metalização, as vias da R04 precisam de um processo de ligação elétrica entre as faces; perfurar não cria essa passagem.
+
+## Organização e integridade
 
 ```text
 Juca_PiZero2_Shield/
 ├── README.md
-├── origem/                    ZIP recebido, preservado
-├── R02/                       31 arquivos originais, sem alterações
-│   ├── *.kicad_pro / *.kicad_sch / *.kicad_pcb
-│   ├── JucaShield.kicad_sym / JucaShield.pretty/
-│   ├── Guia_de_montagem_R02.pdf
-│   └── fabricacao/
-└── analise/                   documentação e verificações do TCC
-    ├── REVISAO_R02.md
-    ├── manifesto_origem.json
-    ├── verificar_r02.py
-    ├── revisao_estrutural.json
-    └── guia_montagem_pagina1.png
+├── origem/       ZIPs originais R02 e R04
+├── R02/          31 arquivos originais preservados
+├── R04/          37 arquivos originais preservados
+├── R05/          adaptação: Pi invertido, jumpers PTH e novo roteamento
+└── analise/      análises, manifestos, verificadores e prévias
 ```
 
-O [manifesto de origem](analise/manifesto_origem.json) registra SHA-256 do ZIP e de cada arquivo extraído. A pasta externa do ZIP foi removida na extração; os bytes dos arquivos foram preservados. O `.gitattributes` desativa conversão de finais de linha nos originais, para preservar esses hashes também após checkout em outro sistema. O pacote não identifica claramente a autoria da placa; mantivemos seus documentos, nomes e referências, sem atribuir a criação da R02 ao autor do TCC.
+O [manifesto da R04](analise/manifesto_origem_R04.json) e o [manifesto da R02](analise/manifesto_origem.json) registram os hashes SHA-256 dos ZIPs e dos arquivos extraídos. Foi removida apenas a pasta externa de cada ZIP na extração; os bytes dos arquivos foram preservados. O `.gitattributes` impede conversão de finais de linha nos originais, inclusive após checkout em outro sistema.
 
-## Relação com o software
+As bibliotecas, documentos e relatórios recebidos fazem parte das respectivas revisões. As análises locais ficam em `analise/`. As fontes originais são preservadas sem atribuir a autoria das placas ao autor do TCC.
 
-O [FollowBot](../../followbot_mvp_audited/followbot_mvp_audited/README.md) já aceita uma porta serial configurável. A shield prevê UART pelo header, enquanto os perfis atuais usam exemplos de serial USB. Será necessário identificar a UART disponível no Ubuntu, confirmar os GPIOs do ESP ligados a J5 e integrar o firmware do carrinho. Os arquivos da placa não comprovam essa etapa.
-
-Para conferir novamente a integridade e a estrutura digital, a partir da raiz do repositório:
+Para repetir as verificações estruturais, a partir da raiz do repositório:
 
 ```powershell
+python Hardware/Juca_PiZero2_Shield/analise/verificar_r04.py
 python Hardware/Juca_PiZero2_Shield/analise/verificar_r02.py
 ```
 
-O verificador é somente de leitura por padrão. Seu escopo e as verificações que ainda dependem de KiCad e bancada estão na [análise](analise/REVISAO_R02.md).
+Os scripts são somente de leitura por padrão. Não substituem DRC/ERC nativo do KiCad nem testes de bancada. O verificador da R02 é específico da R02; o da R04 confere a nova organização de sinais e seletores.
+
+## Histórico e integração
+
+- [R02 original](R02/README.md), [guia da R02](R02/Guia_de_montagem_R02.pdf) e [análise da R02](analise/REVISAO_R02.md): referências históricas; a exigência de JW3 aplica-se à R02.
+- [Análise da R04](analise/REVISAO_R04.md): revisão recebida e pendências de integração identificadas nessa análise.
+- [FollowBot](../../followbot_mvp_audited/followbot_mvp_audited/README.md): o backend permite configurar uma porta serial, mas os perfis ainda usam exemplos USB. A UART no Ubuntu e o firmware real da Juca continuam pendentes de validação.

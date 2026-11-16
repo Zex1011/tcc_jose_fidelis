@@ -19,8 +19,9 @@ Este indice organiza os documentos por objetivo de uso.
 ## Hardware e integração com o carrinho
 
 - Organização do hardware: [Hardware](../../../Hardware/README.md)
-- Shield Juca/Pi R02, arquivos KiCad e guia: [documentação da placa](../../../Hardware/Juca_PiZero2_Shield/README.md)
-- Pinagem, alimentação, montagem e integração UART pendente: [análise da R02](../../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md)
+- Shield Juca/Pi R05, revisão de trabalho com Pi voltado para baixo e jumpers PTH: [arquivos e montagem](../../../Hardware/Juca_PiZero2_Shield/R05/README.md)
+- Pinagem e restrições elétricas herdadas: [análise da R04](../../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R04.md)
+- Acervo das revisões e histórico: [documentação da placa](../../../Hardware/Juca_PiZero2_Shield/README.md), [análise da R02](../../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md)
 
 ## Executar testes por perfil
 

@@ -43,12 +43,14 @@ O backend atual `Picamera2Camera` só deve ser usado se o hardware for compatív
 ESP32
 ```
 
-Os exemplos atuais usam USB/Serial. A shield Juca/Pi R02, incorporada em
-04/11/2026, prevê UART pelo header do Raspberry. O ESP32 permanece definido;
+Os exemplos atuais usam USB/Serial. A revisão de trabalho da shield Juca/Pi,
+R05, prevê UART pelo header do Raspberry com as capinhas de JP3/JP4 instaladas.
+O mapeamento recebido identifica ESP32-S3, GPIO43/TX e GPIO44/RX; confirmar a
+variante e as ligações na Juca instalada. O ESP32 permanece definido;
 o transporte físico e sua configuração ainda exigem integração. Em USB,
 verificar se abrir a serial provoca reset e qual `startup_delay_s` é adequado;
 em UART direta, confirmar os pinos e o comportamento efetivo de inicialização.
-Veja a [análise da shield](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
+Veja a [documentação da R05](../../Hardware/Juca_PiZero2_Shield/R05/README.md).
 
 ## 5. Tipo de locomoção — RESOLVIDO
 
@@ -270,16 +272,19 @@ Se futuramente imagens forem persistidas para análise, definir:
 
 Isso é particularmente relevante para um trabalho acadêmico envolvendo imagens de pessoas.
 
-## 21. Shield Juca / Raspberry Pi Zero 2 W — R02 INCORPORADA; INTEGRAÇÃO PENDENTE
+## 21. Shield Juca / Raspberry Pi Zero 2 W — R05 EM REVISÃO; INTEGRAÇÃO PENDENTE
 
-A [R02 original](../../Hardware/Juca_PiZero2_Shield/README.md) foi preservada com
-ZIP, fontes KiCad, guia de montagem e arquivos de fabricação. Antes da próxima
-revisão, confirmar o esquema/revisão da Juca, alimentação de 5 V e convivência
-com USB, conectores/espaçadores e processo de fabricação. JW3 é o retorno de
-terra obrigatório; o pacote industrial declara duas camadas e furos PTH,
-enquanto o guia descreve fabricação manual de uma face.
+A [R05](../../Hardware/Juca_PiZero2_Shield/R05/README.md) é a revisão de trabalho:
+Raspberry com a face dos componentes voltada para a shield e 13 jumpers PTH
+com capinhas removíveis, inicialmente abertos. R02 e R04 permanecem preservadas
+como histórico. O GND é permanente por trilhas/vias, sem o JW3 usado na R02.
+Confirmar o esquema/revisão da Juca, alimentação de 5 V e convivência com USB,
+conectores, espaçadores e fabricação/continuidade elétrica das vias. A nova
+montagem exige conferir a folga em altura entre o Pi e o fixador H3. As linhas
+adicionais dependem da variante do ESP32-S3 e não devem ser habilitadas sem uso
+definido; permanecem as [restrições elétricas da análise da R04](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R04.md).
 
-Para o software, identificar UART e GPIOs reais, integrar o acionamento e a
-parada do firmware existente e validar STOP/ACK antes de movimento. O roteiro
-e os limites da conferência digital estão na
-[revisão técnica](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R02.md).
+Para o software, conferir o mapeamento recebido e a UART real, fechar JP3/JP4
+com as capinhas para comandos e ACK, integrar o acionamento e a parada do
+firmware existente e validar STOP/ACK antes de movimento. Os relatórios
+recebidos da R04 não validam a montagem ou a fabricação da R05.
