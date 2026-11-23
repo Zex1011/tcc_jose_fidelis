@@ -2,7 +2,7 @@
 
 **Escopo:** shield Juca / Raspberry Pi Zero 2 W, com JP13 ligado a GPIO17/pino físico 11 do Raspberry. A revisão confronta a pinagem do projeto com documentos dos fabricantes e distingue verificações do CAD de condições que dependem da montagem e dos ensaios.
 
-Os arquivos de referência são o [esquemático](../Juca_PiZero2_Shield_R05.kicad_sch), a [PCB](../Juca_PiZero2_Shield_R05.kicad_pcb), a [pinagem CSV](../pinagem_R05.csv), o [mapeamento JSON](../mapeamento_pinos.json) e o [guia da R05](../README.md). A [R04 recebida](../../R04/README.md) permanece como fonte histórica para as conexões da Juca. **O esquemático completo da Juca e a identificação da variante física do ESP32-S3 não estão disponíveis no acervo consultado.** Assim, a correspondência J5–ESP abaixo conserva o mapeamento recebido e ainda requer conferência na placa real.
+Os arquivos de referência são o [esquemático](../Juca_PiZero2_Shield_R05.kicad_sch), a [PCB](../Juca_PiZero2_Shield_R05.kicad_pcb), a [pinagem CSV](../pinagem_R05.csv), o [mapeamento JSON](../mapeamento_pinos.json) e o [guia da R05](../README.md). A R04 recebida permanece no arquivo local como fonte histórica, fora do versionamento atual. **O esquemático completo da Juca e a identificação da variante física do ESP32-S3 não estão disponíveis no acervo consultado.** Assim, a correspondência J5–ESP abaixo conserva o mapeamento recebido e ainda requer conferência na placa real.
 
 ## Pinagem dos sinais
 
@@ -80,12 +80,14 @@ Cada rede roteada mantém uma única largura, inclusive entre F.Cu e B.Cu:
 
 | Rede / grupo | Antes desta revisão de layout | Valor aplicado |
 |---|---|---|
-| `PI_GPIO*` | 0,508 mm | 0,55 mm |
+| `PI_GPIO*` | 0,508 / 0,55 mm | 1,0 mm |
 | `JUCA_*` | 0,762 mm | 1,0 mm |
 | `+5V` | 1,0 / 1,8 mm | 2,0 mm |
 | `GND` | 1,8 mm | 2,0 mm |
 
-O percurso longitudinal dos 5 V foi redesenhado para retirar o estreitamento de 1 mm, contornando as reservas dos fixadores. A largura uniforme de 0,60 mm nos sinais do Pi foi avaliada, mas violava separações da geometria existente; 0,55 mm mantém o mínimo de 0,508 mm. Os valores foram registrados nas classes `Default`, `JucaSignals` e `Power` do projeto. Os jumpers separam as redes Juca/Pi e são o ponto onde os dois grupos de larguras se encontram.
+O percurso longitudinal dos 5 V mantém 2,0 mm e contorna as reservas dos fixadores. Na atualização de **23/11/2026**, o novo roteamento dos sinais usa **1,0 mm**, com **isolamento mínimo de 0,31 mm entre redes diferentes**. Os valores foram registrados nas classes `Default`, `JucaSignals` e `Power` do projeto. O mínimo global de trilha passou a 1,0 mm, para que o DRC detecte novos estreitamentos. Borda, separação de furos e cobre–furo continuam com mínimos de 0,508 mm; as áreas de reserva mecânica foram preservadas.
+
+O limite de **0,31 mm** considera a informação de clearance mínimo de **12 mils** e recomendação de **20 mils**. Um mil corresponde a 0,0254 mm: 12 mils = 0,3048 mm e 20 mils = 0,508 mm. O mínimo foi arredondado para cima, evitando usar 0,30 mm. Essa informação foi fornecida durante a revisão; o trecho original do manual ainda não foi incorporado ao repositório, portanto não se declara sua verificação documental independente. A largura efetiva da fresa/ponta, a profundidade de corte e as tolerâncias da máquina ainda precisam ser confirmadas na preparação CAM.
 
 Seis pontos de passagem entre faces foram corrigidos por proximidade do contorno nominal dos conectores:
 
@@ -100,7 +102,7 @@ Seis pontos de passagem entre faces foram corrigidos por proximidade do contorno
 
 Essas folgas usam o contorno nominal dos footprints: F.Fab nos jumpers e a representação em serigrafia nos headers JPI1/J5/J11, que ainda não possuem modelos 3D dos componentes escolhidos. Na via GPIO17, o desvio exigiu pequenos ajustes nas trilhas F.Cu de GND e GPIO22, preservando seus destinos e larguras. A via GND mantém 0,70 mm entre sua ilha e a borda inferior da placa. As alterações liberam esses contornos nominais; a dimensão real dos componentes e o volume dos filetes de solda ainda precisam ser conferidos na montagem.
 
-A análise das 41 vias contra os 16 contornos nominais resultou em 656 comparações, sem sobreposições e com folga mínima de 0,26 mm. Também foi ampliado o afastamento dos 5 V em relação à reserva circular de H1: a menor distância adicional à reserva de raio 3,5 mm passou de aproximadamente 0,016 para 0,148 mm. A reserva deve ser confrontada com o fixador efetivamente utilizado.
+A análise das 41 vias contra os 16 contornos nominais não encontrou sobreposições; a folga mínima nominal é de 0,26 mm. Os 5 V mantêm aproximadamente 0,160 mm adicionais em relação à reserva circular de H1, de raio 3,5 mm. A reserva deve ser confrontada com o fixador efetivamente utilizado.
 
 A numeração das colunas 1–13 foi deslocada para a borda superior, acima de J5, para não sobrepor os furos das vias. Cada número identifica a mesma coluna de J5 e do respectivo JP. A anotação de montagem J5/Juca permanece em Dwgs.User, na margem direita.
 
@@ -110,6 +112,14 @@ As trilhas usam trechos horizontais, verticais ou diagonais de 45°. Nas junçõ
 
 Os relatórios estão em [verificacao](../verificacao/README.md), e a [vista conjunta do roteamento](roteamento_R05.png) apresenta as duas faces e sua sobreposição. Os arquivos de [fabricação](../fabricacao/) são exportados da mesma revisão. A conferência digital não substitui os ensaios e medições de montagem descritos acima.
 
-A chegada de `PI_GPIO2` ao pino 2 de JP1 foi simplificada em B.Cu: uma diagonal de 45° liga diretamente o corredor em X = 5,5 mm à ilha do jumper, mantendo 0,55 mm de largura. O percurso dessa rede diminuiu aproximadamente 4,53 mm. Foi removido um segmento redundante de 0,0656 mm que permanecia sobreposto à trilha vertical; a conectividade, os pads e as vias foram preservados.
+Na revisão de 23/11/2026, foram identificados **17 segmentos residuais de 0,55 mm** nas redes GPIO9, GPIO10, GPIO11, GPIO13, GPIO14, GPIO15, GPIO17, GPIO18 e GPIO22. Eram trechos curtos, quase todos contidos nas ilhas ou vias. Todos passaram a 1,0 mm. O layout recebido mantinha a conectividade, mas o DRC com a regra anterior apontava 84 violações de clearance e uma invasão de reserva mecânica.
 
-Resultados registrados em 16/11/2026: **190 segmentos, 41 vias; DRC/ERC sem violações, nenhuma conexão aberta ou divergência com o esquemático; 408 verificações estruturais e 29 verificações das exportações aprovadas**. Os 132 furos exportados correspondem ao CAD. Os relatórios explicitam o alcance de cada verificação.
+Com o critério de 0,31 mm, foram feitos ajustes locais, incluindo o recuo das linhas superiores junto de J5 e o desvio da diagonal de GPIO3 para liberar a reserva de H6. A via de GPIO23 próxima de X = 5,9 e Y = 23 mm foi deslocada para **X = 5,6 e Y = 23 mm**, liberando aproximadamente **0,40 mm** de separação em relação à trilha GPIO18. Essa é outra via da mesma rede, distinta da passagem junto de JPI1 apresentada na tabela acima.
+
+Para atender ao mínimo informado de 12 mils sem arredondar para baixo, foram realizados microajustes adicionais nas trilhas e em duas vias: GPIO10 passou de **(20,70; 36,60)** para **(20,70; 36,65) mm**, e GPIO22 passou de **(23,60; 17,20)** para **(23,65; 17,25) mm**. A quantidade e as dimensões dos furos foram mantidas; as coordenadas das três vias deslocadas nesta revisão foram atualizadas no Excellon.
+
+Os ajustes preservam o mapeamento dos pinos, o posicionamento dos componentes, os furos de fixação, as larguras de alimentação e as reservas dos parafusos. Nenhuma exclusão de DRC foi adicionada para ocultar os achados.
+
+Em uma atualização posterior do mesmo dia, o trecho de `PI_GPIO8` em F.Cu foi simplificado de 13 para 3 segmentos. A diagonal liga **(3,50; 36,50)** a **(8,50; 41,50) mm**, na referência local da placa, mantendo 45° e largura de 1,0 mm. Essa mudança reduziu o total de 195 para 185 segmentos, sem alterar pinagem, vias, componentes, furos, reservas ou regras de projeto. As prévias e os arquivos de fabricação foram novamente exportados a partir dessa geometria.
+
+Resultados registrados em 23/11/2026: **185 segmentos, 41 vias; DRC/ERC sem violações, nenhuma conexão aberta ou divergência com o esquemático; 435 verificações estruturais e 29 verificações das exportações aprovadas**. Os 132 furos exportados correspondem ao CAD. Os relatórios explicitam o alcance de cada verificação.

@@ -1,5 +1,2 @@
-# Preservar os bytes recebidos inclusive em checkouts Windows/Linux.
-R02/** -text
-R04/** -text
+# Preservar os bytes do CAD e das exportacoes em checkouts Windows/Linux.
 R05/** -text
-origem/*.zip -text

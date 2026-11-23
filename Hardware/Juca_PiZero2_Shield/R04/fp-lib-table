@@ -1,3 +1,0 @@
-(fp_lib_table
- (lib (name "JucaShield")(type "KiCad")(uri "${KIPRJMOD}/JucaShield.pretty")(options "")(descr "Footprints locais R04"))
-)

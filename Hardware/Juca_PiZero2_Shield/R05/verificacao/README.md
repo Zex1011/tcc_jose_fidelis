@@ -1,6 +1,8 @@
 # Verificação da R05
 
-Relatórios gerados em 16/11/2026 com **KiCad 9.0.8**, a partir dos fontes desta revisão. O projeto usa clearance mínimo de 0,508 mm, vias de 2,0/1,0 mm e furos elétricos de 1,0 mm. As regras ficam no `.kicad_pro`, que deve acompanhar a PCB.
+Relatórios gerados em 23/11/2026 com **KiCad 9.0.8**, a partir dos fontes desta revisão. O projeto usa clearance mínimo de **0,31 mm entre cobres de redes diferentes**, largura mínima de trilha de **1,0 mm**, vias de 2,0/1,0 mm e furos elétricos de 1,0 mm. As restrições cobre–borda, cobre–furo e furo–furo permanecem em 0,508 mm. As regras ficam no `.kicad_pro`, que deve acompanhar a PCB.
+
+A geometria conferida contém **185 segmentos e 41 vias**, incluindo a simplificação de `PI_GPIO8` em F.Cu de 13 para 3 segmentos. DRC/ERC e os relatórios estrutural e de fabricação foram atualizados para essa versão; os hashes no manifesto identificam os fontes e as exportações correspondentes.
 
 - `DRC_R05.json`: regras geométricas, conexões abertas e correspondência com o esquemático.
 - `ERC_R05.json`: regras elétricas do esquemático.
@@ -23,7 +25,11 @@ python Hardware/Juca_PiZero2_Shield/analise/verificar_fabricacao_r05.py --output
 
 Os dois verificadores Python usam somente a biblioteca padrão. O verificador estrutural **lê**, mas não executa novamente, os relatórios nativos fornecidos: gere DRC/ERC e a netlist depois de qualquer mudança nos fontes.
 
-As larguras verificadas são 0,55 mm em `PI_GPIO*`, 1,0 mm em `JUCA_*` e 2,0 mm em `+5V`/`GND`. A face de chegada exigida é F.Cu para J5/J11 e B.Cu para JPI1/JP1–JP13. Esse teste procura contato geométrico direto com cobre da mesma rede na face indicada; não pressupõe metalização do furo nem comprova o acesso físico do ferro de solda.
+As posições, os furos, a orientação e a pinagem esperados da R05 estão declarados explicitamente no verificador. Sua execução não depende dos arquivos R02/R04, que são mantidos apenas no arquivo local e não acompanham novos clones. A conferência estrutural atual inclui os contatos sem conexão e totaliza 435 verificações quando ambos os relatórios nativos são fornecidos.
+
+As larguras verificadas são 1,0 mm em `PI_GPIO*` e `JUCA_*`, e 2,0 mm em `+5V`/`GND`. A face de chegada exigida é F.Cu para J5/J11 e B.Cu para JPI1/JP1–JP13. Esse teste procura contato geométrico direto com cobre da mesma rede na face indicada; não pressupõe metalização do furo nem comprova o acesso físico do ferro de solda.
+
+No KiCad, conferir **Configuração da placa → Regras de projeto → Restrições** e **Classes de rede**. O mínimo global e o clearance das classes devem acompanhar o critério de 0,31 mm. Apenas mudar a largura padrão de uma classe não modifica trilhas existentes nem impõe um mínimo ao DRC; por isso a largura mínima global também foi configurada. Consulte a [documentação oficial do KiCad](https://docs.kicad.org/9.0/en/pcbnew/pcbnew.html#board-setup). A largura efetiva da fresa/ponta e as tolerâncias da máquina continuam pendentes de confirmação para esse isolamento.
 
 ## Exportação usada
 

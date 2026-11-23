@@ -3,7 +3,8 @@
 This is NOT a DRC/ERC engine. It does not validate copper clearance, current,
 Gerber artwork, connector mating or a manufactured assembly. Native KiCad
 reports can be supplied separately; coordinate/topology/style checks do not
-replace them. The original R04 is read only.
+replace them. The reviewed R05 pinout and mechanical contract are declared
+below; historical revisions are not required to run this checker.
 """
 import argparse
 from collections import Counter, defaultdict
@@ -14,13 +15,54 @@ from pathlib import Path
 import re
 
 TOL = 0.00002  # mm; admits KiCad nanometre serialization rounding.
+MIN_COPPER_CLEARANCE_MM = 0.31
+SIGNAL_TRACK_WIDTH_MM = 1.0
+POWER_TRACK_WIDTH_MM = 2.0
+
+# Reviewed R05 design contract, independent of the PCB being checked.
+# Local coordinates use the top-left board corner, X right and Y down.
+# The Pi faces down, with CSI opposite J5: odd header pins are on the right.
+BOARD_ORIGIN_MM = (100.0, 60.0)
+BOARD_SIZE_MM = (48.0, 88.0)
+JUCA_SIGNAL_NETS = (
+    'JUCA_SDA', 'JUCA_SCL', 'JUCA_TXD0', 'JUCA_RXD0',
+    'JUCA_GPIO38', 'JUCA_GPIO37', 'JUCA_GPIO36', 'JUCA_GPIO35',
+    'JUCA_GPIO45', 'JUCA_GPIO48', 'JUCA_GPIO47', 'JUCA_GPIO46', 'JUCA_GPIO3',
+)
+JP_PI_PHYSICAL_PINS = (3, 5, 10, 8, 24, 21, 23, 19, 15, 12, 33, 16, 11)
+PI_SIGNAL_BCM = {
+    3: 2, 5: 3, 10: 15, 8: 14, 24: 8, 21: 9, 23: 11,
+    19: 10, 15: 22, 12: 18, 33: 13, 16: 23, 11: 17,
+}
+MOUNTING_HOLES = {
+    'H1': (4.30, 43.21, 3.2), 'H2': (4.35, 68.00, 3.2),
+    'H3': (39.00, 68.00, 3.2), 'H4': (4.30, 82.14, 3.2),
+    'H5': (14.50, 23.50, 2.75), 'H6': (37.50, 23.50, 2.75),
+    'H7': (14.50, 81.50, 2.75), 'H8': (37.50, 81.50, 2.75),
+}
+
+
+def expected_connector_pads():
+    """Declared R05 positions/nets, never inferred from the input board."""
+    expected = {}
+    for pin, net in enumerate(JUCA_SIGNAL_NETS, 1):
+        expected[('J5', str(pin))] = ((7.4744+(pin-1)*2.54, 3.0927), net)
+    for pin in range(1, 5):
+        net = {2: '+5V', 4: 'GND'}.get(pin, f'unconnected-(J11-Pad{pin})')
+        expected[('J11', str(pin))] = ((45.1794, 77.2477+(pin-1)*2.54), net)
+    for pin in range(1, 41):
+        net = (f'PI_GPIO{PI_SIGNAL_BCM[pin]}' if pin in PI_SIGNAL_BCM else
+               {2: '+5V', 4: '+5V', 9: 'GND'}.get(pin, f'unconnected-(JPI1-Pad{pin})'))
+        expected[('JPI1', str(pin))] = ((15.77 if pin % 2 else 13.23,
+                                       28.37+((pin-1)//2)*2.54), net)
+    return expected
 
 
 def repository():
     for p in [*Path(__file__).resolve().parents, Path.cwd(), *Path.cwd().parents]:
-        if (p / 'Hardware/Juca_PiZero2_Shield/R04').is_dir():
+        if (p / 'Hardware/Juca_PiZero2_Shield/R05/Juca_PiZero2_Shield_R05.kicad_pcb').is_file():
             return p
-    raise ValueError('Repository containing Hardware/Juca_PiZero2_Shield not found')
+    raise ValueError('Repository containing the R05 PCB not found')
 
 
 def parse(path):
@@ -206,8 +248,8 @@ def check_project_settings(path, check):
         return isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value)
 
     for name, limit in {
-        'min_clearance': 0.508,
-        'min_track_width': 0.508,
+        'min_clearance': MIN_COPPER_CLEARANCE_MM,
+        'min_track_width': SIGNAL_TRACK_WIDTH_MM,
         'min_copper_edge_clearance': 0.508,
         'min_hole_clearance': 0.508,
         'min_hole_to_hole': 0.508,
@@ -225,15 +267,17 @@ def check_project_settings(path, check):
     check(any(row.get('name') == 'Default' for row in valid_classes), 'Project has the Default netclass')
     for row in valid_classes:
         name = row.get('name', '<unnamed>')
-        for field in ('clearance', 'track_width'):
+        for field, limit in (('clearance', MIN_COPPER_CLEARANCE_MM),
+                             ('track_width', SIGNAL_TRACK_WIDTH_MM)):
             value = row.get(field)
-            check(number(value) and value + 1e-9 >= 0.508,
-                  f'Netclass {name} {field} >= 0.508 mm (found {value!r})')
+            check(number(value) and value + 1e-9 >= limit,
+                  f'Netclass {name} {field} >= {limit} mm (found {value!r})')
         for field, required in (('via_drill', 1.0), ('via_diameter', 2.0)):
             value = row.get(field)
             check(number(value) and abs(value-required) <= 1e-9,
                   f'Netclass {name} {field} = {required} mm (found {value!r})')
-    for name, required in {'Default': 0.55, 'JucaSignals': 1.0, 'Power': 2.0}.items():
+    for name, required in {'Default': SIGNAL_TRACK_WIDTH_MM, 'JucaSignals': SIGNAL_TRACK_WIDTH_MM,
+                           'Power': POWER_TRACK_WIDTH_MM}.items():
         matching = [row for row in valid_classes if row.get('name') == name]
         value = matching[0].get('track_width') if len(matching) == 1 else None
         check(number(value) and abs(value-required) <= 1e-9,
@@ -250,8 +294,6 @@ def check_project_settings(path, check):
 def inspect(args):
     repo = repository()
     shield = repo / 'Hardware/Juca_PiZero2_Shield'
-    source = shield / 'R04/geometria_e_conexoes.json'
-    original = json.loads(source.read_text(encoding='utf-8'))
     board_path = args.pcb or shield / 'R05/Juca_PiZero2_Shield_R05.kicad_pcb'
     netlist_path = args.netlist or shield / 'R05/verificacao/netlist_R05.net'
     pcb, pads, holes, fps, tracks, vias = load_board(board_path)
@@ -262,35 +304,31 @@ def inspect(args):
     project_path = board_path.with_suffix('.kicad_pro')
     project_hash = check_project_settings(project_path, check)
 
-    origin = tuple(original['kicad_origin'])
-    old_pads = {(r['ref'], r['pin']): r for r in original['pads']}
-    old_holes = {r['ref']: r for r in original['holes']}
+    origin = BOARD_ORIGIN_MM
+    expected_pads = expected_connector_pads()
     check(len(pads) == 83, '83 electrical pads')
     check(len(holes) == 8, '8 mounting holes')
     check(all(p['technology'] == 'thru_hole' and abs(p['drill']-1) <= TOL for p in pads.values()),
           'Every electrical pad is PTH with 1.0 mm drill')
     check(all(abs(v['drill']-1) <= TOL and abs(v['diameter']-2) <= TOL for v in vias),
           'Every via uses 2.0 mm diameter / 1.0 mm drill')
-    for (ref, pin), pad in pads.items():
-        if ref in ('J5', 'J11', 'JPI1'):
-            old = old_pads[(ref, pin)]
-            desired = (46.5-old['x'], old['y']+5.0) if ref == 'JPI1' else (old['x'], old['y'])
-            expected = tuple(a+b for a, b in zip(origin, desired))
-            check(near(pad['position'], expected), f'{ref}.{pin} position matches required mechanical transform')
-            if (ref, pin) == ('JPI1', '11'):
-                check(pad['net'] == 'PI_GPIO17', 'R05 JP13 exception: Pi physical pin 11 is GPIO17')
-            elif (ref, pin) == ('JPI1', '18'):
-                check(pad['net'] == 'unconnected-(JPI1-Pad18)',
-                      'R05 JP13 exception: former Pi physical pin 18 is explicitly NC')
-            elif old['net']:
-                check(pad['net'] == old['net'], f'{ref}.{pin} electrical identity preserved')
-    for ref, hole in holes.items():
-        old = old_holes[ref]
-        pi = int(ref[1:]) >= 5
-        desired = (old['x']+(5.5 if pi else 0), old['y']+(5.0 if pi else 0))
-        check(near(hole['position'], tuple(a+b for a, b in zip(origin, desired))),
-              f'{ref} mounting position (Pi translated +5.5 mm X / +5.0 mm Y, Juca unchanged)')
-        check(abs(hole['drill']-old['drill']) <= TOL, f'{ref} mounting drill preserved')
+    connector_pairs = {pair for pair in pads if pair[0] in ('J5', 'J11', 'JPI1')}
+    check(connector_pairs == set(expected_pads), 'J5/J11/JPI1 contain exactly the declared R05 pins')
+    for (ref, pin), (local_position, expected_net) in expected_pads.items():
+        pad = pads.get((ref, pin))
+        if pad is None:
+            continue  # Missing identities are reported by the exact-set check.
+        expected = tuple(a+b for a, b in zip(origin, local_position))
+        check(near(pad['position'], expected), f'{ref}.{pin} matches declared R05 mechanical position')
+        check(pad['net'] == expected_net, f'{ref}.{pin} matches declared R05 net {expected_net}')
+    check(set(holes) == set(MOUNTING_HOLES), 'Mounting-hole identities are H1 through H8')
+    for ref, (x, y, drill) in MOUNTING_HOLES.items():
+        hole = holes.get(ref)
+        if hole is None:
+            continue
+        check(near(hole['position'], (origin[0]+x, origin[1]+y)),
+              f'{ref} matches declared R05 mounting position')
+        check(abs(hole['drill']-drill) <= TOL, f'{ref} mounting drill is {drill} mm')
     for i in range(1, 14):
         ref = f'JP{i}'
         group = {p: v for (r, p), v in pads.items() if r == ref}
@@ -301,10 +339,11 @@ def inspect(args):
               f'{ref} has 2.54 mm contact pitch')
         check(group['1']['net'] != group['2']['net'], f'{ref} remains open in CAD')
         for pin in ('1', '2'):
-            expected_net = ('PI_GPIO17' if (ref, pin) == ('JP13', '2')
-                            else old_pads[(ref, pin)]['net'])
+            physical_pin = JP_PI_PHYSICAL_PINS[i-1]
+            expected_net = (JUCA_SIGNAL_NETS[i-1] if pin == '1'
+                            else f'PI_GPIO{PI_SIGNAL_BCM[physical_pin]}')
             check(group[pin]['net'] == expected_net,
-                  f'{ref}.{pin} net matches R04 except the explicit JP13 GPIO17 reassignment')
+                  f'{ref}.{pin} matches declared R05 net {expected_net}')
         check(fps[ref][1] == 'JucaShield:Jumper_PTH_1x02_P2_54mm', f'{ref} uses PTH footprint')
         attrs = child(fps[ref], 'attr', ['attr'])
         check('dnp' not in attrs, f'{ref} header is populated (shunt absent)')
@@ -313,9 +352,11 @@ def inspect(args):
     lines = [n for n in children(pcb, 'gr_line') if child(n, 'layer', ['', ''])[1] == 'Edge.Cuts']
     if len(outline) == 1:
         check(near(xy(child(outline[0], 'start')), origin) and
-              near(xy(child(outline[0], 'end')), (origin[0]+48, origin[1]+88)), '48 x 88 mm outline preserved')
+              near(xy(child(outline[0], 'end')), tuple(a+b for a, b in zip(origin, BOARD_SIZE_MM))),
+              '48 x 88 mm outline preserved')
     elif not outline and len(lines) == 4:
-        corners = [origin, (origin[0]+48, origin[1]), (origin[0]+48, origin[1]+88), (origin[0], origin[1]+88)]
+        w, h = BOARD_SIZE_MM
+        corners = [origin, (origin[0]+w, origin[1]), (origin[0]+w, origin[1]+h), (origin[0], origin[1]+h)]
         expected_edges = {tuple(sorted((key(corners[i]), key(corners[(i+1) % 4])))) for i in range(4)}
         actual_edges = {tuple(sorted((key(xy(child(n, 'start'))), key(xy(child(n, 'end')))))) for n in lines}
         check(actual_edges == expected_edges, '48 x 88 mm outline preserved')
@@ -376,8 +417,8 @@ def inspect(args):
         expected_routed_nets = {net for net in exported if net and not net.startswith('unconnected-')}
         check(set(widths_by_net) == expected_routed_nets, 'Every used net has tracks and NC nets have no tracks')
         for net, values in widths_by_net.items():
-            expected_width = (2.0 if net in ('+5V', 'GND') else 0.55 if net.startswith('PI_GPIO')
-                              else 1.0 if net.startswith('JUCA_') else None)
+            expected_width = (POWER_TRACK_WIDTH_MM if net in ('+5V', 'GND')
+                              else SIGNAL_TRACK_WIDTH_MM if net.startswith(('PI_GPIO', 'JUCA_')) else None)
             check(len(values) == 1, f'{net} uses one uniform track width (found {values} mm)')
             check(expected_width is not None and all(abs(v-expected_width) <= TOL for v in values),
                   f'{net} track width is {expected_width} mm (found {values})')

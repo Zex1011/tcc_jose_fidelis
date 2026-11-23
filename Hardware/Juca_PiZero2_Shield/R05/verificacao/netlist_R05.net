@@ -1,7 +1,7 @@
 (export (version "E")
   (design
     (source "C:\\Zeral\\TCC\\tcc_jose_fidelis\\Hardware\\Juca_PiZero2_Shield\\R05\\Juca_PiZero2_Shield_R05.kicad_sch")
-    (date "2026-11-16T19:00:59-0300")
+    (date "2026-11-23T01:13:35-0300")
     (tool "Eeschema 9.0.8")
     (sheet (number "1") (name "/") (tstamps "/")
       (title_block

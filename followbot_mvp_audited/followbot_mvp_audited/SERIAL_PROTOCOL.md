@@ -15,7 +15,7 @@ backend existente. Os perfis ainda apontam para exemplos USB; a configuração
 UART do Pi e o firmware/pinagem da Juca permanecem pendentes. A R05 mantém a
 pinagem UART de JP3/JP4. JP13 passa a ligar o GPIO3 da Juca ao **GPIO17 do Pi,
 pino físico 11**; o pino físico 18 (GPIO24) fica sem conexão na shield.
-Permanecem as [restrições de integração da Juca identificadas na R04](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R04.md).
+Permanecem as [restrições de integração da Juca consolidadas na revisão elétrica da R05](../../Hardware/Juca_PiZero2_Shield/R05/documentacao/REVISAO_ELETRICA_E_LAYOUT.md).
 
 Na R05, os headers PTH estão previstos instalados, mas as duas linhas UART
 começam abertas, sem capinhas. O protocolo exige fechar JP4 para transmitir

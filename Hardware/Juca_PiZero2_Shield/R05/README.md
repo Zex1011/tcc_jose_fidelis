@@ -61,20 +61,22 @@ O número de cada JP corresponde ao pino de J5. **JP1–JP12 conservam o mapeame
 | JP12 / 12 | GPIO46 | 16 / 23 |
 | JP13 / 13 | GPIO3 | 11 / 17 |
 
-O FollowBot exige **JP3 e JP4 fechados**: JP4 leva os comandos Pi → ESP, e JP3 traz os ACKs ESP → Pi. Porta UART, firmware e acionamento real continuam dependentes de integração. Os demais jumpers ficam abertos enquanto seu uso não estiver definido. Permanecem as [restrições de variante, memória e inicialização do ESP32-S3 descritas na análise da R04](../analise/REVISAO_R04.md#linhas-adicionais-e-variante-do-esp).
+O FollowBot exige **JP3 e JP4 fechados**: JP4 leva os comandos Pi → ESP, e JP3 traz os ACKs ESP → Pi. Porta UART, firmware e acionamento real continuam dependentes de integração. Os demais jumpers ficam abertos enquanto seu uso não estiver definido. Conferir as [restrições de variante, memória e inicialização do ESP32-S3](documentacao/REVISAO_ELETRICA_E_LAYOUT.md#restrições-do-esp32-s3-e-do-i²c) antes de habilitar outras linhas.
 
 **A alimentação permanece conectada mesmo com todas as capinhas removidas:** J11-2 liga +5 V aos pinos físicos 2 e 4 do Pi; J11-4 liga GND ao pino físico 9. J11-1 (+BATT) e J11-3 (+3,3 V) permanecem sem ligação. A shield não oferece regulador, conversão de níveis nem seleção entre a alimentação da Juca e a do USB.
 
-As trilhas mantêm **largura constante em cada rede**, inclusive nas trocas de face. As classes do projeto KiCad acompanham os valores abaixo. A capinha une duas redes distintas; a diferença de largura entre os lados Juca e Raspberry ocorre nesse componente.
+As trilhas mantêm **largura constante em cada rede**, inclusive nas trocas de face. Na atualização de 23/11/2026, todos os sinais passaram a usar 1,0 mm. As classes do projeto KiCad acompanham os valores abaixo.
 
 | Grupo de trilhas | Largura anterior na R05 | Largura atual |
 |---|---|---|
-| Sinais do Raspberry (`PI_GPIO*`) | 0,508 mm | **0,55 mm** |
+| Sinais do Raspberry (`PI_GPIO*`) | 0,508 / 0,55 mm | **1,0 mm** |
 | Juca até os jumpers (`JUCA_*`) | 0,762 mm | **1,0 mm** |
 | +5 V | 1,0 e 1,8 mm | **2,0 mm** |
 | GND | 1,8 mm | **2,0 mm** |
 
-O percurso de alimentação foi ajustado para eliminar o estreitamento em B.Cu. A largura de 0,55 mm nos sinais do Pi preserva a separação mínima de 0,508 mm nos trechos apertados; elevar todas essas trilhas a 0,60 mm na geometria avaliada violava essas separações. A [revisão elétrica e de layout](documentacao/REVISAO_ELETRICA_E_LAYOUT.md) reúne a conferência dos pinos, as correções de acesso à solda e as restrições de integração.
+O **isolamento mínimo entre cobres de redes diferentes é de 0,31 mm**, definido tanto nas restrições globais quanto nas três classes. A largura mínima global de trilha é de **1,0 mm**, para detectar trechos estreitos esquecidos em futuras edições. As restrições cobre–borda, cobre–furo e furo–furo permanecem em 0,508 mm; as áreas reservadas aos fixadores continuam ativas.
+
+O critério adotado é **0,31 mm, aproximadamente 12,2 mils**, considerando a informação de mínimo de 12 mils (0,3048 mm) e recomendação de 20 mils (0,508 mm). A conversão não deve ser arredondada para 0,30 mm, que fica abaixo de 12 mils. O trecho original do manual de fabricação ainda não foi incorporado ao repositório; a informação foi fornecida durante a revisão do projeto. A largura efetiva da ferramenta e as tolerâncias da CNC devem ser confirmadas no CAM. A [revisão elétrica e de layout](documentacao/REVISAO_ELETRICA_E_LAYOUT.md) reúne os ajustes locais, a conferência dos pinos e as restrições de integração.
 
 A capacidade de corrente ainda depende da espessura real do cobre, do comprimento das trilhas, dos contatos e das passagens entre faces. Medir em bancada a queda de tensão até os pinos de alimentação do Pi e o aquecimento com a câmera e o processamento em operação, incluindo os efeitos do acionamento dos motores sobre a alimentação fornecida pela Juca. Esses ensaios continuam pendentes.
 
@@ -96,10 +98,12 @@ O diretório [fabricacao](fabricacao/) contém **sete Gerbers** — duas faces d
 |---|---|
 | [DRC nativo, KiCad 9.0.8](verificacao/DRC_R05.json) | 0 violações, 0 conexões pendentes e 0 divergências reportadas com o esquemático |
 | [ERC nativo, KiCad 9.0.8](verificacao/ERC_R05.json) | 0 violações |
-| [Conferência estrutural](verificacao/ESTRUTURA_R05.json) | 408 verificações aprovadas; `PASS_BOUNDED_CHECKS_ONLY` |
+| [Conferência estrutural](verificacao/ESTRUTURA_R05.json) | 435 verificações aprovadas; `PASS_BOUNDED_CHECKS_ONLY` |
 | [Conferência das exportações](verificacao/FABRICACAO_R05.json) | 29 verificações aprovadas; os 132 furos exportados correspondem ao CAD |
 
-O PCB possui **190 segmentos de trilha**, contra 452 na R04, e **41 vias**, contra 23. O aumento das passagens entre faces acompanha a troca dos seletores SMD por PTH, as chegadas às faces acessíveis à solda e a reorganização do roteamento. Essa comparação descreve a geometria; não estabelece ganho de desempenho elétrico.
+O PCB possui **185 segmentos de trilha**, contra 452 na R04, e **41 vias**, contra 23. O aumento das passagens entre faces acompanha a troca dos seletores SMD por PTH, as chegadas às faces acessíveis à solda e a reorganização do roteamento. Essa comparação descreve a geometria; não estabelece ganho de desempenho elétrico.
+
+Na atualização de 23/11/2026, o trecho de `PI_GPIO8` em F.Cu foi simplificado de 13 para 3 segmentos, reduzindo o total da placa de 195 para 185. A diagonal permanece a 45°, com largura de 1,0 mm. Pinagem, posições dos componentes, vias, furos e regras de isolamento foram preservados. As prévias, os relatórios e as exportações de fabricação correspondem a esse percurso atualizado.
 
 Seis vias foram afastadas dos contornos nominais dos conectores para liberar suas ilhas de solda. A conferência das 41 vias contra esses contornos não encontrou sobreposições; a menor folga nominal é de 0,26 mm. Essa medida usa F.Fab nos jumpers e a representação em serigrafia nos demais headers, exigindo confirmação das dimensões dos componentes escolhidos.
 
@@ -109,6 +113,6 @@ As verificações digitais não comprovam montagem, capacidade de corrente, impe
 
 As [instruções para repetir a verificação](verificacao/README.md) incluem os comandos de DRC/ERC e exportação. As vistas vetoriais nativas de [cima](documentacao/vista_superior_KiCad.svg) e [baixo](documentacao/vista_inferior_KiCad.svg) complementam a prévia; a vista inferior nativa está espelhada para representar a observação por baixo da placa.
 
-A [R04 original](../R04/README.md), seus [fontes KiCad](../R04/Juca_PiZero2_Shield_R04.kicad_pro) e [arquivos recebidos de fabricação](../R04/fabricacao/) permanecem preservados como histórico. Seus Gerbers e PDF **não correspondem à R05**. As saídas próprias desta revisão estão em [fabricacao](fabricacao/); parâmetros de usinagem e geração de G-code pertencem à etapa CAM ainda pendente.
+As revisões R02/R04, seus ZIPs e suas análises específicas permanecem apenas no arquivo local, ignorados pelo Git. Não são necessários para abrir ou verificar a R05 e não acompanham novos clones. As referências históricas neste documento explicam a evolução da montagem; a ilustração comparativa permanece como documentação da R05. As saídas próprias desta revisão estão em [fabricacao](fabricacao/); parâmetros de usinagem e geração de G-code pertencem à etapa CAM ainda pendente.
 
 Referências para a montagem: [desenho mecânico oficial do Raspberry Pi Zero 2 W](https://datasheets.raspberrypi.com/rpizero2/raspberry-pi-zero-2-w-mechanical-drawing.pdf) e [pinagem GPIO oficial](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio).

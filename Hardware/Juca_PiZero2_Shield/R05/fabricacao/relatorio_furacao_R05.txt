@@ -1,5 +1,5 @@
 Drill report for Juca_PiZero2_Shield_R05.kicad_pcb
-Created on 2026-11-16T19:01:15-0300
+Created on 2026-11-23T03:29:36-0300
 
 Copper Layer Stackup:
     =============================================================

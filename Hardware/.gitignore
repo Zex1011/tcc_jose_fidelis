@@ -6,3 +6,19 @@
 fp-info-cache
 *-backups/
 _autosave-*
+
+# Revisoes antigas mantidas apenas no arquivo local.
+/Juca_PiZero2_Shield/R02/
+/Juca_PiZero2_Shield/R04/
+/Juca_PiZero2_Shield/origem/Juca_PiZero2_Shield_R02.zip
+/Juca_PiZero2_Shield/origem/Juca_PiZero2_Shield_R04.zip
+/Juca_PiZero2_Shield/analise/REVISAO_R02.md
+/Juca_PiZero2_Shield/analise/REVISAO_R04.md
+/Juca_PiZero2_Shield/analise/guia_montagem_pagina1.png
+/Juca_PiZero2_Shield/analise/guia_montagem_R04_pagina1.png
+/Juca_PiZero2_Shield/analise/manifesto_origem.json
+/Juca_PiZero2_Shield/analise/manifesto_origem_R04.json
+/Juca_PiZero2_Shield/analise/revisao_estrutural.json
+/Juca_PiZero2_Shield/analise/revisao_estrutural_R04.json
+/Juca_PiZero2_Shield/analise/verificar_r02.py
+/Juca_PiZero2_Shield/analise/verificar_r04.py

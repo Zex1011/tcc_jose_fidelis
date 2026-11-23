@@ -1,16 +1,16 @@
 {
   "status": "PASS_BOUNDED_CHECKS_ONLY",
   "board": "C:\\Zeral\\TCC\\tcc_jose_fidelis\\Hardware\\Juca_PiZero2_Shield\\R05\\Juca_PiZero2_Shield_R05.kicad_pcb",
-  "board_sha256": "19188e2a967ff88cd83714f2d6aae1a4f16525704c54c818b5c4c1602b44df3d",
+  "board_sha256": "ece2f03b7c081d3b43cd008b4bbbe51b523cf5f4d8955387202ecaa08272c3cc",
   "project": "C:\\Zeral\\TCC\\tcc_jose_fidelis\\Hardware\\Juca_PiZero2_Shield\\R05\\Juca_PiZero2_Shield_R05.kicad_pro",
-  "project_sha256": "b7f0162b447cc4214fa8c7a7086fcac20941111cb30812c60107e8c3ee04d468",
-  "netlist_sha256": "43853308416c81c98b9d87460fb7d005faa6f243a2e7cbd65d34c2fd82886d5f",
-  "checks_passed": 408,
+  "project_sha256": "9872ef220ab2327064861e91b21ab5590a771cb83a73c3df1c79e62444455c38",
+  "netlist_sha256": "fe7707a5a68fab0a72647225e4e759505a30dcdae7649663f0bff31b7fa5e21d",
+  "checks_passed": 435,
   "failures": [],
   "counts": {
     "electrical_pads": 83,
     "mounting_holes": 8,
-    "tracks": 190,
+    "tracks": 185,
     "vias": 41,
     "nets": 54,
     "used_pads": 57
@@ -62,43 +62,43 @@
       1.0
     ],
     "PI_GPIO10": [
-      0.55
+      1.0
     ],
     "PI_GPIO11": [
-      0.55
+      1.0
     ],
     "PI_GPIO13": [
-      0.55
+      1.0
     ],
     "PI_GPIO14": [
-      0.55
+      1.0
     ],
     "PI_GPIO15": [
-      0.55
+      1.0
     ],
     "PI_GPIO17": [
-      0.55
+      1.0
     ],
     "PI_GPIO18": [
-      0.55
+      1.0
     ],
     "PI_GPIO2": [
-      0.55
+      1.0
     ],
     "PI_GPIO22": [
-      0.55
+      1.0
     ],
     "PI_GPIO23": [
-      0.55
+      1.0
     ],
     "PI_GPIO3": [
-      0.55
+      1.0
     ],
     "PI_GPIO8": [
-      0.55
+      1.0
     ],
     "PI_GPIO9": [
-      0.55
+      1.0
     ]
   },
   "solder_face_contacts": [
@@ -117,8 +117,8 @@
       "net": "GND",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        24,
-        25
+        22,
+        23
       ]
     },
     {
@@ -127,7 +127,7 @@
       "net": "JUCA_SDA",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        55
+        53
       ]
     },
     {
@@ -136,7 +136,7 @@
       "net": "JUCA_GPIO48",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        49
+        47
       ]
     },
     {
@@ -145,7 +145,7 @@
       "net": "JUCA_GPIO47",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        47
+        45
       ]
     },
     {
@@ -154,7 +154,7 @@
       "net": "JUCA_GPIO46",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        45
+        43
       ]
     },
     {
@@ -163,7 +163,7 @@
       "net": "JUCA_GPIO3",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        33
+        31
       ]
     },
     {
@@ -172,7 +172,7 @@
       "net": "JUCA_SCL",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        53
+        51
       ]
     },
     {
@@ -181,7 +181,7 @@
       "net": "JUCA_TXD0",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        57
+        55
       ]
     },
     {
@@ -190,7 +190,7 @@
       "net": "JUCA_RXD0",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        51
+        49
       ]
     },
     {
@@ -199,7 +199,7 @@
       "net": "JUCA_GPIO38",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        41
+        39
       ]
     },
     {
@@ -208,7 +208,7 @@
       "net": "JUCA_GPIO37",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        39
+        37
       ]
     },
     {
@@ -217,7 +217,7 @@
       "net": "JUCA_GPIO36",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        37
+        35
       ]
     },
     {
@@ -226,7 +226,7 @@
       "net": "JUCA_GPIO35",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        35
+        33
       ]
     },
     {
@@ -235,7 +235,7 @@
       "net": "JUCA_GPIO45",
       "required_face": "F.Cu",
       "same_face_track_indices": [
-        43
+        41
       ]
     },
     {
@@ -244,7 +244,7 @@
       "net": "JUCA_SDA",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        56
+        54
       ]
     },
     {
@@ -262,7 +262,7 @@
       "net": "JUCA_GPIO48",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        50
+        48
       ]
     },
     {
@@ -280,7 +280,7 @@
       "net": "JUCA_GPIO47",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        48
+        46
       ]
     },
     {
@@ -289,7 +289,7 @@
       "net": "PI_GPIO13",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        86
+        84
       ]
     },
     {
@@ -298,7 +298,7 @@
       "net": "JUCA_GPIO46",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        46
+        44
       ]
     },
     {
@@ -307,7 +307,7 @@
       "net": "PI_GPIO23",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        138
+        140
       ]
     },
     {
@@ -316,7 +316,7 @@
       "net": "JUCA_GPIO3",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        34
+        32
       ]
     },
     {
@@ -325,7 +325,7 @@
       "net": "PI_GPIO17",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        154
+        151
       ]
     },
     {
@@ -334,7 +334,7 @@
       "net": "JUCA_SCL",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        54
+        52
       ]
     },
     {
@@ -343,7 +343,7 @@
       "net": "PI_GPIO3",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        164
+        161
       ]
     },
     {
@@ -352,7 +352,7 @@
       "net": "JUCA_TXD0",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        58
+        56
       ]
     },
     {
@@ -361,7 +361,7 @@
       "net": "PI_GPIO15",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        97
+        95
       ]
     },
     {
@@ -370,7 +370,7 @@
       "net": "JUCA_RXD0",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        52
+        50
       ]
     },
     {
@@ -379,7 +379,7 @@
       "net": "PI_GPIO14",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        91
+        89
       ]
     },
     {
@@ -388,7 +388,7 @@
       "net": "JUCA_GPIO38",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        42
+        40
       ]
     },
     {
@@ -397,7 +397,9 @@
       "net": "PI_GPIO8",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        178
+        171,
+        172,
+        174
       ]
     },
     {
@@ -406,7 +408,7 @@
       "net": "JUCA_GPIO37",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        40
+        38
       ]
     },
     {
@@ -415,7 +417,7 @@
       "net": "PI_GPIO9",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        188
+        181
       ]
     },
     {
@@ -424,7 +426,7 @@
       "net": "JUCA_GPIO36",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        38
+        36
       ]
     },
     {
@@ -433,7 +435,8 @@
       "net": "PI_GPIO11",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        75
+        75,
+        78
       ]
     },
     {
@@ -442,7 +445,7 @@
       "net": "JUCA_GPIO35",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        36
+        34
       ]
     },
     {
@@ -451,7 +454,7 @@
       "net": "PI_GPIO10",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        62
+        60
       ]
     },
     {
@@ -460,7 +463,7 @@
       "net": "JUCA_GPIO45",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        44
+        42
       ]
     },
     {
@@ -469,7 +472,7 @@
       "net": "PI_GPIO22",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        127
+        124
       ]
     },
     {
@@ -478,8 +481,8 @@
       "net": "PI_GPIO15",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        98,
-        100
+        96,
+        98
       ]
     },
     {
@@ -488,7 +491,7 @@
       "net": "PI_GPIO17",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        153
+        150
       ]
     },
     {
@@ -497,8 +500,8 @@
       "net": "PI_GPIO18",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        105,
-        111
+        103,
+        110
       ]
     },
     {
@@ -507,7 +510,7 @@
       "net": "PI_GPIO22",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        128
+        125
       ]
     },
     {
@@ -516,7 +519,7 @@
       "net": "PI_GPIO23",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        137
+        135
       ]
     },
     {
@@ -525,7 +528,7 @@
       "net": "PI_GPIO10",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        67
+        65
       ]
     },
     {
@@ -535,7 +538,7 @@
       "required_face": "B.Cu",
       "same_face_track_indices": [
         6,
-        14
+        11
       ]
     },
     {
@@ -544,7 +547,7 @@
       "net": "PI_GPIO9",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        189
+        178
       ]
     },
     {
@@ -553,7 +556,7 @@
       "net": "PI_GPIO11",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        74
+        76
       ]
     },
     {
@@ -562,7 +565,7 @@
       "net": "PI_GPIO8",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        177
+        170
       ]
     },
     {
@@ -571,7 +574,7 @@
       "net": "PI_GPIO2",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        114
+        115
       ]
     },
     {
@@ -580,7 +583,7 @@
       "net": "PI_GPIO13",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        84
+        82
       ]
     },
     {
@@ -589,8 +592,8 @@
       "net": "+5V",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        15,
-        21
+        14,
+        19
       ]
     },
     {
@@ -599,7 +602,7 @@
       "net": "PI_GPIO3",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        162
+        159
       ]
     },
     {
@@ -608,7 +611,7 @@
       "net": "PI_GPIO14",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        90
+        88
       ]
     },
     {
@@ -617,7 +620,7 @@
       "net": "GND",
       "required_face": "B.Cu",
       "same_face_track_indices": [
-        30
+        28
       ]
     }
   ],

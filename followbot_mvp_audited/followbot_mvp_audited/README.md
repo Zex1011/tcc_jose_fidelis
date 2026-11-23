@@ -46,7 +46,7 @@ A placa de interligação prevista com o carrinho está em
 A revisão de trabalho é a [R05](../../Hardware/Juca_PiZero2_Shield/R05/README.md),
 com o Raspberry voltado para baixo e 13 jumpers PTH de capinha removível,
 inicialmente abertos. A UART do protocolo atual requer JP3 e JP4 fechados.
-R02 e R04 permanecem como histórico. Fabricação, integração física e firmware
+R02 e R04 permanecem no acervo histórico local, fora da árvore versionada atual. Fabricação, integração física e firmware
 do carrinho ainda precisam ser validados.
 
 ```text

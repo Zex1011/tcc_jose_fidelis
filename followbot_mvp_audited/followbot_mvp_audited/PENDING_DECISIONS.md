@@ -276,13 +276,13 @@ Isso é particularmente relevante para um trabalho acadêmico envolvendo imagens
 
 A [R05](../../Hardware/Juca_PiZero2_Shield/R05/README.md) é a revisão de trabalho:
 Raspberry com a face dos componentes voltada para a shield e 13 jumpers PTH
-com capinhas removíveis, inicialmente abertos. R02 e R04 permanecem preservadas
-como histórico. O GND é permanente por trilhas/vias, sem o JW3 usado na R02.
+com capinhas removíveis, inicialmente abertos. R02 e R04 permanecem no acervo
+histórico local, fora da árvore versionada atual. O GND é permanente por trilhas/vias, sem o JW3 usado na R02.
 Confirmar o esquema/revisão da Juca, alimentação de 5 V e convivência com USB,
 conectores, espaçadores e fabricação/continuidade elétrica das vias. A nova
 montagem exige conferir a folga em altura entre o Pi e o fixador H3. As linhas
 adicionais dependem da variante do ESP32-S3 e não devem ser habilitadas sem uso
-definido; permanecem as [restrições elétricas da análise da R04](../../Hardware/Juca_PiZero2_Shield/analise/REVISAO_R04.md).
+definido; permanecem as [restrições elétricas consolidadas na revisão da R05](../../Hardware/Juca_PiZero2_Shield/R05/documentacao/REVISAO_ELETRICA_E_LAYOUT.md).
 
 Para o software, conferir o mapeamento recebido e a UART real, fechar JP3/JP4
 com as capinhas para comandos e ACK, integrar o acionamento e a parada do

@@ -51,7 +51,13 @@
           "min_clearance": 0.5
         }
       },
-      "diff_pair_dimensions": [],
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
       "drc_exclusions": [],
       "meta": {
         "version": 2
@@ -118,7 +124,7 @@
       },
       "rules": {
         "max_error": 0.005,
-        "min_clearance": 0.508,
+        "min_clearance": 0.31,
         "min_connection": 0.0,
         "min_copper_edge_clearance": 0.508,
         "min_groove_width": 0.0,
@@ -131,7 +137,7 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 1.0,
-        "min_track_width": 0.508,
+        "min_track_width": 1.0,
         "min_via_annular_width": 0.5,
         "min_via_diameter": 2.0,
         "solder_mask_to_copper_clearance": 0.0,
@@ -181,7 +187,9 @@
           "td_width_to_size_filter_ratio": 0.9
         }
       ],
-      "track_widths": [],
+      "track_widths": [
+        0.0
+      ],
       "tuning_pattern_settings": {
         "diff_pair_defaults": {
           "corner_radius_percentage": 80,
@@ -210,8 +218,8 @@
       },
       "via_dimensions": [
         {
-          "diameter": 2.0,
-          "drill": 1.0
+          "diameter": 0.0,
+          "drill": 0.0
         }
       ],
       "zones_allow_external_fillets": false
@@ -243,7 +251,7 @@
     "classes": [
       {
         "bus_width": 12,
-        "clearance": 0.508,
+        "clearance": 0.31,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -254,14 +262,14 @@
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "priority": 2147483647,
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 0.55,
+        "track_width": 1.0,
         "via_diameter": 2.0,
         "via_drill": 1.0,
         "wire_width": 6
       },
       {
         "bus_width": 12,
-        "clearance": 0.508,
+        "clearance": 0.31,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,
@@ -279,7 +287,7 @@
       },
       {
         "bus_width": 12,
-        "clearance": 0.508,
+        "clearance": 0.31,
         "diff_pair_gap": 0.25,
         "diff_pair_via_gap": 0.25,
         "diff_pair_width": 0.2,

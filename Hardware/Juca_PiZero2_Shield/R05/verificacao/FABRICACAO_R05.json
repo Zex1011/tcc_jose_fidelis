@@ -26,14 +26,14 @@
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/Juca_PiZero2_Shield_R05.kicad_pcb",
       "exists": true,
-      "bytes": 151131,
-      "sha256": "19188e2a967ff88cd83714f2d6aae1a4f16525704c54c818b5c4c1602b44df3d"
+      "bytes": 150237,
+      "sha256": "ece2f03b7c081d3b43cd008b4bbbe51b523cf5f4d8955387202ecaa08272c3cc"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/Juca_PiZero2_Shield_R05.kicad_pro",
       "exists": true,
-      "bytes": 9746,
-      "sha256": "b7f0162b447cc4214fa8c7a7086fcac20941111cb30812c60107e8c3ee04d468"
+      "bytes": 9856,
+      "sha256": "9872ef220ab2327064861e91b21ab5590a771cb83a73c3df1c79e62444455c38"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/analise/verificar_fabricacao_r05.py",
@@ -44,64 +44,64 @@
     {
       "path": "Hardware/Juca_PiZero2_Shield/analise/verificar_r05.py",
       "exists": true,
-      "bytes": 26474,
-      "sha256": "f0f0e20fbb5fc70b076b65ef2db8863d79b38b55531f54a832f1394068fe01d3"
+      "bytes": 28849,
+      "sha256": "41d677196a8ef216dadf3d199ae3670880da054ee0c4dbc246d7b520ff9bd7bc"
     }
   ],
   "exports": [
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05.drl",
       "exists": true,
-      "bytes": 2680,
-      "sha256": "59f19c95a2ecec3cce5286f6ce72c6f7956637df21bbfcd785e9821604efd5ee"
+      "bytes": 2683,
+      "sha256": "1590f804e09da4ef5bb55a1c1bf2664ef54bdf3630d250f7733c4b46ed677c4b"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-job.gbrjob",
       "exists": true,
-      "bytes": 2621,
-      "sha256": "9505ad6da54ba8e7e0029b6265ce3baf6a66d8802645ab85a682d77d6e919f22"
+      "bytes": 2617,
+      "sha256": "06b2557cc8b138f335a0939ec13a458cb587bc720f86349435660b197d934a57"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-F_Cu.gtl",
       "exists": true,
-      "bytes": 12963,
-      "sha256": "7a806ab8a18c8fc2ef3839854b36acec56985700c06b136e8ea5fc5fad671fde"
+      "bytes": 12372,
+      "sha256": "2b8d2168bc87322c354cefbfc6ae60e761e306451694635c46949b0b8dee6419"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-B_Cu.gbl",
       "exists": true,
-      "bytes": 14228,
-      "sha256": "e49784111dbd39aaf790f4aae075faeccb6daca01d5ee2483d926da39b11cdd9"
+      "bytes": 14421,
+      "sha256": "89bd52c4c155213aa44ad698d66608a5e8dbc662cf757e38d980050fd47340fa"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-F_Mask.gts",
       "exists": true,
       "bytes": 3092,
-      "sha256": "eae86847c4bb53a711f816486395da7c6800cccfe66cb27b2bca6ac637170765"
+      "sha256": "3ac2d1a63ef9f3e9d3c42326a1cd08b77543dd99515d3d0b8050124365a396cc"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-B_Mask.gbs",
       "exists": true,
       "bytes": 3092,
-      "sha256": "714dfe117951b8ce3cdbeedfbf2b3ec3a0b1849024d773d624883c77a6682b72"
+      "sha256": "496788762cc3dc4a887bc0ea3f894c6614b6c4fa4bb087b28e10f78647f0cde4"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-F_Silkscreen.gto",
       "exists": true,
       "bytes": 13052,
-      "sha256": "7bf23052296f504c9aa66ea4e7be596fbc684939fe57c60303b1a5297dc25c3a"
+      "sha256": "1a1e06500d9d7bc9f58ca8e2fbf5dd20ef954b81461c5e85a8458fb65fa43bd6"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-B_Silkscreen.gbo",
       "exists": true,
       "bytes": 963,
-      "sha256": "686f541fe028f0a67583c9291ab2a2470bfeb70bf4f195cca3d6430ae572c3ea"
+      "sha256": "c12fb70756790602fa4f158f67cb415af0d1d56489e4738dd50be8a041acff60"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-Edge_Cuts.gm1",
       "exists": true,
       "bytes": 725,
-      "sha256": "5705e7c6eb55eb0bc1984e2a818626b2da5a7732d295e51e21a6936d90b80680"
+      "sha256": "0f0eac56251b156d1428319dd7fb1e2ef25ffc2291c1d37926aabffc0a2fad38"
     }
   ],
   "additional_export_files": [
@@ -109,13 +109,13 @@
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/Juca_PiZero2_Shield_R05-drl_map.svg",
       "exists": true,
       "bytes": 88838,
-      "sha256": "82e21e4bd8e75abfe24f79f9db939d006fd57a1aca5d5c2d87cbb75df6b15080"
+      "sha256": "d1a56053fa316fc136b4c200e6127930f5f756285802afba2dfdcaa897300915"
     },
     {
       "path": "Hardware/Juca_PiZero2_Shield/R05/fabricacao/relatorio_furacao_R05.txt",
       "exists": true,
       "bytes": 792,
-      "sha256": "0d29e480f980e9072b703128df0c6c58309d01c5bd293e7c2b998b47cd1379ee"
+      "sha256": "0b9f92e1f4c80414b162338ddf6d1ddaaab22315eb9e133eecc08843300957ab"
     }
   ],
   "limits": [

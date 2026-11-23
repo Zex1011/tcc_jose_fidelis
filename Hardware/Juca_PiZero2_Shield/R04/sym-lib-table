@@ -1,3 +1,0 @@
-(sym_lib_table
- (lib (name "JucaShield") (type "KiCad") (uri "${KIPRJMOD}/JucaShield.kicad_sym") (options "") (descr "Simbolos do shield de duas faces"))
-)
