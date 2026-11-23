@@ -34,7 +34,11 @@ capturar imagem
     -> capturar próxima imagem
 ```
 
-O objetivo desta versão é validar o sistema completo antes de introduzir concorrência, filas, ROS, PID, trackers avançados ou otimizações em C++.
+O pipeline padrão permanece sequencial. Há também um módulo experimental de
+[comunicação micro-ROS em thread](docs/MICRO_ROS.md), executável isoladamente,
+com envio provisório de `(v,w)`. Sua integração ao orquestrador aguarda o contrato
+do firmware da Juca. PID, trackers avançados e otimizações em C++ continuam
+como evoluções posteriores à validação do protótipo.
 
 
 ## Hardware-alvo consolidado

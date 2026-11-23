@@ -38,7 +38,12 @@ Câmera
   -> acionamento do carrinho
 ```
 
-A versão atual executa esse fluxo de forma **sequencial e síncrona**. Concorrência, filas, ROS, controle distribuído e otimizações de baixo nível só devem ser considerados após medições demonstrarem necessidade.
+A versão atual executa esse fluxo de forma **sequencial e síncrona**. Desde
+23/11/2026, existe um módulo experimental de [micro-ROS em thread](docs/MICRO_ROS.md),
+isolado do pipeline, para preparar a comunicação com o firmware existente da
+Juca. Tópicos, mensagens, unidades e retorno desse firmware ainda precisam ser
+confirmados antes da integração. Controle distribuído e otimizações de baixo
+nível continuam dependentes de validação e medições.
 
 ---
 
@@ -86,7 +91,7 @@ A frequência de 1 Hz é uma **meta inicial de viabilidade**, não uma garantia 
 - SLAM;
 - planejamento de rotas;
 - desvio de obstáculos completo;
-- ROS/ROS2;
+- integração ROS/ROS2 no pipeline principal (publicador experimental isolado disponível);
 - mapa do ambiente;
 - navegação por GPS;
 - re-identificação robusta de pessoas;

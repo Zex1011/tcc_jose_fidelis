@@ -45,6 +45,13 @@ de trabalho, prevê UART pelo header, habilitada com as capinhas de JP3/JP4,
 com integração física pendente. O backend serial já permite configurar a
 porta, preservando o contrato `CommunicationLink` e o restante do pipeline.
 
+O módulo experimental [MicroRosCommunication](docs/MICRO_ROS.md) publica `(v,w)`
+em ROS 2 por uma thread própria. Um micro-ROS Agent externo faz a ponte com a
+UART do ESP. Seu contrato inicial usa `Twist` e tópico configurável, ainda
+pendentes de confirmação no firmware. Ele não implementa `CommunicationLink`
+nem substitui os perfis existentes: publicação local não equivale ao ACK
+exigido pelo orquestrador.
+
 ## Modelos compartilhados
 
 Arquivo: `src/followbot/models.py`

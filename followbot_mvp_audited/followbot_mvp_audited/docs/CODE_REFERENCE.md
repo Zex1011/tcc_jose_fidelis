@@ -72,6 +72,10 @@ Responsabilidades: controle proporcional com limites, deadbands e regra de segur
 
 ## Comunicacao
 
+- src/followbot/communication/micro_ros_link.py
+Funcao: publicador ROS 2 experimental de `(v,w)` em thread, para uso com micro-ROS Agent externo.
+Responsabilidades: envio assincrono, fila com apenas o comando mais recente, expiracao, encerramento e CLI de depuracao. Publicacao local nao e ACK; contrato da Juca e integracao ao pipeline pendentes. Veja [MICRO_ROS.md](MICRO_ROS.md).
+
 - src/followbot/communication/serial_link.py
 Funcao: transporte serial com protocolo CMD/ACK.
 Responsabilidades: envio de comandos, timeout/retry e consolidacao de latencia/erro.

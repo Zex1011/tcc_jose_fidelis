@@ -15,6 +15,7 @@ Este indice organiza os documentos por objetivo de uso.
 - Arquitetura e contratos internos: [ARCHITECTURE.md](../ARCHITECTURE.md)
 - Diagramas de blocos, classes e estados do RPi: [guia e imagens](../../../Documentacao/diagramas/software_rpi/README.md)
 - Protocolo serial com ESP: [SERIAL_PROTOCOL.md](../SERIAL_PROTOCOL.md)
+- Comunicação micro-ROS em thread e contrato provisório de velocidades: [MICRO_ROS.md](MICRO_ROS.md)
 
 ## Hardware e integração com o carrinho
 
